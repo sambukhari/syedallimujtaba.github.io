@@ -175,7 +175,7 @@
   window.downloadResume = function (e) {
     e.preventDefault();
     // Put your resume file in /assets/resume/Syed-Ali-Resume.pdf and update this link:
-    const url = "assets/resume/Syed-Ali-Resume.pdf";
+    const url = "assets/resume/Syed-Ali-Mujtaba-Tech-Lead-CV.pdf";
     window.open(url, "_blank");
   };
 })();
