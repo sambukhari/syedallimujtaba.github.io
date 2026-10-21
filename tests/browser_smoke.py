@@ -1,104 +1,115 @@
-"""Check exact assets in-memory. Requires Playwright and Chromium.
-Set BROWSER_EXECUTABLE to an installed browser. This is not a deployment audit.
+"""Offline browser verification of exact UI/scene sources.
+The environment blocks navigation and WebGL creation. Local CSS and SVGs are
+inlined and only ES-module transport is substituted. The production 3D software
+fallback is exercised, not a mocked renderer. This is not a deployment audit.
 """
 from pathlib import Path
-import json
-import os
-import re
-import shutil
+import json, re, hashlib, os, shutil
 from playwright.sync_api import sync_playwright
-ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'qa-output'
-OUT.mkdir(exist_ok=True)
-HTML = re.sub(r'<link[^>]+(?:stylesheet|icon)[^>]*>', '', (ROOT / 'index.html').read_text())
-HTML = re.sub(r'<script src="[^"]+" defer></script>', '', HTML)
-CSS = (ROOT / 'assets/css/style.css').read_text()
-JS = (ROOT / 'assets/js/main.js').read_text()
-results = []
-
-def mount(browser, width=1440, javascript=True, reduced_motion='no-preference'):
-    page = browser.new_page(viewport={'width': width, 'height': 1000}, reduced_motion=reduced_motion)
-    errors = []
-    page.on('pageerror', lambda error: errors.append(str(error)))
-    page.set_content(HTML)
-    page.add_style_tag(content=CSS)
-    if javascript:
-        page.add_script_tag(content=JS)
-    return page, errors
-
-def check(condition, label):
-    assert condition, label
-    results.append(label)
-
-def fits(page):
-    return page.evaluate('document.documentElement.scrollWidth <= innerWidth')
-
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'qa-output';OUT.mkdir(exist_ok=True)
+HTML=(ROOT/'index.html').read_text()
+HTML=re.sub(r'<link[^>]*>','',HTML)
+HTML=re.sub(r'<script src=[^>]+></script>','',HTML)
+SPRITE=(ROOT/'assets/images/symbols.svg').read_text().replace('<svg xmlns=','<svg style="position:absolute;width:0;height:0;overflow:hidden" xmlns=',1)
+HTML=HTML.replace('<body>','<body>'+SPRITE).replace('assets/images/symbols.svg#','#')
+CSS=(ROOT/'assets/css/style.css').read_text()
+JS=(ROOT/'assets/js/main.js').read_text()
+JS=re.sub(r'const scriptUrl = .*?;',"const scriptUrl = '';",JS)
+JS=JS.replace("import(new URL('scene.js', scriptUrl).href)","Promise.resolve({mountScene:window.mountScene})")
+SCENE=(ROOT/'assets/js/scene.js').read_text().replace('export const fragment','const fragment').replace('export async function mountScene','async function mountScene')+'\nwindow.mountScene=mountScene;'
+results=[]
+def check(value,label):
+ if not value:raise AssertionError(label)
+ results.append(label)
+def fits(page):return page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+def mount(browser,width=1440,javascript=True,scene=False,reduced='reduce'):
+ page=browser.new_page(viewport={'width':width,'height':1000},reduced_motion=reduced)
+ errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+ page.set_content(HTML);page.add_style_tag(content=CSS)
+ if javascript:
+  page.add_script_tag(content=SCENE if scene else "window.mountScene=(host,controls)=>{host.dataset.engine='static';controls.hidden=true;};")
+  page.add_script_tag(content=JS)
+ return page,errors
 with sync_playwright() as p:
-    executable = os.environ.get('BROWSER_EXECUTABLE') or shutil.which('chromium')
-    options = {'headless': True}
-    if executable:
-        options['executable_path'] = executable
-    browser = p.chromium.launch(**options)
-    for width in [320, 390, 640, 768, 820, 900, 1024, 1440, 1920]:
-        page, errors = mount(browser, width)
-        check(fits(page), f'Layout fits {width}px')
-        page.locator('details').evaluate_all('(items) => items.forEach(e => e.open = true)')
-        check(fits(page), f'Expanded details fit {width}px')
-        check(not errors, f'No script errors at {width}px')
-        page.close()
-    page, errors = mount(browser)
-    page.locator('[data-filter="web"]').click()
-    check(page.locator('.project-card:visible').count() == 2, 'Web filter')
-    check(page.locator('#filter-status').inner_text() == '2 projects shown.', 'Filter announcement')
-    page.locator('[data-filter="mobile"]').click()
-    check(page.locator('.project-card:visible').count() == 1, 'Mobile filter')
-    page.locator('[data-filter="all"]').click()
-    check(page.locator('.project-card:visible').count() == 3, 'All filter')
-    page.locator('#ezead-marketplace summary').click()
-    check(page.locator('#ezead-marketplace details').get_attribute('open') is not None, 'Native details')
-    page.locator('#layer-controls [data-layer="systems"]').click()
-    check(page.locator('#sculpture').get_attribute('data-layer') == 'systems', '3D layer control')
-    check('Laravel' in page.locator('#layer-caption').inner_text(), 'Layer caption')
-    page.locator('#motion-toggle').click()
-    check(page.locator('#motion-toggle').get_attribute('aria-pressed') == 'false', 'Motion toggle')
-    page.locator('#copy-email').click()
-    check('Copy is unavailable' in page.locator('#copy-status').inner_text(), 'Honest clipboard failure')
-    page.evaluate("Object.defineProperty(navigator, 'clipboard', {configurable:true, value:{writeText:async s=>{window.copiedEmail=s}}})")
-    page.locator('#copy-email').click()
-    check(page.evaluate('window.copiedEmail') == 'syedallimujtaba@gmail.com', 'Copied address')
-    check(page.locator('#copy-status').inner_text() == 'Email address copied.', 'Copy announcement')
-    check(not errors, 'No interaction errors')
-    page.close()
-    page, errors = mount(browser, 390)
-    menu = page.locator('.menu-toggle')
-    check(not page.locator('#site-nav').is_visible(), 'Mobile menu collapsed')
-    menu.click()
-    check(page.locator('#site-nav').is_visible(), 'Menu opens')
-    page.keyboard.press('Escape')
-    check(menu.get_attribute('aria-expanded') == 'false', 'Escape closes menu')
-    check(page.evaluate('document.activeElement.classList.contains("menu-toggle")'), 'Focus returns to menu')
-    menu.click()
-    page.locator('#site-nav a[href="#projects"]').click()
-    check(not page.locator('#site-nav').is_visible(), 'Menu closes on navigation')
-    check(page.evaluate('document.activeElement.id') == 'projects', 'Destination receives focus')
-    page.close()
-    page, errors = mount(browser, 390, reduced_motion='reduce')
-    check(page.locator('#motion-toggle').is_disabled(), 'Reduced motion respected')
-    check(page.locator('#motion-toggle').get_attribute('aria-pressed') == 'false', 'Motion off under reduced preference')
-    check(page.locator('#sculpture').evaluate('e => getComputedStyle(e).transitionDuration') == '0s', 'No reduced-motion transitions')
-    page.close()
-    for width in [320, 768, 1440]:
-        page, errors = mount(browser, width, javascript=False)
-        check(page.locator('.project-card').count() == 3, f'No-JS projects at {width}px')
-        check(page.locator('#site-nav').is_visible(), f'No-JS navigation at {width}px')
-        check(fits(page), f'No-JS layout at {width}px')
-        check(not page.locator('#project-filters').is_visible(), f'No-JS filters hidden at {width}px')
-        page.close()
-    for label, width in [('desktop', 1440), ('tablet', 820), ('mobile', 390)]:
-        page, _ = mount(browser, width)
-        page.screenshot(path=str(OUT / f'{label}-full.png'), full_page=True)
-        page.screenshot(path=str(OUT / f'{label}-hero.png'))
-        page.close()
-    browser.close()
-(OUT / 'browser-results.json').write_text(json.dumps({'checks_passed': len(results), 'checks': results}, indent=2))
-print(f'{len(results)} browser checks passed. Screenshots: {OUT}')
+ browser=p.chromium.launch(executable_path=os.environ.get('BROWSER_EXECUTABLE') or shutil.which('chromium'),headless=True,args=['--no-sandbox'])
+ for width in [320,360,390,600,768,820,1024,1440,1920]:
+  page,errors=mount(browser,width)
+  check(fits(page),f'Layout fits {width}px')
+  page.locator('details').evaluate_all('(items)=>items.forEach(i=>i.open=true)')
+  check(fits(page),f'Expanded projects and career fit {width}px')
+  check(page.locator('.skill').count()==29,f'All 29 skills at {width}px')
+  check(not errors,f'No script errors at {width}px');page.close()
+ page,errors=mount(browser)
+ for category,count in [('ai',3),('backend',7),('frontend',9),('cloud',10),('all',29)]:
+  page.locator(f'[data-skill="{category}"]').click()
+  actual=page.locator('.skill:visible').count()
+  check(actual==count,f'Skill filter {category}: {actual}')
+  check(str(count) in page.locator('#skill-status').inner_text(),f'Skill announcement {category}')
+ for scenario in ['leads','support','reports']:
+  page.locator(f'[data-demo="{scenario}"]').click();page.locator('#run-demo').click()
+  page.locator('#approve-demo').wait_for(state='visible')
+  check('Review' in page.locator('#demo-status').inner_text(),f'{scenario}: awaits human review')
+  check(not page.locator('[data-step="3"]').evaluate('e=>e.classList.contains("complete")'),f'{scenario}: no action before approval')
+  page.locator('#approve-demo').click()
+  check('Approved in this demo.' in page.locator('#demo-status').inner_text(),f'{scenario}: approved simulation')
+  check(page.locator('.flow-node.complete').count()==4,f'{scenario}: all stages complete')
+  page.locator('#reset-demo').click()
+  check(page.locator('.flow-node.complete').count()==0,f'{scenario}: reset clears states')
+ page.locator('[data-demo="leads"]').click();page.locator('#run-demo').click();page.locator('[data-demo="support"]').click();page.wait_for_timeout(550)
+ check(page.locator('#approve-demo').is_hidden(),'Switching scenario cancels pending timers')
+ check('Ready.' in page.locator('#demo-status').inner_text(),'Switching scenario restores ready state')
+ page.locator('#copy-email').click()
+ check('Copy unavailable' in page.locator('#copy-status').inner_text(),'Clipboard denial handled honestly')
+ page.evaluate("Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async s=>window.copied=s}})")
+ page.locator('#copy-email').click()
+ check(page.evaluate('window.copied')=='syedallimujtaba@gmail.com','Clipboard copies correct address')
+ check('copied' in page.locator('#copy-status').inner_text(),'Clipboard success announced')
+ check(not errors,'No scenario or clipboard errors');page.close()
+ page,errors=mount(browser,390)
+ check(page.locator('#navigation').is_hidden(),'Mobile menu starts closed')
+ page.locator('.menu-button').click();check(page.locator('#navigation').is_visible(),'Mobile menu opens')
+ page.keyboard.press('Escape');check(page.locator('#navigation').is_hidden(),'Escape closes mobile menu')
+ check(page.evaluate('document.activeElement.classList.contains("menu-button")'),'Escape returns focus')
+ page.locator('.menu-button').click();page.locator('#navigation a[href="#work"]').click()
+ check(page.locator('#navigation').is_hidden(),'Mobile navigation closes after selection')
+ check(page.evaluate('document.activeElement.id')=='work','Mobile navigation focuses destination')
+ check(not errors,'No mobile navigation errors');page.close()
+ for width in [320,768,1440]:
+  page,errors=mount(browser,width,javascript=False)
+  check(fits(page),f'No-JS fits {width}px')
+  check(page.locator('#navigation').is_visible(),f'No-JS navigation visible {width}px')
+  check(page.locator('.project-details').count()==3,f'No-JS project overviews {width}px')
+  check(page.locator('.scene-fallback').is_visible(),f'No-JS SVG illustration {width}px')
+  check(page.locator('.skill-filters').is_hidden(),f'No-JS inactive controls hidden {width}px');page.close()
+ page,errors=mount(browser,1440,scene=True,reduced='reduce')
+ page.wait_for_timeout(250)
+ engine=page.locator('#scene').get_attribute('data-engine')
+ check(engine in ['native-webgl','software-3d'],'Actual interactive 3D backend initialized')
+ check(page.locator('[data-motion]').is_disabled(),'Reduced motion disables autoplay control')
+ check(page.locator('[data-motion]').get_attribute('aria-pressed')=='false','Reduced motion starts still')
+ before=page.locator('canvas').screenshot();page.locator('[data-rotate="1"]').click();after=page.locator('canvas').screenshot()
+ check(hashlib.sha256(before).digest()!=hashlib.sha256(after).digest(),'Keyboard/button rotation changes rendered geometry')
+ check(not errors,'No 3D fallback errors');page.close()
+ page,errors=mount(browser,1440,scene=True,reduced='no-preference')
+ page.wait_for_timeout(300);a=int(page.locator('#scene').get_attribute('data-frame'))
+ page.wait_for_timeout(250);b=int(page.locator('#scene').get_attribute('data-frame'))
+ check(b>a,'3D continuously renders while visible')
+ page.locator('[data-motion]').click();a=int(page.locator('#scene').get_attribute('data-frame'));page.wait_for_timeout(200);b=int(page.locator('#scene').get_attribute('data-frame'))
+ check(a==b,'Pause actually stops rendering')
+ canvas=page.locator('canvas');box=canvas.bounding_box();before=canvas.screenshot()
+ page.mouse.move(box['x']+box['width']*.5,box['y']+box['height']*.5);page.mouse.down();page.mouse.move(box['x']+box['width']*.5+65,box['y']+box['height']*.5+10,steps=6);page.mouse.up();page.wait_for_timeout(500)
+ check(hashlib.sha256(before).digest()!=hashlib.sha256(canvas.screenshot()).digest(),'Pointer drag changes rendered geometry')
+ page.locator('[data-motion]').click();page.locator('#contact').scroll_into_view_if_needed();page.wait_for_timeout(250)
+ a=int(page.locator('#scene').get_attribute('data-frame'));page.wait_for_timeout(180);b=int(page.locator('#scene').get_attribute('data-frame'))
+ check(a==b,'Offscreen 3D does not render')
+ check(not errors,'No live 3D interaction errors');page.close()
+ for name,width,height in [('desktop',1440,1080),('tablet',820,1080),('mobile',390,950)]:
+  page,errors=mount(browser,width,scene=True,reduced='reduce');page.set_viewport_size({'width':width,'height':height});page.wait_for_timeout(200)
+  page.screenshot(path=str(OUT/f'{name}-hero.png'));page.screenshot(path=str(OUT/f'{name}-full.png'),full_page=True)
+  check(fits(page),f'Final {name} screenshot fits viewport')
+  check(not errors,f'Final {name} screenshot has no script errors');page.close()
+ browser.close()
+report={'checks_passed':len(results),'checks':results,'scene_backend_exercised':engine,'limits':['Offline in-memory asset mounting; no HTTP deployment test.','External font delivery and hardware WebGL were not available in this environment.','Native WebGL shader path is included but not executed by this browser.','No Safari/Firefox, Lighthouse score, or WCAG conformance claim.']}
+(OUT/'browser-results.json').write_text(json.dumps(report,indent=2))
+print(json.dumps({'checks_passed':len(results),'scene_backend_exercised':engine,'screenshots':str(OUT)},indent=2))

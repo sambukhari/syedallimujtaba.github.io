@@ -1,69 +1,80 @@
-# Syed Ali Mujtaba Shah - Portfolio
+# Ali Mujtaba - Intelligence, engineered
 
-An editorial, static portfolio for a Tech Lead and Senior Full-Stack Engineer. Warm paper, ink, cobalt and a custom interactive CSS-3D sculpture. No runtime framework, remote fonts, animation library, analytics tracker or build service is required.
+A new portfolio direction for Syed Ali Mujtaba Shah: AI agents and automation first, grounded in full-stack engineering and technical leadership. Dark editorial typography, acid-green accents, an original interactive 3D sculpture, SVG skill icons, and a locally simulated automation lab.
 
-## Develop
+## Run and publish
 
-Open `index.html`, or run `python -m http.server 8000` from this folder.
+The root `index.html` is already rendered and is suitable for the existing GitHub Pages repository-root publishing setup. No application server, npm dependency, API key, or paid 3D service is required.
 
-Use Node 20 or later for content generation and checks. There are no npm dependencies to install:
+For local development with Node 20+:
 
 ```sh
 npm run build
 npm run check
+python -m http.server 8000
 ```
 
-`index.html` is generated and committed. GitHub Pages serves it directly. Keep the existing publishing settings. Merge the review branch into the configured publishing source when approved; a pull request is not a deployment. All internal assets use relative paths, including project-site subpaths.
+Open `http://localhost:8000`. Use a server rather than opening the source `index.html` as a file: browsers restrict JavaScript module imports from `file://`. The separately supplied standalone preview is designed for opening directly.
+
+`npm run build` updates the generated project and skill content in `index.html` and produces `dist/`. Commit the updated root HTML together with source/data changes. Do not commit `dist/`. Merge the redesign pull request into the repository's configured publishing branch to publish; this branch itself does not alter Pages settings.
 
 ## Structure
 
-- `index.html`: semantic page and static project markup.
-- `assets/css/style.css`: responsive visual system and CSS-3D geometry.
-- `assets/js/main.js`: navigation, filters, layer controls and copy-email enhancement.
-- `assets/data/projects.json`: structured public project content.
-- `assets/resume/`: resume downloads. The repository's existing PDFs are retained; no resume rewrite in this phase. The standalone conversation ZIP includes the CV supplied in the conversation at the linked download path.
-- `scripts/build.mjs`: validating, HTML-escaping project renderer.
-- `tests/`: content/integrity tests and optional Chromium interaction checks.
-- `docs/PROJECT_INTAKE.md`: project submission template.
+- `index.html`: semantic page, conceptual project illustrations, career history, contact, and generated content.
+- `assets/css/style.css`: responsive visual system, motion preferences, print layout, and fallbacks.
+- `assets/js/main.js`: navigation, skill filters, clipboard handling, local workflow simulation, and scene loading.
+- `assets/js/scene.js`: original 3D renderer and interaction lifecycle.
+- `assets/images/symbols.svg`: brand and custom SVG icons; no icon fonts.
+- `assets/data/projects.json`: project narratives, approved links, screenshots, and evidence.
+- `assets/data/skills.json`: the 29 primary skill tiles and filter categories.
+- `scripts/build.mjs`: dependency-free content validation and static output.
+- `tests/`: source tests and the offline browser verification harness.
 
-Older repository assets are retained for rollback, not loaded automatically. A canonical URL and social-preview image should be set after the live URL and final assets are confirmed.
+## The 3D implementation
 
-## Add project material
+The preferred path uses a custom GLSL ray-marched scene on native WebGL, with analytic surfaces, normals, procedural studio reflections, and a bounded render resolution. If WebGL is unavailable, a real triangle-based 3D software renderer uses interpolated normals and a depth buffer on Canvas 2D. The final fallback is a static SVG composition. No external textures, model files, 3D services, or rendering-library downloads are needed.
 
-Start with `docs/PROJECT_INTAKE.md`. Edit one object in `assets/data/projects.json`, run `npm run build` and `npm run check`, then commit the data, image files and regenerated HTML together. Do not edit the generated section between `PROJECTS:START` and `PROJECTS:END` directly.
+Drag horizontally to rotate; keyboard-accessible rotation buttons are adjacent to the scene. Animation can be paused. Reduced-motion preferences disable autoplay. Rendering is paused offscreen and when the document is hidden; resources are released on page exit. Native vertical scrolling is preserved on touch devices.
 
-A screenshot needs `src`, `alt`, `width`, `height` and an optional `caption`. Use actual files under `assets/images/projects/`. The first becomes the cover; subsequent images become the gallery. Without images, the cover remains abstract typography, not a fake product screenshot.
+The design is bespoke, not a claim to be objectively the world's best or a claim to use Three.js. The original Instagram URLs could not be loaded in the implementation environment; no claim is made to have watched or reproduced them.
 
-Each link needs `label` and an actual absolute HTTPS `url`. Empty `links` arrays produce no dummy Live/Code buttons. To publish a full case study, set `status` to `case-study`, supply `challenge`, a non-empty `decisions` array and `outcome`.
+## Automation lab
 
-Metrics require `value`, `label`, `verified: true` and a public HTTPS `source`. This is an author-approval gate, not an automated truth check. Do not publish confidential evidence. Use a specific qualitative outcome where a number cannot be substantiated or disclosed.
+Lead routing, support triage, and reporting are fixed, fictional examples. The visitor must approve the proposed action before the demo completes. Changing scenarios cancels pending timers. Reset returns to the ready state. The demo sends no data, calls no model, and creates no records or messages. It is visibly labelled as a local simulation, not a live AI agent or a client success story.
 
-## Content provenance and confirmations
+## Add evidence
 
-Career history and three initial project overviews are based on the supplied CV. The existing site's email, `syedallimujtaba@gmail.com`, is preserved. The CV prints `syedallimujtabab@gmail.com` instead; confirm the primary address before aligning the resume and LinkedIn.
+Edit an existing project in `assets/data/projects.json`, then run the build. Supported optional fields:
 
-Dates, overlapping roles and `Present` follow the CV. Employment types and whether both ongoing roles remain current need confirmation. Project names for the HR/payroll and commerce work are descriptive, since approved public product names and URLs were not provided.
-
-No project outcome metrics, ratings, testimonials, product screenshots or detailed system architectures have been invented. Project `metrics`, `links` and `screenshots` arrays are empty until evidence is supplied. The CV contains quantitative claims; these are deferred for confirmation rather than silently presented as independently verified facts. The 15+ team in Experience is cross-functional, not engineers only.
-
-LinkedIn is linked, not edited. The resume is not rewritten in this phase.
-
-## Accessibility and performance
-
-Essential content, native details, mail links and downloads work without JavaScript. Mobile navigation has expanded state, Escape handling and focus management. Filters announce results. The 3D object is decorative; meaningful controls have accessible names. Optional pointer motion respects reduced-motion settings and uses no continuous animation loop.
-
-No custom cursor, scroll hijacking, autoplay video or pretend contact-form success. Copy reports failure when the Clipboard API is unavailable. These are implementation choices, not formal WCAG certification or a guaranteed performance score.
-
-## Tests
-
-`npm run check` validates JavaScript syntax, regenerated HTML, project data, escaping, safe links, screenshots, evidence gates and local asset paths.
-
-Optional browser checks:
-
-```sh
-python -m pip install playwright
-python -m playwright install chromium
-python tests/browser_smoke.py
+```json
+{
+  "problem": "The actual business problem",
+  "architecture": "Your actual architecture decisions",
+  "tradeoffs": "Alternatives you considered and why",
+  "screenshots": [
+    {"src": "assets/projects/example/overview.webp", "alt": "Describe the real product screen", "caption": "What this screen demonstrates"}
+  ],
+  "links": [{"label": "Live product", "url": "https://example.com/"}],
+  "metrics": [{"value": "Verified value", "label": "What improved", "source": "Approved evidence reference", "approved": true}]
+}
 ```
 
-Set `BROWSER_EXECUTABLE` for an existing Chromium binary. The browser script uses the exact markup, CSS and JS in-memory, allowing network-restricted execution. It tests interactions and layout, not HTTP delivery, deployment or third-party URLs. Screenshots go to ignored `qa-output/`. Review the deployed website after merge.
+These are schema examples, not published claims. New projects also need a visual article with the matching `data-project` identifier in the HTML. Use `docs/PROJECT_INTAKE.md` for gathering material. Never commit confidential customer data or unapproved screenshots to this public repository.
+
+Current work covers are clearly labelled conceptual illustrations, not product screenshots. The three initial project overviews derive from the supplied CV. Their links, screenshots, and metrics arrays remain empty rather than inventing evidence.
+
+## Content decisions
+
+The existing public contact address, `syedallimujtaba@gmail.com`, is retained. The uploaded CV has an extra `b` in its email spelling; confirm that separately before the resume/LinkedIn phase. Employment dates, including overlaps and ongoing roles, are retained from the CV and should be reconfirmed before a resume rewrite. AI agents and automation are emphasized based on the owner's explicit update; no unprovided AI tools, employers, client projects, or outcomes are claimed.
+
+This change does not replace either PDF in the GitHub repository or edit LinkedIn. The separately supplied offline preview/source bundle contains the CV attached in this conversation so its download works offline; the repository keeps its existing public resume asset.
+
+## Verification and limits
+
+`npm run check`: 24 tests, syntax checks, and deterministic generated-content validation.
+
+`python tests/browser_smoke.py`: 105 browser checks, including 320-1920px layouts, expanded details, filters, navigation focus, local workflow approval/reset/cancellation, no-JavaScript content, reduced motion, clipboard denial/success, live 3D drag/rotation, pause, and offscreen stopping.
+
+Browser navigation is blocked in the implementation environment, so the harness mounts the exact HTML/CSS/JS in memory, inlines local SVG references, and substitutes only module transport. The actual software 3D fallback is executed. Hardware WebGL and external font delivery were not available; the accelerated shader path is not certified by these checks. No live deployment, Safari/Firefox, Lighthouse score, or WCAG conformance claim is made.
+
+Review the deployed site after merging. Main content remains available if JavaScript, WebGL, or the optional Google Fonts request is unavailable. No tracking is included.

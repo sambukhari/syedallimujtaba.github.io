@@ -1,0 +1,176 @@
+[
+  {
+    "name": "AI agents",
+    "icon": "agent",
+    "category": "ai",
+    "color": "#c2f561"
+  },
+  {
+    "name": "Workflow automation",
+    "icon": "workflow",
+    "category": "ai",
+    "color": "#c2f561"
+  },
+  {
+    "name": "AI integration",
+    "icon": "cube",
+    "category": "ai",
+    "color": "#c2f561"
+  },
+  {
+    "name": "Laravel",
+    "icon": "laravel",
+    "category": "backend",
+    "color": "#ff665e"
+  },
+  {
+    "name": "PHP",
+    "icon": "php",
+    "category": "backend",
+    "color": "#adb5ed"
+  },
+  {
+    "name": "Node.js",
+    "icon": "node-js",
+    "category": "backend",
+    "color": "#80bf73"
+  },
+  {
+    "name": "MySQL",
+    "icon": "database",
+    "category": "backend",
+    "color": "#7cb6dd"
+  },
+  {
+    "name": "REST APIs",
+    "icon": "api",
+    "category": "backend",
+    "color": "#cfcebd"
+  },
+  {
+    "name": "React",
+    "icon": "react",
+    "category": "frontend",
+    "color": "#79d9f7"
+  },
+  {
+    "name": "React Native",
+    "icon": "react",
+    "category": "frontend",
+    "color": "#79d9f7"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "js",
+    "category": "frontend",
+    "color": "#f2df6c"
+  },
+  {
+    "name": "HTML5",
+    "icon": "html5",
+    "category": "frontend",
+    "color": "#ed8a68"
+  },
+  {
+    "name": "CSS3",
+    "icon": "css3-alt",
+    "category": "frontend",
+    "color": "#78b8eb"
+  },
+  {
+    "name": "WordPress",
+    "icon": "wordpress",
+    "category": "frontend",
+    "color": "#81b9d2"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "bootstrap",
+    "category": "frontend",
+    "color": "#b898e2"
+  },
+  {
+    "name": "AWS",
+    "icon": "aws",
+    "category": "cloud",
+    "color": "#edb267"
+  },
+  {
+    "name": "Docker",
+    "icon": "docker",
+    "category": "cloud",
+    "color": "#69b8ed"
+  },
+  {
+    "name": "Git",
+    "icon": "git-alt",
+    "category": "cloud",
+    "color": "#ed866e"
+  },
+  {
+    "name": "GitHub",
+    "icon": "github",
+    "category": "cloud",
+    "color": "#e4e5df"
+  },
+  {
+    "name": "GitLab",
+    "icon": "gitlab",
+    "category": "cloud",
+    "color": "#ef9e6e"
+  },
+  {
+    "name": "Jenkins",
+    "icon": "jenkins",
+    "category": "cloud",
+    "color": "#d6babc"
+  },
+  {
+    "name": "Linux",
+    "icon": "linux",
+    "category": "cloud",
+    "color": "#f0d078"
+  },
+  {
+    "name": "Stripe",
+    "icon": "stripe",
+    "category": "backend",
+    "color": "#ada3fa"
+  },
+  {
+    "name": "PayPal",
+    "icon": "paypal",
+    "category": "backend",
+    "color": "#8cbbed"
+  },
+  {
+    "name": "Android",
+    "icon": "android",
+    "category": "frontend",
+    "color": "#a4cf7f"
+  },
+  {
+    "name": "iOS",
+    "icon": "apple",
+    "category": "frontend",
+    "color": "#e4e5df"
+  },
+  {
+    "name": "Jira",
+    "icon": "jira",
+    "category": "cloud",
+    "color": "#89b7fa"
+  },
+  {
+    "name": "Trello",
+    "icon": "trello",
+    "category": "cloud",
+    "color": "#8abadf"
+  },
+  {
+    "name": "Slack",
+    "icon": "slack",
+    "category": "cloud",
+    "color": "#d497b6"
+  }
+]

@@ -1,149 +1,139 @@
-/* Progressive enhancement: essential content and links also work without JS. */
+/* Progressive enhancement. All career, project and contact content is static HTML. */
 (() => {
   'use strict';
-  const $ = (selector, root = document) => root.querySelector(selector);
-  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-  const menu = $('.menu-toggle');
-  const nav = $('#site-nav');
-  if (menu && nav) {
-    const close = (restoreFocus = false) => {
-      nav.classList.remove('is-open');
-      menu.setAttribute('aria-expanded', 'false');
-      if (restoreFocus) menu.focus();
-    };
-    menu.addEventListener('click', () => {
-      const open = menu.getAttribute('aria-expanded') !== 'true';
-      nav.classList.toggle('is-open', open);
-      menu.setAttribute('aria-expanded', String(open));
-    });
-    nav.addEventListener('click', (event) => {
-      const link = event.target.closest('a');
-      if (!link) return;
-      close();
-      if (window.matchMedia('(max-width: 900px)').matches && link.hash && link.getAttribute('href').startsWith('#')) {
-        const section = document.getElementById(link.hash.slice(1));
-        if (section) {
-          section.setAttribute('tabindex', '-1');
-          section.focus({ preventScroll: true });
-          section.addEventListener('blur', () => section.removeAttribute('tabindex'), { once: true });
-        }
-      }
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && nav.classList.contains('is-open')) close(true);
-    });
-    document.addEventListener('click', (event) => {
-      if (!nav.contains(event.target) && !menu.contains(event.target) && nav.classList.contains('is-open')) close(nav.contains(document.activeElement));
-    });
-    window.matchMedia('(min-width: 901px)').addEventListener('change', () => close());
-    document.documentElement.classList.add('js');
+  document.documentElement.classList.add('js');
+  const $ = (selector) => document.querySelector(selector);
+  const $$ = (selector) => [...document.querySelectorAll(selector)];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const menu = $('.menu-button');
+  const nav = $('#navigation');
+  function closeMenu(returnFocus = false) {
+    nav.classList.remove('is-open');
+    menu.setAttribute('aria-expanded', 'false');
+    if (returnFocus) menu.focus();
   }
-  const filters = $('#project-filters');
-  const cards = $$('.project-card');
-  if (filters && cards.length) {
-    $$('[data-count]', filters).forEach((node) => {
-      node.textContent = String(cards.filter((c) => node.dataset.count === 'all' || c.dataset.category === node.dataset.count).length);
+  menu.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    menu.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('is-open')) closeMenu(true);
+  });
+  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', (event) => {
+    if (!nav.classList.contains('is-open')) return;
+    const target = document.querySelector(link.getAttribute('href'));
+    closeMenu();
+    if (target) {
+      event.preventDefault();
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth' });
+      history.replaceState(null, '', link.getAttribute('href'));
+    }
+  }));
+  matchMedia('(min-width: 601px)').addEventListener('change', (event) => {
+    if (event.matches) closeMenu();
+  });
+
+  $$('.skill-filters button').forEach((button) => button.addEventListener('click', () => {
+    const filter = button.dataset.skill;
+    $$('.skill-filters button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    let count = 0;
+    $$('.skill').forEach((skill) => {
+      const visible = filter === 'all' || skill.dataset.category === filter;
+      skill.hidden = !visible;
+      if (visible) count++;
     });
-    filters.addEventListener('click', (event) => {
-      const button = event.target.closest('button[data-filter]');
-      if (!button || !filters.contains(button)) return;
-      const category = button.dataset.filter;
-      $$('button', filters).forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
-      let visible = 0;
-      cards.forEach((card) => {
-        card.hidden = category !== 'all' && card.dataset.category !== category;
-        if (!card.hidden) visible += 1;
-      });
-      const status = $('#filter-status');
-      if (status) status.textContent = `${visible} project${visible === 1 ? '' : 's'} shown.`;
+    $('#skill-status').textContent = `${count} skills shown for ${button.textContent}.`;
+  }));
+
+  const scenarios = {
+    leads: {
+      input: 'New enquiry', reason: 'Classify & prepare', output: 'Route to the right team',
+      ready: 'Ready. Run a sample enquiry through the workflow.',
+      messages: ['Sample: a business needs a Laravel platform and an automation workflow.', 'Demo classification: product engineering. Preparing a team-routing suggestion.', 'Review: route this sample enquiry to the engineering team. Nothing has been sent.', 'Approved in this demo. Routing is simulated; no CRM record or message was created.']
+    },
+    support: {
+      input: 'Support request', reason: 'Identify intent & draft', output: 'Prepare a reviewed reply',
+      ready: 'Ready. Try a sample customer-support workflow.',
+      messages: ['Sample: a customer asks how to reset their account password.', 'Demo classification: account access. Preparing a password-reset help response.', 'Review: suggest the standard reset instructions. No customer data is accessed.', 'Approved in this demo. The reply is marked ready; no email or message was sent.']
+    },
+    reports: {
+      input: 'Reporting schedule', reason: 'Summarise sample data', output: 'Prepare a team digest',
+      ready: 'Ready. Try a sample weekly-reporting workflow.',
+      messages: ['Sample: three completed tasks and one blocked task in a fictional work log.', 'Demo summary: three tasks completed. One task needs an owner decision.', 'Review the sample digest before distribution. No external data was fetched.', 'Approved in this demo. The digest is marked ready; nothing was published.']
+    }
+  };
+  let selected = 'leads';
+  let timers = [];
+  let awaitingApproval = false;
+  const run = $('#run-demo'), approve = $('#approve-demo'), log = $('#demo-status');
+  const steps = $$('.flow-node');
+  function cancelTimers() { timers.forEach(clearTimeout); timers = []; }
+  function stage(index) {
+    steps.forEach((node, i) => {
+      node.classList.toggle('active', i === index);
+      node.classList.toggle('complete', i < index);
     });
-    filters.hidden = false;
+    log.textContent = scenarios[selected].messages[index];
   }
-  const sculpture = $('#sculpture');
-  const viewport = $('#scene-viewport');
-  const layers = $('#layer-controls');
-  const motionButton = $('#motion-toggle');
-  if (sculpture && viewport && layers && motionButton) {
-    const captions = {
-      interface: 'Considered interfaces. Web and mobile, connected.',
-      systems: 'Laravel, APIs and the architecture beneath the surface.',
-      delivery: 'Code reviews, release discipline and team ownership.'
-    };
-    let enabled = !reduced.matches;
-    let pointerFrame = 0;
-    let pointer = { x: 0, y: 0 };
-    const resetTilt = () => {
-      if (pointerFrame) cancelAnimationFrame(pointerFrame);
-      pointerFrame = 0;
-      sculpture.style.removeProperty('--rx');
-      sculpture.style.removeProperty('--rz');
-    };
-    const syncMotion = () => {
-      if (reduced.matches) enabled = false;
-      document.documentElement.classList.toggle('motion-off', !enabled);
-      motionButton.disabled = reduced.matches;
-      motionButton.setAttribute('aria-pressed', String(enabled));
-      motionButton.textContent = reduced.matches ? 'Reduced motion' : enabled ? 'Motion on \u25cb' : 'Motion off \u2014';
-      motionButton.setAttribute('aria-label', reduced.matches ? 'Reduced motion enabled in your system settings' : enabled ? 'Turn off pointer motion' : 'Turn on pointer motion');
-      if (!enabled) resetTilt();
-    };
-    layers.addEventListener('click', (event) => {
-      const button = event.target.closest('button[data-layer]');
-      if (!button || !Object.hasOwn(captions, button.dataset.layer)) return;
-      sculpture.dataset.layer = button.dataset.layer;
-      $$('button', layers).forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
-      const caption = $('#layer-caption');
-      if (caption) caption.textContent = captions[button.dataset.layer];
-    });
-    viewport.addEventListener('pointermove', (event) => {
-      if (!enabled || reduced.matches || !finePointer.matches || event.pointerType === 'touch') return;
-      const box = viewport.getBoundingClientRect();
-      pointer = { x: (event.clientX - box.left) / box.width - .5, y: (event.clientY - box.top) / box.height - .5 };
-      if (pointerFrame) return;
-      pointerFrame = requestAnimationFrame(() => {
-        sculpture.style.setProperty('--rx', `${56 - pointer.y * 10}deg`);
-        sculpture.style.setProperty('--rz', `${-33 + pointer.x * 15}deg`);
-        pointerFrame = 0;
-      });
-    }, { passive: true });
-    viewport.addEventListener('pointerleave', resetTilt);
-    motionButton.addEventListener('click', () => { enabled = !enabled; syncMotion(); });
-    reduced.addEventListener('change', syncMotion);
-    finePointer.addEventListener('change', resetTilt);
-    document.addEventListener('visibilitychange', () => { if (document.hidden) resetTilt(); });
-    layers.hidden = false;
-    motionButton.hidden = false;
-    syncMotion();
+  function reset() {
+    cancelTimers(); awaitingApproval = false;
+    steps.forEach((node) => node.classList.remove('active', 'complete'));
+    run.disabled = false; run.hidden = false; approve.hidden = true;
+    run.innerHTML = 'Run workflow <span aria-hidden="true">&#8599;</span>';
+    log.textContent = scenarios[selected].ready;
   }
-  const copy = $('#copy-email');
-  const email = $('#email-link');
-  const copyStatus = $('#copy-status');
-  if (copy && email && copyStatus) {
-    copy.addEventListener('click', async () => {
-      try {
-        if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
-        await navigator.clipboard.writeText(email.textContent.trim());
-        copyStatus.textContent = 'Email address copied.';
-      } catch {
-        copyStatus.textContent = 'Copy is unavailable here. Select the email address above, or use the email link.';
-      }
-    });
-    copy.hidden = false;
-  }
-  const year = $('#year');
-  if (year) year.textContent = String(new Date().getFullYear());
-  if ('IntersectionObserver' in window) {
-    const links = $$('.site-nav a[href^="#"]');
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries.find((entry) => entry.isIntersecting);
-      if (!visible) return;
-      links.forEach((link) => {
-        if (link.hash === `#${visible.target.id}`) link.setAttribute('aria-current', 'location');
-        else link.removeAttribute('aria-current');
-      });
-    }, { rootMargin: '-15% 0px -65% 0px' });
-    links.forEach((link) => { const section = document.getElementById(link.hash.slice(1)); if (section) observer.observe(section); });
-  }
+  $$('.lab-tabs button').forEach((button) => button.addEventListener('click', () => {
+    selected = button.dataset.demo;
+    $$('.lab-tabs button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    $('#flow-input').textContent = scenarios[selected].input;
+    $('#flow-reason').textContent = scenarios[selected].reason;
+    $('#flow-output').textContent = scenarios[selected].output;
+    reset();
+  }));
+  run.addEventListener('click', () => {
+    cancelTimers(); run.disabled = true; stage(0);
+    const delay = reduced.matches ? 180 : 700;
+    timers.push(setTimeout(() => stage(1), delay));
+    timers.push(setTimeout(() => {
+      stage(2); awaitingApproval = true; run.hidden = true; approve.hidden = false;
+      approve.focus({ preventScroll: true });
+    }, delay * 2));
+  });
+  approve.addEventListener('click', () => {
+    if (!awaitingApproval) return;
+    awaitingApproval = false; stage(3); steps[3].classList.add('complete');
+    approve.hidden = true; run.hidden = false; run.disabled = false;
+    run.innerHTML = 'Run again <span aria-hidden="true">&#8599;</span>';
+    run.focus({ preventScroll: true });
+  });
+  $('#reset-demo').addEventListener('click', reset);
+  window.addEventListener('pagehide', cancelTimers, { once: true });
+
+  $('#copy-email').addEventListener('click', async () => {
+    const address = $('.email-link').textContent.trim();
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(address);
+      $('#copy-status').textContent = 'Email address copied.';
+    } catch {
+      $('#copy-status').textContent = 'Copy unavailable. Select the email address above, or click it to open your mail app.';
+    }
+  });
+  $('#year').textContent = String(new Date().getFullYear());
+
+  const scriptUrl = document.currentScript?.src || new URL('assets/js/main.js', document.baseURI).href;
+  const controls = $('#scene-controls');
+  import(new URL('scene.js', scriptUrl).href).then(({ mountScene }) => {
+    controls.hidden = false;
+    return mountScene($('#scene'), controls);
+  }).then(() => {
+    if (['native-webgl', 'software-3d'].includes($('#scene').dataset.engine)) $('#scene-hint').textContent = 'DRAG TO EXPLORE / LIVE 3D';
+  }).catch(() => {
+    controls.hidden = true;
+    $('#scene').dataset.engine = 'static';
+    $('#scene-hint').textContent = 'THREE DISCIPLINES. ONE SYSTEM.';
+  });
 })();

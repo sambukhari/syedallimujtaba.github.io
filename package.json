@@ -1,13 +1,15 @@
 {
-  "name": "syed-ali-mujtaba-portfolio",
-  "version": "2.0.0",
+  "name": "ali-mujtaba-portfolio",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
-  "description": "Editorial portfolio with interactive CSS 3D and static case-study rendering.",
+  "description": "AI-focused portfolio with interactive GPU/CPU 3D, SVG skills and a local workflow simulation.",
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check assets/js/main.js && node scripts/build.mjs --check && node --test tests/*.test.mjs"
+    "check": "node --check assets/js/main.js && node --check assets/js/scene.js && node scripts/build.mjs --check && node --test tests/*.test.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
