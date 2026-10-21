@@ -1,65 +1,15 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-import { validateProjects, renderProjects, escapeHTML } from '../scripts/build.mjs';
-const projects = JSON.parse(await readFile(new URL('../assets/data/projects.json', import.meta.url), 'utf8'));
-const fresh = () => structuredClone(projects);
-test('all current project overviews validate', () => assert.equal(validateProjects(fresh()).length, 3));
-test('duplicate project slugs are rejected', () => {
-  const p = fresh(); p[1].id = p[0].id;
-  assert.throws(() => validateProjects(p), /unique/);
-});
-test('empty collections fail safely', () => assert.throws(() => validateProjects([]), /non-empty/));
-test('invalid categories and featured flags are rejected', () => {
-  const p = fresh(); p[0].category = 'unknown';
-  assert.throws(() => validateProjects(p), /category/);
-  p[0].category = 'web'; p[0].featured = 'true';
-  assert.throws(() => validateProjects(p), /boolean/);
-});
-test('authored text is HTML-escaped', () => {
-  assert.equal(escapeHTML('<script>"&\''), '&lt;script&gt;&quot;&amp;&#39;');
-  const p = fresh(); p[0].summary = '<script>alert("x")</script>';
-  assert.ok(!renderProjects(p).includes('<script>'));
-  assert.ok(renderProjects(p).includes('&lt;script&gt;'));
-});
-test('unsafe and credential-bearing URLs are rejected', () => {
-  for (const url of ['javascript:alert(1)', '/not-a-live-link', 'https://user:secret@example.com']) {
-    const p = fresh(); p[0].links = [{ label: 'Live', url }];
-    assert.throws(() => validateProjects(p), /HTTPS/);
-  }
-});
-test('empty URLs do not become fake action buttons', () => {
-  assert.ok(!renderProjects(fresh()).includes('href="#"'));
-  assert.ok(!renderProjects(fresh()).includes('class="project-links"'));
-});
-test('screenshots require safe paths, alt text and dimensions', () => {
-  for (const screenshot of [
-    { src: 'assets/images/projects/../../private.png', alt: 'Screen', width: 800, height: 600 },
-    { src: 'assets/images/projects/demo.png', alt: '', width: 800, height: 600 },
-    { src: 'assets/images/projects/demo.png', alt: 'Screen', width: 0, height: 600 }
-  ]) {
-    const p = fresh(); p[0].screenshots = [screenshot];
-    assert.throws(() => validateProjects(p), /Screenshots/);
-  }
-});
-test('screenshots replace abstract covers', () => {
-  const p = fresh(); p[0].screenshots = [{ src: 'assets/images/projects/demo.png', alt: 'Approved screen', width: 800, height: 600 }];
-  assert.match(renderProjects(p), /class="project-cover photo-cover"/);
-  assert.match(renderProjects(p), /alt="Approved screen" width="800" height="600" loading="lazy"/);
-});
-test('unapproved or unsourced metrics are rejected', () => {
-  const p = fresh(); p[0].metrics = [{ value: '40%', label: 'Time saved', verified: false }];
-  assert.throws(() => validateProjects(p), /approved metrics/);
-  p[0].metrics[0].verified = true;
-  assert.throws(() => validateProjects(p), /approved metrics/);
-});
-test('approved metrics include evidence links', () => {
-  const p = fresh(); p[0].metrics = [{ value: '40%', label: 'Time saved', verified: true, source: 'https://example.com/approved-evidence' }];
-  assert.match(renderProjects(p), /Evidence for Time saved/);
-});
-test('full case studies require challenge, decisions and outcome', () => {
-  const p = fresh(); p[0].status = 'case-study';
-  assert.throws(() => validateProjects(p), /challenge/);
-  Object.assign(p[0], { challenge: 'A documented problem.', decisions: ['A supported decision.'], outcome: 'A documented outcome.' });
-  assert.match(renderProjects(p), /Read case study/);
-});
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+import {escape,safeLink,safeAsset,validate,renderProject,generate} from '../scripts/build.mjs';
+const read=p=>readFileSync(new URL(p,import.meta.url),'utf8');const projects=JSON.parse(read('../assets/data/projects.json'));const skills=JSON.parse(read('../assets/data/skills.json'));const html=read('../index.html');
+test('Current source data validates',()=>assert.doesNotThrow(()=>validate(projects,skills)));
+test('HTML content is generated deterministically',()=>assert.equal(generate(html,projects,skills),html));
+test('Escapes user text',()=>assert.equal(escape('<script>"a" & x\'s'), '&lt;script&gt;&quot;a&quot; &amp; x&#39;s'));
+test('Rejects unsafe links',()=>{for(const url of ['javascript:alert(1)','data:text/html,x','http://test.com','#','https://user:pass@example.com'])assert.equal(safeLink(url),false);assert.equal(safeLink('https://example.com/demo'),true);});
+test('Rejects path traversal and external screenshots',()=>{for(const p of ['../a.png','assets/../a.png','https://site.test/a.png','assets/a.html'])assert.equal(safeAsset(p),false);assert.equal(safeAsset('assets/projects/cover.webp'),true);});
+test('No fabricated project evidence',()=>{for(const p of projects){assert.equal(p.metrics.length,0);assert.equal(p.links.length,0);assert.equal(p.screenshots.length,0);}});
+test('Metric evidence requires approval',()=>{const p=structuredClone(projects);p[0].metrics=[{value:'40%',label:'faster',source:'unconfirmed'}];assert.throws(()=>validate(p,skills));});
+test('Project IDs are unique',()=>assert.throws(()=>validate([...projects,projects[0]],skills)));
+test('Screenshots require alternative text',()=>{const p=structuredClone(projects);p[0].screenshots=[{src:'assets/test.png'}];assert.throws(()=>validate(p,skills));});
+test('Optional evidence renders without script injection',()=>{const p=structuredClone(projects[0]);p.screenshots=[{src:'assets/demo.png',alt:'An image',caption:'<script>unsafe</script>'}];p.links=[{url:'https://example.com/',label:'Demo'}];p.metrics=[{value:'10',label:'units',source:'approved report',approved:true}];validate([p],skills);const out=renderProject(p);assert.match(out,/loading="lazy"/);assert.match(out,/noopener noreferrer/);assert.ok(!out.includes('<script>unsafe'));assert.match(out,/approved report/);});
+test('Every skill icon has an SVG symbol',()=>{const symbols=read('../assets/images/symbols.svg');for(const skill of skills)assert.ok(symbols.includes(`id="${skill.icon}"`),skill.name);});
+test('AI and primary engineering skills present',()=>{for(const name of ['AI agents','Workflow automation','Laravel','React Native','React','Docker','AWS'])assert.ok(skills.some(s=>s.name===name));});

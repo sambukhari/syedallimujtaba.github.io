@@ -1,7 +1,8 @@
 .DS_Store
 node_modules/
+dist/
+qa-output/
 __pycache__/
-.pytest_cache/
+*.pyc
 .env
 .env.*
-qa-output/

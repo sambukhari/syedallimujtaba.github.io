@@ -1,45 +1,14 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { readFile, access } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { resolve } from 'node:path';
-const root = fileURLToPath(new URL('../', import.meta.url));
-const html = await readFile(resolve(root, 'index.html'), 'utf8');
-const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
-const refs = [...html.matchAll(/\b(?:href|src)="([^"]+)"/g)].map((m) => m[1]);
-test('one main, one h1 and unique IDs', () => {
-  assert.equal((html.match(/<main\b/g) ?? []).length, 1);
-  assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
-  assert.equal(ids.length, new Set(ids).size);
-});
-test('internal navigation targets exist', () => {
-  for (const ref of refs.filter((r) => r.startsWith('#'))) {
-    assert.ok(ref !== '#'); assert.ok(ids.includes(ref.slice(1)), ref);
-  }
-});
-test('relative assets exist and support project subpaths', async () => {
-  for (const ref of refs.filter((r) => !/^(?:https?:|mailto:|#)/.test(r))) {
-    assert.ok(!ref.startsWith('/')); assert.ok(!ref.includes('..'));
-    await access(resolve(root, ref));
-  }
-});
-test('no remote runtime assets, inline handlers or pretend form', () => {
-  assert.ok(!/<script[^>]*src="https?:/i.test(html));
-  assert.ok(!/<link[^>]*href="https?:/i.test(html));
-  assert.ok(!/\son(?:click|load|error|submit)=/i.test(html));
-  assert.ok(!/<form\b/i.test(html));
-});
-test('new tabs disclose behavior and use safe rel values', () => {
-  for (const match of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>[\s\S]*?<\/a>/g)) {
-    assert.match(match[0], /rel="noopener noreferrer"/);
-    assert.match(match[0], /opens in a new tab/);
-  }
-});
-test('Person metadata is valid', () => {
-  const person = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
-  assert.equal(person.name, 'Syed Ali Mujtaba Shah'); assert.equal(person['@type'], 'Person');
-});
-test('three project overviews are static HTML', () => {
-  assert.equal((html.match(/class="project-card(?: project-featured)?"/g) ?? []).length, 3);
-  for (const company of ['EzeAD', 'MyTechPal', 'Pixart']) assert.ok(html.includes(company));
-});
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync,existsSync} from 'node:fs';
+const root=new URL('../',import.meta.url);const read=p=>readFileSync(new URL(p,root),'utf8');const html=read('index.html'),css=read('assets/css/style.css'),js=read('assets/js/main.js'),scene=read('assets/js/scene.js');
+test('All navigation anchors resolve',()=>{for(const m of html.matchAll(/href="#([^"]+)"/g))assert.ok(html.includes(`id="${m[1]}"`),m[1]);});
+test('No placeholder links',()=>assert.ok(!html.includes('href="#"')));
+test('Exactly one main heading',()=>assert.equal((html.match(/<h1\b/g)||[]).length,1));
+test('Project overviews work without JavaScript',()=>{assert.equal((html.match(/class="project-details"/g)||[]).length,3);assert.ok(html.includes('My contribution'));});
+test('Demo clearly marked as simulated',()=>{assert.match(html,/Simulated locally/);assert.match(js,/no CRM record/);assert.match(js,/awaitingApproval/);});
+test('No API keys or live AI requests',()=>{assert.ok(!js.includes('fetch('));assert.ok(!js.includes('sk-proj-'));});
+test('SVG and stylesheet paths exist',()=>{for(const p of ['assets/images/symbols.svg','assets/images/favicon.svg','assets/css/style.css','assets/js/main.js','assets/js/scene.js'])assert.ok(existsSync(new URL(p,root)));});
+test('External links protected',()=>{for(const tag of html.match(/<a[^>]+target="_blank"[^>]*>/g)||[])assert.match(tag,/rel="noopener noreferrer"/);});
+test('Reduced motion and no-JS protections',()=>{assert.match(css,/prefers-reduced-motion/);assert.match(css,/html:not\(\.js\)/);assert.match(scene,/reduced.matches/);});
+test('3D has depth, normals and fallback paths',()=>{assert.match(scene,/webglBackend/);assert.match(scene,/softwareBackend/);assert.match(scene,/zbuffer/);assert.match(scene,/normalAt/);assert.match(scene,/IntersectionObserver/);assert.match(scene,/webglcontextlost/);});
+test('3D resources are released',()=>{assert.match(scene,/deleteProgram/);assert.match(scene,/backend.dispose/);assert.match(scene,/observer.disconnect/);});
+test('Contact spelling retained from connected repository account',()=>assert.ok(html.includes('mailto:syedallimujtaba@gmail.com')));
