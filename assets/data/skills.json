@@ -3,174 +3,232 @@
     "name": "AI agents",
     "icon": "agent",
     "category": "ai",
-    "color": "#c2f561"
+    "color": "#8dadff",
+    "description": "Tool-connected agent workflows",
+    "featured": false
   },
   {
     "name": "Workflow automation",
     "icon": "workflow",
     "category": "ai",
-    "color": "#c2f561"
+    "color": "#8dadff",
+    "description": "From recurring tasks to repeatable flows",
+    "featured": false
   },
   {
     "name": "AI integration",
     "icon": "cube",
     "category": "ai",
-    "color": "#c2f561"
+    "color": "#8dadff",
+    "description": "Connecting intelligence with software",
+    "featured": false
   },
   {
     "name": "Laravel",
     "icon": "laravel",
     "category": "backend",
-    "color": "#ff665e"
+    "color": "#ff665e",
+    "description": "Application architecture & APIs",
+    "featured": true
   },
   {
     "name": "PHP",
     "icon": "php",
     "category": "backend",
-    "color": "#adb5ed"
+    "color": "#adb5ed",
+    "description": "Backend systems & packages",
+    "featured": true
   },
   {
     "name": "Node.js",
     "icon": "node-js",
     "category": "backend",
-    "color": "#80bf73"
+    "color": "#80bf73",
+    "description": "JavaScript backend development",
+    "featured": false
   },
   {
     "name": "MySQL",
     "icon": "database",
     "category": "backend",
-    "color": "#7cb6dd"
+    "color": "#7cb6dd",
+    "description": "Relational data models",
+    "featured": false
   },
   {
     "name": "REST APIs",
     "icon": "api",
     "category": "backend",
-    "color": "#cfcebd"
+    "color": "#cfcebd",
+    "description": "Contracts between systems",
+    "featured": false
   },
   {
     "name": "React",
     "icon": "react",
     "category": "frontend",
-    "color": "#79d9f7"
+    "color": "#79d9f7",
+    "description": "Interactive web interfaces",
+    "featured": true
   },
   {
     "name": "React Native",
     "icon": "react",
     "category": "frontend",
-    "color": "#79d9f7"
+    "color": "#79d9f7",
+    "description": "Cross-platform mobile apps",
+    "featured": true
   },
   {
     "name": "JavaScript",
     "icon": "js",
     "category": "frontend",
-    "color": "#f2df6c"
+    "color": "#f2df6c",
+    "description": "ES6+ application development",
+    "featured": false
   },
   {
     "name": "HTML5",
     "icon": "html5",
     "category": "frontend",
-    "color": "#ed8a68"
+    "color": "#ed8a68",
+    "description": "Web & mobile development",
+    "featured": false
   },
   {
     "name": "CSS3",
     "icon": "css3-alt",
     "category": "frontend",
-    "color": "#78b8eb"
+    "color": "#78b8eb",
+    "description": "Web & mobile development",
+    "featured": false
   },
   {
     "name": "WordPress",
     "icon": "wordpress",
     "category": "frontend",
-    "color": "#81b9d2"
+    "color": "#81b9d2",
+    "description": "Content management",
+    "featured": false
   },
   {
     "name": "Bootstrap",
     "icon": "bootstrap",
     "category": "frontend",
-    "color": "#b898e2"
+    "color": "#b898e2",
+    "description": "Web & mobile development",
+    "featured": false
   },
   {
     "name": "AWS",
     "icon": "aws",
     "category": "cloud",
-    "color": "#edb267"
+    "color": "#edb267",
+    "description": "EC2, S3 & RDS",
+    "featured": false
   },
   {
     "name": "Docker",
     "icon": "docker",
     "category": "cloud",
-    "color": "#69b8ed"
+    "color": "#69b8ed",
+    "description": "Reproducible environments",
+    "featured": false
   },
   {
     "name": "Git",
     "icon": "git-alt",
     "category": "cloud",
-    "color": "#ed866e"
+    "color": "#ed866e",
+    "description": "Engineering delivery",
+    "featured": false
   },
   {
     "name": "GitHub",
     "icon": "github",
     "category": "cloud",
-    "color": "#e4e5df"
+    "color": "#e4e5df",
+    "description": "Source control & collaboration",
+    "featured": false
   },
   {
     "name": "GitLab",
     "icon": "gitlab",
     "category": "cloud",
-    "color": "#ef9e6e"
+    "color": "#ef9e6e",
+    "description": "Repositories & CI pipelines",
+    "featured": false
   },
   {
     "name": "Jenkins",
     "icon": "jenkins",
     "category": "cloud",
-    "color": "#d6babc"
+    "color": "#d6babc",
+    "description": "Continuous integration",
+    "featured": false
   },
   {
     "name": "Linux",
     "icon": "linux",
     "category": "cloud",
-    "color": "#f0d078"
+    "color": "#f0d078",
+    "description": "Engineering delivery",
+    "featured": false
   },
   {
     "name": "Stripe",
     "icon": "stripe",
     "category": "backend",
-    "color": "#ada3fa"
+    "color": "#ada3fa",
+    "description": "Payment integration",
+    "featured": false
   },
   {
     "name": "PayPal",
     "icon": "paypal",
     "category": "backend",
-    "color": "#8cbbed"
+    "color": "#8cbbed",
+    "description": "Payment integration",
+    "featured": false
   },
   {
     "name": "Android",
     "icon": "android",
     "category": "frontend",
-    "color": "#a4cf7f"
+    "color": "#a4cf7f",
+    "description": "Mobile delivery",
+    "featured": false
   },
   {
     "name": "iOS",
     "icon": "apple",
     "category": "frontend",
-    "color": "#e4e5df"
+    "color": "#e4e5df",
+    "description": "Mobile delivery",
+    "featured": false
   },
   {
     "name": "Jira",
     "icon": "jira",
     "category": "cloud",
-    "color": "#89b7fa"
+    "color": "#89b7fa",
+    "description": "Engineering delivery",
+    "featured": false
   },
   {
     "name": "Trello",
     "icon": "trello",
     "category": "cloud",
-    "color": "#8abadf"
+    "color": "#8abadf",
+    "description": "Engineering delivery",
+    "featured": false
   },
   {
     "name": "Slack",
     "icon": "slack",
     "category": "cloud",
-    "color": "#d497b6"
+    "color": "#d497b6",
+    "description": "Engineering delivery",
+    "featured": false
   }
 ]

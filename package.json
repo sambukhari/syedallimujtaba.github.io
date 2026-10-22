@@ -1,15 +1,16 @@
 {
-  "name": "ali-mujtaba-portfolio",
-  "version": "3.0.0",
-  "private": true,
-  "type": "module",
-  "description": "AI-focused portfolio with interactive GPU/CPU 3D, SVG skills and a local workflow simulation.",
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "test": "node --test tests/*.test.mjs",
-    "check": "node --check assets/js/main.js && node --check assets/js/scene.js && node scripts/build.mjs --check && node --test tests/*.test.mjs"
+  "name":"ali-mujtaba-portfolio",
+  "version":"4.0.0",
+  "private":true,
+  "type":"module",
+  "description":"Meaningful systems model, dimensional skill emblems and source-backed portfolio.",
+  "scripts":{
+    "build":"node scripts/build.mjs",
+    "test":"node --test tests/*.test.mjs",
+    "check":"node --check assets/js/main.js && node --check assets/js/scene.js && node scripts/build.mjs --check && node --test tests/*.test.mjs",
+    "vendor":"node scripts/vendor.mjs",
+    "test:browser":"python tests/browser_smoke.py"
   },
-  "engines": {
-    "node": ">=20"
-  }
+  "dependencies":{"three":"0.180.0"},
+  "engines":{"node":">=20"}
 }
