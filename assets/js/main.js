@@ -20,7 +20,14 @@
  function advance(){if(!playing)return;if(document.hidden)return;if(stage>=2){atReview();return;}setStage(stage+1);timer=setTimeout(advance,1100);}
  flow.addEventListener('click',()=>{if(awaitingReview){awaitingReview=false;setStage(4);flow.textContent='Replay the flow \u21bb';$('#model-status').textContent='Approved in this conceptual demonstration. No external action was performed.';return;}if(playing){stopFlow();return;}stopFlow();if(!motion){atReview();return;}setStage(0);playing=true;studio.classList.add('flow-playing');flow.textContent='Pause flow';timer=setTimeout(advance,1100);});
  $$('[data-stage]').forEach(b=>b.addEventListener('click',()=>{stopFlow();setStage(Number(b.dataset.stage));}));
- $$('.segmented [data-mode]').forEach(b=>b.addEventListener('click',()=>{stopFlow();mode=b.dataset.mode;studio.dataset.mode=mode;$$('.segmented [data-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));setStage(mode==='mobile'?4:mode==='web'?2:1);}));
+ document.addEventListener('portfolio:scroll-stage',event=>{
+   const index=Number(event.detail?.stage);
+   if(!motion||reduced.matches||!Number.isInteger(index)||index<0||index>4)return;
+   if(playing||awaitingReview)stopFlow();
+   // Scroll and preview are narrative only; they do not approve or execute an action.
+   if(index!==stage)setStage(index,false);
+ });
+ $('.segmented [data-mode]').forEach(b=>b.addEventListener('click',()=>{stopFlow();mode=b.dataset.mode;studio.dataset.mode=mode;$$('.segmented [data-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));setStage(mode==='mobile'?4:mode==='web'?2:1);}));
  $('#rotate-model').addEventListener('click',()=>{turn=turn===0?14:turn===14?-14:0;$('.model-assembly').style.setProperty('--turn',turn+'deg');setStage(stage,false);$('#model-status').textContent='Model angle changed.';});
  const motionButton=$('#motion-toggle');
  function setMotion(value){motion=value&&!reduced.matches;document.body.classList.toggle('motion-off',!motion);motionButton.setAttribute('aria-pressed',String(motion));motionButton.textContent=reduced.matches?'Reduced motion':motion?'Motion on':'Motion off';motionButton.disabled=reduced.matches;if(!motion)stopFlow();document.dispatchEvent(new CustomEvent('portfolio:motion',{detail:{motion}}));setStage(stage,false);}
