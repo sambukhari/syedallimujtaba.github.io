@@ -92,3 +92,7 @@ Work is prepared on `portfolio/meaningful-systems-v3`. The owner explicitly auth
 The new design retains the existing architectural 3D model and genuine project evidence. It adds a five-stage illustrative client workflow tied to the interactive model, a seven-chapter accessible career reel, and a warm porcelain / aubergine / copper art direction. Reel imagery is conceptual, not employer footage. Overlapping career roles follow the supplied CV. Reduced-motion and explicit site motion controls suspend animation. Contact remains a mail-draft composer, not a backend submission.
 
 Tailwind v4.1.10 utilities are compiled to the committed lightweight `assets/css/tailwind.generated.css`. Run `npm install && npm run build` after modifying Tailwind classes or templates; the deployed site does not use Tailwind's runtime CDN.
+
+
+## Executive hero portrait (October 2026)
+The right side of the header uses `assets/images/ali-mujtaba-executive.webp`, optimized to approximately 100 KB from the executive-styled image the site owner approved. The raw identity-reference photos are not committed. The image is intentionally rendered as a normal accessible asset with subtle CSS perspective/pointer motion; it is not a separate heavy 3D mesh. Reduced-motion preferences and the site's motion toggle disable effects. The established scroll-driven AI workflow follows below the introduction unchanged. Run `npm run build` after editing `src/page.html` so the root `index.html` stays in sync.
