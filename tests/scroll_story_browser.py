@@ -24,7 +24,7 @@ def current(page):
 
 try:
     with sync_playwright() as driver:
-        browser=driver.chromium.launch(headless=True,args=['--no-sandbox'])
+        browser=driver.chromium.launch(channel='chrome',headless=True,args=['--no-sandbox'])
         context=browser.new_context(viewport={'width':1440,'height':980},reduced_motion='no-preference')
         page=context.new_page()
         clean_externals(page)
