@@ -1,7 +1,7 @@
 name: Portfolio code checks
 on:
   push:
-    branches: [main, portfolio/client-first-reel-v5]
+    branches: [main, portfolio/client-first-reel-v5, portfolio/scroll-driven-ai-story-v7]
   pull_request:
     branches: [main]
 permissions:
@@ -26,3 +26,17 @@ jobs:
           grep -q 'id="system-studio"' index.html
           grep -q 'id="contact-form"' index.html
           grep -q 'assets/css/tailwind.generated.css' index.html
+
+  story-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Chromium browser driver
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Exercise scroll, mobile and reduced-motion behavior
+        run: python tests/scroll_story_browser.py
