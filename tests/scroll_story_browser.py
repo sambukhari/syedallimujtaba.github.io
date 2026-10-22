@@ -53,7 +53,7 @@ try:
         check(page.locator('.story-section').evaluate("(e)=>e.classList.contains('story-finished')"),'final stage reveals next-section direction')
         page.locator('#work').scroll_into_view_if_needed()
         check(page.locator('#work').is_visible(),'normal scrolling reaches projects without being trapped')
-        check(not errors,'desktop JavaScript error free')
+        check(not errors,f'desktop JavaScript error free: {errors!r}')
         context.close()
 
         context=browser.new_context(viewport={'width':390,'height':844},reduced_motion='no-preference')
