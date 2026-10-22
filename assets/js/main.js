@@ -27,7 +27,7 @@
    // Scroll and preview are narrative only; they do not approve or execute an action.
    if(index!==stage)setStage(index,false);
  });
- $('.segmented [data-mode]').forEach(b=>b.addEventListener('click',()=>{stopFlow();mode=b.dataset.mode;studio.dataset.mode=mode;$$('.segmented [data-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));setStage(mode==='mobile'?4:mode==='web'?2:1);}));
+ $$('.segmented [data-mode]').forEach(b=>b.addEventListener('click',()=>{stopFlow();mode=b.dataset.mode;studio.dataset.mode=mode;$$('.segmented [data-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));setStage(mode==='mobile'?4:mode==='web'?2:1);}));
  $('#rotate-model').addEventListener('click',()=>{turn=turn===0?14:turn===14?-14:0;$('.model-assembly').style.setProperty('--turn',turn+'deg');setStage(stage,false);$('#model-status').textContent='Model angle changed.';});
  const motionButton=$('#motion-toggle');
  function setMotion(value){motion=value&&!reduced.matches;document.body.classList.toggle('motion-off',!motion);motionButton.setAttribute('aria-pressed',String(motion));motionButton.textContent=reduced.matches?'Reduced motion':motion?'Motion on':'Motion off';motionButton.disabled=reduced.matches;if(!motion)stopFlow();document.dispatchEvent(new CustomEvent('portfolio:motion',{detail:{motion}}));setStage(stage,false);}
