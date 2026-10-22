@@ -70,6 +70,18 @@
    } else {
      story.dataset.storyActive=String(sceneVisible);
      studio.classList.toggle('scroll-flowing',sceneVisible&&allowMotion()&&!document.hidden);
+     // Mobile/small-window story beats are normal-flow sections, not a pinned carousel.
+     // Read visible chapter positions on scroll so no IntersectionObserver timing race
+     // can skip an explanation when a reader scrolls quickly.
+     if(allowMotion()&&previewCancelled&&!manualOverride){
+       const reached=stages.filter(item=>item.getBoundingClientRect().top<window.innerHeight*.72);
+       if(reached.length){
+         const last=reached[reached.length-1];
+         show(Number(last.dataset.storyChapter),'scroll');
+         progress.style.width=((Number(last.dataset.storyChapter)+1)*20)+'%';
+         story.classList.toggle('story-finished',Number(last.dataset.storyChapter)===4);
+       }
+     }
    }
  }
  function requestUpdate(){if(!raf)raf=requestAnimationFrame(scrollProgress);}
