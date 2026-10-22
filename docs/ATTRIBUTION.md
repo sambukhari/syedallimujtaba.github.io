@@ -1,13 +1,17 @@
 # Attribution
 
-Brand symbols in `assets/images/symbols.svg` are from Font Awesome Free by Fonticons, Inc., redistributed as SVG symbols under the Creative Commons Attribution 4.0 International license.
+Brand symbols in `assets/images/symbols.svg` are from Font Awesome Free by Fonticons, Inc., distributed as SVG symbols under Creative Commons Attribution 4.0 International.
 
-- Font Awesome: https://fontawesome.com/
-- Font Awesome Free license: https://fontawesome.com/license/free
-- CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+- https://fontawesome.com/
+- https://fontawesome.com/license/free
+- https://creativecommons.org/licenses/by/4.0/
 
-The source SVG path geometry is unchanged; the SVG wrapper was converted to reusable symbols and colors are applied through CSS. Brand names and marks identify technologies only; they do not imply sponsorship or endorsement. MySQL and non-brand capabilities use custom generic symbols rather than claiming those are official logos.
+The original vector paths are retained. Presentation changes include color, layered CSS depth and optional extruded geometry. Brand names/marks identify technologies, not endorsement. MySQL and non-brand capabilities use original generic symbols, not purported official logos. Respect the respective owners' brand guidance for subsequent changes.
 
-Custom line icons, layouts, conceptual work illustrations, and the 3D scene are original implementation assets created for this portfolio.
+Three.js 0.180.0 / r180 is by the three.js authors, under MIT. The default implementation loads pinned modules from jsDelivr. Optional vendoring copies the upstream license alongside its code.
+- https://github.com/mrdoob/three.js/tree/r180
+- https://github.com/mrdoob/three.js/blob/r180/LICENSE
 
-The optional Manrope web font is requested through Google Fonts. No font files are bundled. The site uses system-font fallbacks when the font request is unavailable.
+Optional DM Sans and Space Grotesk fonts are requested through Google Fonts. No font files are bundled in this repository or deliverable.
+
+The architectural model, layout, generic icons, explanatory project diagrams and CSS materials are original portfolio implementation assets. They are conceptual illustrations, not real product screenshots or third-party client assets.

@@ -1,12 +1,10 @@
-# Ali Mujtaba - Intelligence, engineered
+# Ali Mujtaba - engineering with intent
 
-A new portfolio direction for Syed Ali Mujtaba Shah: AI agents and automation first, grounded in full-stack engineering and technical leadership. Dark editorial typography, acid-green accents, an original interactive 3D sculpture, SVG skill icons, and a locally simulated automation lab.
+A static, AI-first portfolio for Syed Ali Mujtaba Shah. This revision replaces the unrelated sculpture with an architectural system model, adds dimensional technology emblems, publishes three source-backed GitHub project overviews, and introduces an honest contact composer.
 
-## Run and publish
+## Run
 
-The root `index.html` is already rendered and is suitable for the existing GitHub Pages repository-root publishing setup. No application server, npm dependency, API key, or paid 3D service is required.
-
-For local development with Node 20+:
+The committed root `index.html` works with the existing GitHub Pages repository-root setup. Preserve the repository subpath; all local asset links are relative.
 
 ```sh
 npm run build
@@ -14,67 +12,77 @@ npm run check
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000`. Use a server rather than opening the source `index.html` as a file: browsers restrict JavaScript module imports from `file://`. The separately supplied standalone preview is designed for opening directly.
+Open `http://localhost:8000`. Node 20+ is required for build/check. Those commands need no installed dependencies. Do not open the source page with `file://`: browser module and SVG restrictions vary.
 
-`npm run build` updates the generated project and skill content in `index.html` and produces `dist/`. Commit the updated root HTML together with source/data changes. Do not commit `dist/`. Merge the redesign pull request into the repository's configured publishing branch to publish; this branch itself does not alter Pages settings.
+## Rendering and dependencies
 
-## Structure
+Critical HTML, CSS, the architectural model and dimensional skill emblems render without Three.js. A pinned Three.js 0.180.0 import map enhances them when WebGL and the CDN are available. The entire page shares **one WebGL context** with scissored, visibility-aware views. Hero geometry is original procedural geometry; skill marks are extruded from the existing SVG sprite. Geometry and materials are reused. Pixel density is capped, hidden/offscreen scenes stop drawing, and motion respects both system preferences and the visitor's control.
 
-- `index.html`: semantic page, conceptual project illustrations, career history, contact, and generated content.
-- `assets/css/style.css`: responsive visual system, motion preferences, print layout, and fallbacks.
-- `assets/js/main.js`: navigation, skill filters, clipboard handling, local workflow simulation, and scene loading.
-- `assets/js/scene.js`: original 3D renderer and interaction lifecycle.
-- `assets/images/symbols.svg`: brand and custom SVG icons; no icon fonts.
-- `assets/data/projects.json`: project narratives, approved links, screenshots, and evidence.
-- `assets/data/skills.json`: the 29 primary skill tiles and filter categories.
-- `scripts/build.mjs`: dependency-free content validation and static output.
-- `tests/`: source tests and the offline browser verification harness.
+The CSS fallback is a layered 3D composition: a physical board, monitor, phone, orchestration chip, tools block and review checkpoint. Technology marks use depth-separated vector layers, not just a tilted card. Two layers are shipped in HTML; intermediate layers are cloned once during enhancement to reduce repeated markup. CSS fallbacks remain visible until a view is rendered successfully. Context loss returns the page to CSS. Add `?no3d` to test the fallback explicitly.
 
-## The 3D implementation
+The system is conceptual, not a live client architecture. Its request sequence stops at a human checkpoint; approving it sends nothing and performs no external action. AI, web and mobile modes change the explanatory focus. Adjacent HTML controls provide keyboard access independently of canvas interactions.
 
-The preferred path uses a custom GLSL ray-marched scene on native WebGL, with analytic surfaces, normals, procedural studio reflections, and a bounded render resolution. If WebGL is unavailable, a real triangle-based 3D software renderer uses interpolated normals and a depth buffer on Canvas 2D. The final fallback is a static SVG composition. No external textures, model files, 3D services, or rendering-library downloads are needed.
+Three.js is optional at runtime. For self-hosting on an internet-connected machine:
 
-Drag horizontally to rotate; keyboard-accessible rotation buttons are adjacent to the scene. Animation can be paused. Reduced-motion preferences disable autoplay. Rendering is paused offscreen and when the document is hidden; resources are released on page exit. Native vertical scrolling is preserved on touch devices.
-
-The design is bespoke, not a claim to be objectively the world's best or a claim to use Three.js. The original Instagram URLs could not be loaded in the implementation environment; no claim is made to have watched or reproduced them.
-
-## Automation lab
-
-Lead routing, support triage, and reporting are fixed, fictional examples. The visitor must approve the proposed action before the demo completes. Changing scenarios cancels pending timers. Reset returns to the ready state. The demo sends no data, calls no model, and creates no records or messages. It is visibly labelled as a local simulation, not a live AI agent or a client success story.
-
-## Add evidence
-
-Edit an existing project in `assets/data/projects.json`, then run the build. Supported optional fields:
-
-```json
-{
-  "problem": "The actual business problem",
-  "architecture": "Your actual architecture decisions",
-  "tradeoffs": "Alternatives you considered and why",
-  "screenshots": [
-    {"src": "assets/projects/example/overview.webp", "alt": "Describe the real product screen", "caption": "What this screen demonstrates"}
-  ],
-  "links": [{"label": "Live product", "url": "https://example.com/"}],
-  "metrics": [{"value": "Verified value", "label": "What improved", "source": "Approved evidence reference", "approved": true}]
-}
+```sh
+npm install --ignore-scripts
+npm run vendor
+npm run build
+npm run check
 ```
 
-These are schema examples, not published claims. New projects also need a visual article with the matching `data-project` identifier in the HTML. Use `docs/PROJECT_INTAKE.md` for gathering material. Never commit confidential customer data or unapproved screenshots to this public repository.
+The vendor script checks the pinned version, copies the library and license under `assets/vendor/three/`, and updates the source import map. Commit the vendored assets and regenerated HTML when using this option. This optional install/vendor procedure was not executed in the restricted implementation environment. The default CDN version is pinned; external availability is not guaranteed.
 
-Current work covers are clearly labelled conceptual illustrations, not product screenshots. The three initial project overviews derive from the supplied CV. Their links, screenshots, and metrics arrays remain empty rather than inventing evidence.
+Optional DM Sans and Space Grotesk fonts load through Google Fonts; system fonts remain usable when those requests fail. No font files are bundled. No analytics, API credentials, paid 3D services or backend are required.
 
-## Content decisions
+## Source map
 
-The existing public contact address, `syedallimujtaba@gmail.com`, is retained. The uploaded CV has an extra `b` in its email spelling; confirm that separately before the resume/LinkedIn phase. Employment dates, including overlaps and ongoing roles, are retained from the CV and should be reconfirmed before a resume rewrite. AI agents and automation are emphasized based on the owner's explicit update; no unprovided AI tools, employers, client projects, or outcomes are claimed.
+- `src/page.html`: editable page template; identity, conceptual model, professional work and contact.
+- `src/career.html`: preserved career history from the supplied CV.
+- `assets/data/projects.json`: the single source for public project cards and expanded implementation details.
+- `assets/data/skills.json`: skill labels, groupings, colors, symbols and emphasis.
+- `scripts/build.mjs`: validation, escaping and deterministic static rendering into `index.html` and `dist/`.
+- `assets/css/style.css`: responsive design tokens, layered CSS geometry, motion and print styles.
+- `assets/js/main.js`: progressive navigation, flow controls, skill filtering and contact behavior.
+- `assets/js/scene.js`: optional shared-context Three.js enhancement, geometry and lifecycle.
+- `assets/images/symbols.svg`: attributed brand and original capability symbols.
+- `tests/`: content checks and offline Chromium behavior/layout checks.
+- `docs/PROJECT_SOURCES.md`: sources, evidence limits and content reconciliation.
+- `docs/ATTRIBUTION.md`: asset/library attribution.
 
-This change does not replace either PDF in the GitHub repository or edit LinkedIn. The separately supplied offline preview/source bundle contains the CV attached in this conversation so its download works offline; the repository keeps its existing public resume asset.
+After editing the template or data, run `npm run build` and commit the generated root HTML. Do not commit `dist/`, `node_modules/`, QA output, secrets or confidential evidence.
 
-## Verification and limits
+## Projects and content
 
-`npm run check`: 24 tests, syntax checks, and deterministic generated-content validation.
+Three repositories are presented: `support-chat-core`, `laravel-exception-alert`, and `chat-saas`. The narratives distinguish source inspection from deployment or operational evidence. Public source links are visible inside each native HTML detail panel. No downloads, customer counts, ratings, performance results or screenshots were invented. Diagrams are explicitly explanatory illustrations, not product screenshots.
 
-`python tests/browser_smoke.py`: 105 browser checks, including 320-1920px layouts, expanded details, filters, navigation focus, local workflow approval/reset/cancellation, no-JavaScript content, reduced motion, clipboard denial/success, live 3D drag/rotation, pause, and offscreen stopping.
+`support-chat-core` is described as a realtime support-chat core, not an AI agent. `chat-saas` was inspected beyond its boilerplate README; its narrative covers company-scoped chat workflows found in its routes/controller, not inferred billing or production capabilities. See the provenance document for exact reviewed files.
 
-Browser navigation is blocked in the implementation environment, so the harness mounts the exact HTML/CSS/JS in memory, inlines local SVG references, and substitutes only module transport. The actual software 3D fallback is executed. Hardware WebGL and external font delivery were not available; the accelerated shader path is not certified by these checks. No live deployment, Safari/Firefox, Lighthouse score, or WCAG conformance claim is made.
+The three CV-based professional overviews remain separate from these public repositories. Client screenshots and detailed case-study evidence still need owner approval. Use `docs/PROJECT_INTAKE.md` to collect them. AI agents/automation positioning comes from the owner's explicit update. Specific AI vendor tools are not claimed without evidence.
 
-Review the deployed site after merging. Main content remains available if JavaScript, WebGL, or the optional Google Fonts request is unavailable. No tracking is included.
+## Contact
+
+The contact form is a **local email-draft composer**, not a submission service. It validates input and opens a prefilled `mailto:` draft. The visitor still reviews and sends it in their email application. Copy-message and manual-copy fallbacks are provided. Clipboard failure is reported honestly. Nothing is sent or stored by this site. Without JavaScript, direct email/social/resume links remain available and form controls are hidden to prevent accidental GET submission.
+
+No new server-side or third-party endpoint was configured. Adding one is a separate integration that must include privacy, validation, spam controls and truthful delivery states.
+
+The existing public email, `syedallimujtaba@gmail.com`, is preserved. The attached CV prints `syedallimujtabab@gmail.com`; the owner should confirm the intended spelling. Career date overlaps and ongoing roles are retained from the CV, not silently reconciled. Public repository PDFs and legacy image assets are not replaced by this revision. LinkedIn is unchanged.
+
+## Verification performed
+
+- `npm run build`: generated three project overviews and 29 skill entries.
+- `npm run check`: 25 Node tests plus JavaScript syntax and generated-content checks passed.
+- `python tests/browser_smoke.py`: 95 Chromium checks passed, including 320-1920px layouts, expanded details, filters, conceptual approval flow, mobile menu/focus, clipboard success/denial, inquiry behavior, no-JavaScript layouts, reduced motion and offscreen stopping.
+- Desktop, tablet, mobile and section screenshots were visually reviewed internally.
+
+The browser harness requires Python Playwright and Chromium at `/usr/bin/chromium`; adjust the executable path for a different local installation.
+
+### Verification limits
+
+The available browser blocks navigation and cannot create a WebGL context. Tests mount the actual HTML/CSS/main JS in memory, inline local SVG references, suppress only hash-navigation transport, and use the real CSS-3D geometry. They do not mock business/UI behavior. Mailto state is captured before the blocked external navigation. The Three.js module passed syntax/source checks, but **its actual WebGL rendering was not executable here**. No hardware-WebGL, deployed browser, CDN/font delivery, Safari/Firefox, WCAG certification, Lighthouse or field performance claim is made.
+
+The owner authorized merging into main; review the accelerated rendering on a normal browser after deployment. The complete CSS fallback is independent of that enhancement. Performance and accessibility remain design targets, not fabricated benchmark scores.
+
+## Publish
+
+Work is prepared on `portfolio/meaningful-systems-v3`. The owner explicitly authorized merging this redesign into `main`. Existing Pages settings are preserved. After merging, verify the deployment status and live subpath, assets, contact actions and resume link.

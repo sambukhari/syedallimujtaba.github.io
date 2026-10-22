@@ -1,74 +1,102 @@
 [
   {
-    "id": "ezead-marketplace",
-    "number": "01",
-    "category": "mobile",
-    "company": "EzeAD Media Group",
-    "title": "A marketplace,\nbeyond the browser.",
-    "shortTitle": "EzeAD marketplace",
-    "summary": "Bringing a classifieds platform to mobile, with React Native delivery and cross-functional engineering leadership.",
-    "role": "Development Team Lead",
-    "tags": [
-      "React Native",
-      "Team leadership"
-    ],
-    "scope": "A mobile marketplace for EzeAD's classifieds platform, supporting buying and selling across cities.",
-    "contribution": "Led delivery of the React Native marketplace app. The wider role includes architecture direction, code review standards and cross-functional delivery.",
-    "coverLabel": "Marketplace / Mobile",
-    "coverWord": "Connect.",
-    "theme": "blue",
+    "id": "support-chat-core",
+    "title": "Conversations, connected.",
+    "name": "Support Chat Core",
+    "category": "Open-source package",
     "featured": true,
-    "status": "overview",
-    "screenshots": [],
-    "links": [],
-    "metrics": []
-  },
-  {
-    "id": "hr-payroll",
-    "number": "02",
-    "category": "web",
-    "company": "MyTechPal",
-    "title": "Less admin.\nMore clarity.",
-    "shortTitle": "HR & payroll platform",
-    "summary": "Connecting employee operations and payroll workflows in one Laravel-based business system.",
-    "role": "Full Stack Developer",
+    "theme": "chat",
+    "summary": "A Laravel support-chat core connecting a visitor widget with a human support team through Server-Sent Events.",
     "tags": [
       "Laravel",
-      "Workflow automation"
+      "PHP",
+      "SSE"
     ],
-    "scope": "HR and payroll management for an organisation with employees across multiple countries.",
-    "contribution": "Delivered the Laravel-based system and automated payroll workflows, replacing recurring manual processing and data-handling tasks.",
-    "coverLabel": "Business systems / Web",
-    "coverWord": "Simplify.",
-    "theme": "sand",
-    "featured": false,
-    "status": "overview",
-    "screenshots": [],
-    "links": [],
-    "metrics": []
+    "repo": "https://github.com/sambukhari/support-chat-core",
+    "branch": "main",
+    "visualLabel": "Architecture illustration",
+    "visual": [
+      "Visitor widget",
+      "Event stream",
+      "Support team"
+    ],
+    "problem": "A reusable support-chat foundation needs to coordinate visitor messages, human operators and conversation state.",
+    "implementation": "The public source includes conversation and message models, visitor and operator endpoints, and an SSE stream that notifies clients when new events exist.",
+    "decision": "The event stream emits event metadata; clients retrieve the message content separately. The inspected implementation uses short-lived streaming requests.",
+    "limits": "The README describes this as a non-AI core. Source inspection is not a deployment, scalability or security certification.",
+    "sources": [
+      "README.md",
+      "src/Http/Controllers/SupportChatController.php",
+      "src/routes/web.php"
+    ],
+    "reviewed": "2026-10-22",
+    "code": "Content-Type: text/event-stream\nconversation_uuid  /  event_id  /  type",
+    "codeLabel": "Protocol fields from the source"
   },
   {
-    "id": "multi-tenant-commerce",
-    "number": "03",
-    "category": "web",
-    "company": "Pixart Pte. Ltd.",
-    "title": "Commerce with\nroom to grow.",
-    "shortTitle": "Multi-tenant commerce",
-    "summary": "A Laravel commerce platform bringing together storefronts, custom content management, and inventory.",
-    "role": "Senior Web & Mobile App Developer",
+    "id": "laravel-exception-alert",
+    "title": "When things break, know.",
+    "name": "Laravel Exception Alert",
+    "category": "Developer tooling",
+    "featured": false,
+    "theme": "alert",
+    "summary": "A configurable Laravel package that sends exception details by email without replacing an application\u2019s report or render methods.",
     "tags": [
       "Laravel",
-      "Multi-tenancy"
+      "PHP",
+      "Email"
     ],
-    "scope": "An e-commerce platform supporting a product catalogue, a custom CMS and inventory management.",
-    "contribution": "Engineered the multi-tenant Laravel platform and its content and inventory capabilities during the role at Pixart.",
-    "coverLabel": "Commerce / Web",
-    "coverWord": "Scale.",
-    "theme": "ink",
+    "repo": "https://github.com/sambukhari/laravel-exception-alert",
+    "branch": "main",
+    "visualLabel": "Documented command",
+    "visual": [
+      "Exception",
+      "Reportable hook",
+      "Email alert"
+    ],
+    "problem": "Application errors need a direct route to the developer without a disruptive integration.",
+    "implementation": "A trait registers a Laravel reportable callback, checks configuration, sends a Mailable and catches delivery failures. The package documents install, test and uninstall commands.",
+    "decision": "The inspected trait sends synchronously by default. The alert is configurable by exception status, with failures logged rather than allowed to escape the mail block.",
+    "limits": "No installation counts, production adoption or response-time improvements are claimed. Framework compatibility should be checked for each consuming application.",
+    "sources": [
+      "README.md",
+      "src/Traits/ExceptionAlertTrait.php"
+    ],
+    "reviewed": "2026-10-22",
+    "code": "php artisan exception-alert:install\nphp artisan exception-alert:test",
+    "codeLabel": "Commands from the package README"
+  },
+  {
+    "id": "chat-saas",
+    "title": "One product. Clear boundaries.",
+    "name": "Multi-company Chat Platform",
+    "category": "Public application source",
     "featured": false,
-    "status": "overview",
-    "screenshots": [],
-    "links": [],
-    "metrics": []
+    "theme": "platform",
+    "summary": "A Laravel application with company sites, human-agent workspaces and company-scoped conversation handling.",
+    "tags": [
+      "Laravel",
+      "PHP",
+      "Company scoping"
+    ],
+    "repo": "https://github.com/sambukhari/chat-saas",
+    "branch": "master",
+    "visualLabel": "Source-derived structure",
+    "visual": [
+      "Admin",
+      "Company / sites",
+      "Human agent"
+    ],
+    "problem": "A support platform needs separate workspaces for administrators, companies and support operators.",
+    "implementation": "Routes define these workspaces and a widget script endpoint. The inspected chat controller scopes queries to the operator\u2019s company and checks company ownership before conversation actions.",
+    "decision": "Conversation join, reply, close and leave are explicit actions; replies require assignment to the current human operator.",
+    "limits": "The README is framework boilerplate. These descriptions are limited to inspected routes and controller code. AI behavior, billing, deployment and commercial usage are not verified.",
+    "sources": [
+      "routes/web.php",
+      "app/Http/Controllers/Agent/ChatController.php"
+    ],
+    "reviewed": "2026-10-22",
+    "code": "Conversation::where('company_id', $agent->company_id)",
+    "codeLabel": "Query excerpt from ChatController.php"
   }
 ]

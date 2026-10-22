@@ -1,51 +1,25 @@
-import { readFileSync, writeFileSync, existsSync, mkdirSync, cpSync, rmSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve, join } from 'node:path';
-const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-export const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function safeLink(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password;}catch{return false;}}
-export function safeAsset(value){return typeof value==='string'&&/^assets\/[a-zA-Z0-9_./-]+\.(png|jpg|jpeg|webp|svg)$/.test(value)&&!value.split('/').includes('..');}
-export function validate(projects,skills){
- if(!Array.isArray(projects)||!Array.isArray(skills))throw new Error('Data must be arrays.');
- const ids=new Set();
- for(const p of projects){
-  if(!/^[a-z0-9-]+$/.test(p.id)||ids.has(p.id))throw new Error('Invalid or duplicate project id.');ids.add(p.id);
-  for(const key of ['company','shortTitle','summary','contribution','scope'])if(typeof p[key]!=='string'||!p[key].trim())throw new Error(`Missing project ${key}.`);
-  for(const link of p.links||[])if(!safeLink(link.url)||!link.label)throw new Error('Project links must be labelled HTTPS URLs.');
-  for(const image of p.screenshots||[])if(!safeAsset(image.src)||!image.alt)throw new Error('Screenshots require safe local paths and alt text.');
-  for(const metric of p.metrics||[])if(metric.approved!==true||!metric.source||!metric.value||!metric.label)throw new Error('Metrics require explicit approval, a source, value and label.');
- }
- for(const s of skills)if(!s.name||!/^[a-z0-9-]+$/.test(s.icon)||!['ai','backend','frontend','cloud'].includes(s.category)||!/^#[0-9a-f]{6}$/i.test(s.color))throw new Error('Invalid skill.');
+import {readFile,writeFile,mkdir,cp} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=p=>readFile(path.join(root,p),'utf8');
+export const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function validateProjects(items){
+ const ids=new Set();if(!Array.isArray(items)||!items.length)throw Error('Projects must be a nonempty array');
+ for(const p of items){if(!/^[a-z0-9-]+$/.test(p.id)||ids.has(p.id))throw Error('Invalid or duplicate project id');ids.add(p.id);
+ for(const k of ['title','name','summary','problem','implementation','decision','limits'])if(typeof p[k]!=='string'||!p[k])throw Error(`Missing ${k}`);
+ if(!/^https:\/\/github\.com\/sambukhari\/[a-z0-9-]+$/.test(p.repo))throw Error('Project URL must be an approved public repository');
+ if(!Array.isArray(p.sources)||!p.sources.length||p.sources.some(s=>s.includes('..')||s.startsWith('/')))throw Error('Missing or invalid provenance');
+ if(!['chat','alert','platform'].includes(p.theme)||!Array.isArray(p.tags))throw Error('Invalid visual or tags');}
+ return items;
 }
-export function renderProject(p){
- const icon=name=>`<svg class="icon" aria-hidden="true"><use href="assets/images/symbols.svg#${name}"/></svg>`;
- const tags=(p.tags||[]).map(t=>`<span>${t==='Laravel'?icon('laravel'):t==='React Native'?icon('react'):''}${escape(t)}</span>`).join('');
- const narratives=[['My contribution',p.contribution],['Project context',p.scope],['Problem',p.problem],['Architecture',p.architecture],['Engineering trade-offs',p.tradeoffs]].filter(([,v])=>v).map(([label,text])=>`<h4>${label}</h4><p>${escape(text)}</p>`).join('');
- const gallery=(p.screenshots||[]).map(i=>`<figure class="project-screenshot"><img src="${escape(i.src)}" alt="${escape(i.alt)}" loading="lazy" decoding="async">${i.caption?`<figcaption>${escape(i.caption)}</figcaption>`:''}</figure>`).join('');
- const metrics=(p.metrics||[]).map(m=>`<p><strong>${escape(m.value)}</strong> ${escape(m.label)} <small>Evidence: ${escape(m.source)}</small></p>`).join('');
- const links=(p.links||[]).map(l=>`<a href="${escape(l.url)}" target="_blank" rel="noopener noreferrer">${escape(l.label)} &#8599;</a>`).join(' ');
- return `<div class="work-content"><div class="work-meta"><span>${escape(p.company.toUpperCase())}</span><span>${escape(p.number)} / ${escape(p.category.toUpperCase())}</span></div><h3>${escape(p.shortTitle)}</h3><p>${escape(p.summary)}</p><div class="tags">${tags}</div><details class="project-details"><summary>Explore the project <span>&#8599;</span></summary><div>${narratives}${gallery}${metrics}${links}<a href="#contact">Discuss this work &#8594;</a></div></details></div>`;
-}
-export function generate(html,projects,skills){
- validate(projects,skills);
- for(const p of projects){
-  const pattern=new RegExp(`(<article[^>]+data-project="${p.id}"[^>]*>[\\s\\S]*?)(<div class="work-content">[\\s\\S]*?)(</article>)`);
-  if(!pattern.test(html))throw new Error(`Add a visual article with data-project="${p.id}" to index.html first.`);
-  html=html.replace(pattern,(_,visual,old,end)=>visual+renderProject(p)+end);
- }
- const content=skills.map(s=>`<li class="skill" data-category="${s.category}" style="--brand:${s.color}"><svg class="icon" aria-hidden="true"><use href="assets/images/symbols.svg#${s.icon}"/></svg><span>${escape(s.name)}</span></li>`).join('');
- return html.replace(/(<ul class="skill-grid">)[\s\S]*?(<\/ul>)/,(_,a,b)=>a+content+b);
-}
-export function build(check=false){
- const projects=JSON.parse(readFileSync(join(root,'assets/data/projects.json'),'utf8'));
- const skills=JSON.parse(readFileSync(join(root,'assets/data/skills.json'),'utf8'));
- const html=readFileSync(join(root,'index.html'),'utf8');
- const generated=generate(html,projects,skills);
- if(check){if(html!==generated)throw new Error('Generated content is stale. Run npm run build.');console.log('Generated project and skill content is current.');return;}
- for(const p of projects)for(const image of p.screenshots||[])if(!existsSync(join(root,image.src)))throw new Error(`Missing screenshot: ${image.src}`);
- writeFileSync(join(root,'index.html'),generated);
- const dist=join(root,'dist');rmSync(dist,{recursive:true,force:true});mkdirSync(dist,{recursive:true});
- cpSync(join(root,'index.html'),join(dist,'index.html'));cpSync(join(root,'assets'),join(dist,'assets'),{recursive:true});
- console.log('Static portfolio built in dist/. The repository root is also ready for GitHub Pages.');
-}
-if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url))build(process.argv.includes('--check'));
+const icon=id=>`<svg aria-hidden="true" focusable="false"><use href="assets/images/symbols.svg#${escape(id)}"></use></svg>`;
+function skill(s,featured=false){return `<article class="skill${featured?' skill-featured':''}" data-category="${escape(s.category)}" tabindex="0" aria-label="${escape(s.name+': '+s.description)}" style="--brand:${escape(s.color)}"><div class="skill-visual" data-view="skill" data-logo="${escape(s.icon)}"><div class="emblem-shadow"></div><div class="emblem" aria-hidden="true">${[0,8].map(i=>`<span class="emblem-layer" style="--layer:${i}">${icon(s.icon)}</span>`).join('')}</div><span class="pedestal" aria-hidden="true"></span></div><div class="skill-label"><h3>${escape(s.name)}</h3>${featured?`<span aria-hidden="true">↗</span>`:''}</div><p>${escape(s.description)}</p></article>`;}
+function project(p,i){return `<article class="project project-${p.theme}${p.featured?' project-featured':''}" id="project-${p.id}"><div class="project-art"><div class="art-meta"><span>${String(i+1).padStart(2,'0')} / ${escape(p.category)}</span>${icon(p.theme==='alert'?'laravel':'api')}</div><div class="architecture-art" aria-hidden="true"><div class="art-central">${icon(p.theme==='alert'?'bolt':p.theme==='chat'?'people':'cube')}<b>${p.theme==='chat'?'Connected.':p.theme==='alert'?'Reported.':'Scoped.'}</b></div><div class="art-route">${p.visual.map(v=>`<span>${escape(v)}</span>`).join('<i>→</i>')}</div></div><span class="art-disclosure">${escape(p.visualLabel)} · not a product screenshot</span></div><div class="project-content"><p class="eyebrow">${escape(p.name)}</p><h3>${escape(p.title)}</h3><p>${escape(p.summary)}</p><div class="tags">${p.tags.map(t=>`<span>${escape(t)}</span>`).join('')}</div><a class="repo-link" href="${escape(p.repo)}" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><details class="case-study"><summary>Under the hood <span aria-hidden="true">+</span></summary><div class="case-content"><h4>The problem</h4><p>${escape(p.problem)}</p><h4>Inside the implementation</h4><p>${escape(p.implementation)}</p><h4>An engineering detail</h4><p>${escape(p.decision)}</p><span class="micro">${escape(p.codeLabel)}</span><pre><code>${escape(p.code)}</code></pre><p class="evidence-note">${escape(p.limits)}</p><div class="source-links"><span>Source references</span>${p.sources.map(s=>`<a href="${escape(p.repo)}/blob/${escape(p.branch)}/${escape(s)}" target="_blank" rel="noopener noreferrer">${escape(s.split('/').at(-1))} ↗</a>`).join('')}</div></div></details></div></article>`;}
+async function build(){const projects=validateProjects(JSON.parse(await read('assets/data/projects.json')));const skills=JSON.parse(await read('assets/data/skills.json'));
+ const featured=skills.filter(s=>s.featured);const rest=skills.filter(s=>!s.featured);
+ let html=await read('src/page.html');html=html.replace('{{PROJECTS}}',projects.map(project).join('\n')).replace('{{FEATURED_SKILLS}}',featured.map(s=>skill(s,true)).join('\n')).replace('{{SKILLS}}',rest.map(s=>skill(s)).join('\n')).replace('{{CAREER}}',await read('src/career.html'));
+ if(/{{[A-Z_]+}}/.test(html))throw Error('Unresolved template');
+ if(process.argv.includes('--check')){if(await read('index.html')!==html)throw Error('Generated index.html is stale');console.log('Generated markup is current');return;}
+ await writeFile(path.join(root,'index.html'),html);await mkdir(path.join(root,'dist'),{recursive:true});await writeFile(path.join(root,'dist/index.html'),html);await cp(path.join(root,'assets'),path.join(root,'dist/assets'),{recursive:true});console.log(`Built ${projects.length} public projects and ${skills.length} skills`);}
+if(process.argv[1]===fileURLToPath(import.meta.url))await build();
