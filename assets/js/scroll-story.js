@@ -74,7 +74,7 @@
      // Read visible chapter positions on scroll so no IntersectionObserver timing race
      // can skip an explanation when a reader scrolls quickly.
      if(allowMotion()&&previewCancelled&&!manualOverride){
-       const reached=stages.filter(item=>item.getBoundingClientRect().top<window.innerHeight*.72);
+       const reached=stages.filter(item=>item.getBoundingClientRect().top<window.innerHeight*.52);
        if(reached.length){
          const last=reached[reached.length-1];
          show(Number(last.dataset.storyChapter),'scroll');

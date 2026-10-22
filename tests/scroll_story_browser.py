@@ -61,7 +61,7 @@ try:
         clean_externals(page)
         page.goto(origin,wait_until='domcontentloaded')
         check(page.locator('.story-mobile-chapters').is_visible(),'mobile has accessible stacked workflow chapters')
-        page.locator('[data-story-chapter="3"]').scroll_into_view_if_needed()
+        page.locator('[data-story-chapter="3"]').evaluate("(e)=>e.scrollIntoView({block:'center',behavior:'instant'})")
         page.wait_for_function("document.querySelector('#system-studio').dataset.step === '3'",timeout=4000)
         check(current(page)=='3','mobile scrolling explains human-review phase')
         check(page.evaluate("document.documentElement.scrollWidth <= innerWidth"),'mobile has no horizontal overflow')
