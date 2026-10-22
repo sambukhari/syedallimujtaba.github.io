@@ -1,0 +1,4 @@
+/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
+:root,:host{--spacing:.25rem;--color-white:#fff;--radius-3xl:1.5rem}
+.flex{display:flex}.grid{display:grid}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-3{gap:calc(var(--spacing)*3)}.gap-6{gap:calc(var(--spacing)*6)}.rounded-3xl{border-radius:var(--radius-3xl)}.border-white\/10{border-color:color-mix(in srgb,#fff 10%,transparent)}.bg-white\/5{background-color:color-mix(in srgb,#fff 5%,transparent)}.p-6{padding:calc(var(--spacing)*6)}
+@media(min-width:64rem){.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
