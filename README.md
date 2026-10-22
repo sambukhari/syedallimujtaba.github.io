@@ -86,3 +86,9 @@ The owner authorized merging into main; review the accelerated rendering on a no
 ## Publish
 
 Work is prepared on `portfolio/meaningful-systems-v3`. The owner explicitly authorized merging this redesign into `main`. Existing Pages settings are preserved. After merging, verify the deployment status and live subpath, assets, contact actions and resume link.
+
+
+## V5 visual storytelling
+The new design retains the existing architectural 3D model and genuine project evidence. It adds a five-stage illustrative client workflow tied to the interactive model, a seven-chapter accessible career reel, and a warm porcelain / aubergine / copper art direction. Reel imagery is conceptual, not employer footage. Overlapping career roles follow the supplied CV. Reduced-motion and explicit site motion controls suspend animation. Contact remains a mail-draft composer, not a backend submission.
+
+Tailwind v4.1.10 utilities are compiled to the committed lightweight `assets/css/tailwind.generated.css`. Run `npm install && npm run build` after modifying Tailwind classes or templates; the deployed site does not use Tailwind's runtime CDN.

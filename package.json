@@ -1,16 +1,24 @@
 {
-  "name":"ali-mujtaba-portfolio",
-  "version":"4.0.0",
-  "private":true,
-  "type":"module",
-  "description":"Meaningful systems model, dimensional skill emblems and source-backed portfolio.",
-  "scripts":{
-    "build":"node scripts/build.mjs",
-    "test":"node --test tests/*.test.mjs",
-    "check":"node --check assets/js/main.js && node --check assets/js/scene.js && node scripts/build.mjs --check && node --test tests/*.test.mjs",
-    "vendor":"node scripts/vendor.mjs",
-    "test:browser":"python tests/browser_smoke.py"
+  "name": "ali-mujtaba-portfolio",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Client-centered AI systems storytelling, Tailwind utilities and accessible 3D career reel",
+  "scripts": {
+    "build": "node scripts/build-tailwind.mjs && node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check assets/js/main.js && node --check assets/js/scene.js && node scripts/build.mjs --check && node --test tests/*.test.mjs",
+    "vendor": "node scripts/vendor.mjs",
+    "test:browser": "python tests/browser_smoke.py",
+    "build:css": "node scripts/build-tailwind.mjs"
   },
-  "dependencies":{"three":"0.180.0"},
-  "engines":{"node":">=20"}
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "tailwindcss": "4.1.10"
+  }
 }
