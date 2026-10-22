@@ -7,7 +7,7 @@
  // Intermediate depth layers are cloned once, avoiding repeated SVG markup in the initial document.
  $$('.emblem').forEach(emblem=>{const front=emblem.lastElementChild;for(let i=1;i<8;i++){const layer=front.cloneNode(true);layer.style.setProperty('--layer',String(i));emblem.insertBefore(layer,front);}});
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let motion=!reduced.matches,mode='ai',stage=1,turn=0,timer=null,playing=false,awaitingReview=false;
+ let motion=!reduced.matches,mode='ai',stage=0,turn=0,timer=null,playing=false,awaitingReview=false;
  const studio=$('#system-studio'), flow=$('#play-flow');
  const descriptions={
   ai:[['Start with a clear intent.','A useful workflow begins with a defined task, its constraints and the person who needs the result.'],['Intelligence, with a purpose.','An agent coordinates the workflow. APIs connect the tools. People stay in control.'],['Connect the right tools.','APIs and structured data turn an isolated model into a useful part of a larger system.'],['A human checkpoint.','Review the proposed action before a consequential step. This model illustrates a design principle, not a live agent.'],['A result people can use.','Deliver the outcome through a web interface or mobile app, with a clear handoff and understandable state.']],
@@ -22,7 +22,7 @@
  $$('[data-stage]').forEach(b=>b.addEventListener('click',()=>{stopFlow();setStage(Number(b.dataset.stage));}));
  document.addEventListener('portfolio:scroll-stage',event=>{
    const index=Number(event.detail?.stage);
-   if(!motion||reduced.matches||!Number.isInteger(index)||index<0||index>4)return;
+   if(!Number.isInteger(index)||index<0||index>4)return;
    if(playing||awaitingReview)stopFlow();
    // Scroll and preview are narrative only; they do not approve or execute an action.
    if(index!==stage)setStage(index,false);
