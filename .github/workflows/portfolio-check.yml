@@ -36,5 +36,7 @@ jobs:
           python-version: '3.11'
       - name: Use preinstalled Chrome with Playwright
         run: python -m pip install --disable-pip-version-check playwright==1.56.0
-      - name: Exercise scroll, mobile and reduced-motion behavior
-        run: python tests/scroll_story_browser.py
+      - name: Exercise scroll, portrait and mobile behavior
+        run: |
+          python tests/scroll_story_browser.py
+          python tests/portrait_browser.py
