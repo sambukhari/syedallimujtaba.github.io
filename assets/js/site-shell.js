@@ -1,6 +1,7 @@
 /* Shared accessible navigation and footer behavior, no scroll-position animation. */
 (() => {
  'use strict';
+ document.documentElement.classList.add('js');
  const header=document.querySelector('[data-site-header]');
  if(!header)return;
  const toggle=header.querySelector('[data-site-menu]'),nav=header.querySelector('#navigation');

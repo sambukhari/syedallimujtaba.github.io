@@ -8,7 +8,7 @@
  if(chapters.length!==5||!fill||!counter||!label)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const lengths=[1150,1170,1220,1480];
- let stage=0,active=false,started=false,completed=false,manual=false,timeout=0,paused=false;
+ let stage=0,active=false,started=false,completed=false,manual=false,timeout=0,paused=false,visible=false;
  const allowed=()=>!reduced.matches&&!document.body.classList.contains('motion-off')&&!document.hidden;
  function render(n,source='section'){
   stage=Math.max(0,Math.min(4,n));
@@ -43,12 +43,20 @@
  chapters.forEach((el,i)=>el.addEventListener('click',()=>manualStage(i)));
  section.querySelectorAll('[data-stage]').forEach(el=>el.addEventListener('click',()=>manualStage(Number(el.dataset.stage)),{capture:true}));
  section.querySelectorAll('[data-mode],#play-flow').forEach(el=>el.addEventListener('click',()=>{manual=true;clear();label.textContent='INTERACTIVE PREVIEW · MANUAL CONTROL'},{capture:true}));
+ document.addEventListener('portfolio:scene',event=>{
+   const n=Number(event.detail?.stage);
+   if(!Number.isInteger(n)||n===stage||n<0||n>4)return;
+   stage=n;
+   chapters.forEach((button,i)=>{button.dataset.current=String(i===n);button.setAttribute('aria-pressed',String(i===n))});
+   counter.textContent=String(n+1).padStart(2,'0')+' / 05';
+   fill.style.width=(n+1)*20+'%';
+ });
  const observer=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{
-  const visible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.17;
+  visible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.17;
   if(visible){if(!active)begin()}else if(active)pause();
  },{threshold:[0,.18,.3,.5],rootMargin:'0px 0px -5% 0px'}):null;
  if(observer)observer.observe(section);else{render(0);label.textContent='SELECT A STAGE TO EXPLORE'};
- const onMotion=()=>{if(!allowed()){clear();if(active)pause()}else if(paused&&!manual&&!completed)begin()};
+ const onMotion=()=>{if(!allowed()){clear();if(active)pause()}else if(visible&&paused&&!manual&&!completed)begin()};
  document.addEventListener('portfolio:motion',onMotion);
  reduced.addEventListener('change',onMotion);
  document.addEventListener('visibilitychange',onMotion);
