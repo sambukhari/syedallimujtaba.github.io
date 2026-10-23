@@ -98,7 +98,7 @@ test('existing cases, source-backed pages and the explorer still build without d
  assert.match(directory,/Developer tools/);
  assert.equal((home.match(/projects\/boxes-by-swagify\/assets\/cover.svg/g)||[]).length,1);
  assert.equal((home.match(/projects\/resume-ezead\/assets\/cover.svg/g)||[]).length,1);
- assert.equal((home.match(/projects\/php-class-utilities\/assets\/cover.svg/g)||[]).length,1);
+ assert.equal((directory.match(/php-class-utilities\/assets\/cover.svg/g)||[]).length,1);
 });
 test('three new project media folders contain labeled, XML-safe architecture diagrams',()=>{
  for(const slug of ['boxes-by-swagify','resume-ezead','php-class-utilities']){
