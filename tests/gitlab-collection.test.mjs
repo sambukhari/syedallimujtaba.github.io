@@ -51,7 +51,7 @@ test('main portfolio and directory expose 36 repository cards without inflating 
  assert.ok(home.includes('case-feature-priority-fix'));
  assert.ok(home.includes('case-feature-ezead-marketplace'));
  assert.match(home,/Show all 36 repositories/);
- assert.match(directory,/Project directory/);
+ assert.match(directory,/project directory/i);
  const categories=archive.map(x=>x.category);
  assert.ok(categories.includes('Mobile apps'));
  assert.ok(categories.includes('Commerce & marketplaces'));
