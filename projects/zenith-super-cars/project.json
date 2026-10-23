@@ -1,0 +1,109 @@
+{
+  "slug": "zenith-super-cars",
+  "title": "Zenith Super Cars",
+  "purpose": "Luxury vehicle discovery and rental booking website",
+  "stack": "Laravel/Lavalite CMS, PHP; WordPress blog subdirectory",
+  "repoPath": "sambukhari/zenith-super-cars",
+  "repository": "https://gitlab.com/sambukhari/zenith-super-cars",
+  "modules": [
+    {
+      "title": "Car Discovery",
+      "detail": "Vehicle search and browse controllers"
+    },
+    {
+      "title": "Bookings & Checkout",
+      "detail": "Checkout workflows"
+    },
+    {
+      "title": "Locations",
+      "detail": "Location listings and management"
+    },
+    {
+      "title": "Accounts",
+      "detail": "Sign-in, registration and password reset"
+    }
+  ],
+  "checklist": [
+    "Present: auth and user controllers",
+    "Present: API controller and API-login controller",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Web platforms",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Luxury vehicle discovery and rental booking website",
+  "summary": "Luxury vehicle discovery and rental booking website",
+  "overview": "Luxury vehicle discovery and rental booking website",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Zenith Super Cars — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Zenith Super Cars source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Zenith Super Cars"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Car Discovery",
+      "body": "Vehicle search and browse controllers",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Bookings & Checkout",
+      "body": "Checkout workflows",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Locations",
+      "body": "Location listings and management",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Accounts",
+      "body": "Sign-in, registration and password reset",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Car Discovery",
+        "detail": "Vehicle search and browse controllers",
+        "icon": "layers"
+      },
+      {
+        "name": "Bookings & Checkout",
+        "detail": "Checkout workflows",
+        "icon": "layers"
+      },
+      {
+        "name": "Locations",
+        "detail": "Location listings and management",
+        "icon": "layers"
+      },
+      {
+        "name": "Accounts",
+        "detail": "Sign-in, registration and password reset",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}
