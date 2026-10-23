@@ -37,8 +37,8 @@ async function build(){const projects=validateProjects(JSON.parse(await read('as
  for(const addition of ashiqAudit.added)if(!githubCases.some(x=>x.slug===addition.slug))throw Error('Missing distinct Ashiq case '+addition.slug);
  const richer=cases.filter(x=>['priority-fix','apaea-research-platform'].includes(x.slug)).map(x=>({slug:x.slug,title:x.manifest.title,purpose:x.manifest.summary,stack:Array.isArray(x.manifest.stack)?x.manifest.stack.join(', '):x.manifest.stack,category:x.slug==='priority-fix'?'Mobile apps':'Community & platforms',cover:x.manifest.cover,modules:Array.from({length:x.slug==='priority-fix'?4:34},(_,i)=>({title:'Module '+i})),placeholder:false}));
  const order=['priority-fix','apaea-research-platform','boxes-by-swagify','resume-ezead','eze-auction','learn-skill-pro','trade-core-apps','trade-core','prescription-drive','php-class-utilities','sportsapp','sportscms','grocery-app-admin-panel','priority-fix-admin-panel','ttu-test-the-ummah'];
- const archive=[...catalog,...richer,...githubCases].sort((a,b)=>(order.indexOf(a.slug)<0?1e3:order.indexOf(a.slug))-(order.indexOf(b.slug)<0?1e3:order.indexOf(b.slug))||a.title.localeCompare(b.title));
- const expected=catalog.length+richer.length+githubCases.length;
+ const archive=[...catalog,...richer,...githubCases].filter(item=>!item.placeholder).sort((a,b)=>(order.indexOf(a.slug)<0?1e3:order.indexOf(a.slug))-(order.indexOf(b.slug)<0?1e3:order.indexOf(b.slug))||a.title.localeCompare(b.title));
+ const expected=catalog.filter(item=>!item.placeholder).length+richer.length+githubCases.length;
  if(archive.length!==expected||new Set(archive.map(x=>x.slug)).size!==expected)throw Error('Collection must preserve unique projects');
  const directoryHTML=renderProjectIndex(archive);
  const featured=skills.filter(s=>s.featured);const rest=skills.filter(s=>!s.featured);

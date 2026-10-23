@@ -82,13 +82,15 @@ function renderArchiveItem(m,prefix){
 
 function renderCollection(repos,prefix="projects/",teaser=true){
  const total=repos.length;
- const cards=repos.map((m,i)=>`<div class="gc-entry" data-ordinal="${i}" ${teaser&&i>=9?"hidden":""}>${renderArchiveItem(m,prefix)}</div>`).join("");
- return `<section class="gc-collection" aria-labelledby="gc-collection-title" data-limit="${teaser?9:0}">
- <div class="gc-collection-head"><div><p class="cs-section-index">GITHUB + GITLAB / PROJECT COLLECTION</p><h3 id="gc-collection-title">An engineering portfolio.<br><em>Not just three projects.</em></h3></div><p>Browse ${total} distinct project entries across mobile products, Laravel systems, commerce, developer utilities and community platforms. Related frontend/backend repositories may share one entry; placeholders are clearly labeled.</p></div>
- <div class="gc-collection-bar"><div class="gc-filters" role="group" aria-label="Project category filter">${["All","Mobile apps","Web platforms","Commerce & marketplaces","Community & platforms","Developer tools","Archive only"].map((x,i)=>`<button type="button" data-filter="${esc(x)}" aria-pressed="${i===0}">${esc(x)}</button>`).join("")}</div><label class="gc-search"><span class="cs-visually-hidden">Search project directory</span><input type="search" data-collection-search placeholder="Search projects, Laravel, React Native..." autocomplete="off"></label></div>
- <p class="gc-results" role="status" data-collection-results>${teaser?"Showing 9 of "+total+" projects":total+" projects"}</p><div class="gc-grid">${cards}</div><p data-collection-empty class="gc-empty" hidden>No projects match. Clear the search or try another category.</p>
- ${teaser?`<div class="gc-more"><button type="button" data-expand-collection aria-expanded="false">Show all ${total} projects <span aria-hidden="true">↓</span></button><a href="projects/">Open full project directory ↗</a></div>`:"<div class=\"gc-more\"><a href=\"../index.html#work\">← Back to featured work</a></div>"}
- <p class="gc-footnote">Source: uploaded GitLab and GitHub documentation ZIPs. Architecture art is illustrative. Application code and production status have not been independently audited; empty repositories are labeled as such.</p></section>`;
+ const visible=teaser?repos.slice(0,6):repos;
+ const cards=visible.map((item,i)=>'<div class="gc-entry" data-ordinal="'+i+'">'+renderArchiveItem(item,prefix)+'</div>').join('');
+ const lead=teaser
+ ? '<div><p class="cs-section-index">EXPLORE THE ENGINEERING LIBRARY</p><h3 id="gc-collection-title">The work behind<br><em>the work.</em></h3></div><p>A focused selection from the wider project library. Browse source-backed architecture, individual modules and the decisions behind each system.</p>'
+ : '<div><p class="cs-section-index">CURATED SOFTWARE PORTFOLIO</p><h3 id="gc-collection-title">Explore by<br><em>what was built.</em></h3></div><p>A searchable directory of substantive products and engineering systems, each with documented modules and links to the source repositories.</p>';
+ const names=["All","Mobile apps","Web platforms","Commerce & marketplaces","Community & platforms","Developer tools"];
+ const filters=teaser?'':'<div class="gc-collection-bar"><div class="gc-filters" role="group" aria-label="Project category filter">'+names.map((name,i)=>'<button type="button" data-filter="'+esc(name)+'" aria-pressed="'+(i===0)+'">'+esc(name)+'</button>').join('')+'</div><label class="gc-search"><span class="cs-visually-hidden">Search project directory</span><input type="search" data-collection-search placeholder="Search projects, technologies or features..." autocomplete="off"></label></div><p class="gc-results" role="status" data-collection-results>'+total+' projects ready to explore</p>';
+ const more=teaser?'<div class="gc-more"><a href="'+prefix+'" class="gc-explore-link">Explore all '+total+' projects <span aria-hidden="true">↗</span></a></div>':'';
+ return '<section class="gc-collection '+(teaser?'gc-collection-preview':'gc-collection-full')+'" aria-labelledby="gc-collection-title" data-limit="0"><div class="gc-collection-head">'+lead+'</div>'+filters+'<div class="gc-grid">'+cards+'</div><p data-collection-empty class="gc-empty" hidden>No projects match your search. Try another category.</p>'+more+'<p class="gc-footnote">Features are based on source documentation. Architecture diagrams illustrate the systems; they are not product screenshots.</p></section>';
 }
 
 function renderProjectIndexRaw(repos){
