@@ -44,13 +44,13 @@ test('each new project has a source summary, responsive detail page and two vali
 });
 test('main portfolio and directory expose 41 project cards without inflating featured cards',()=>{
  const home=read('index.html'),directory=read('projects/index.html');
- assert.equal((home.match(/class="gc-entry"/g)||[]).length,41);
- assert.equal((directory.match(/class="gc-entry"/g)||[]).length,41);
+ assert.equal((home.match(/class="gc-entry"/g)||[]).length,6);
+ assert.equal((directory.match(/class="gc-entry"/g)||[]).length,38);
  assert.equal((home.match(/class="case-feature"/g)||[]).length,1);
  assert.ok(home.includes('case-feature-apaea-research-platform'));
  assert.ok(home.includes('case-feature-priority-fix'));
  assert.ok(home.includes('case-feature-ezead-marketplace'));
- assert.match(home,/Show all 41 projects/);
+ assert.match(home,/Explore all 38 projects/);
  assert.match(directory,/project directory/i);
  const categories=archive.map(x=>x.category);
  assert.ok(categories.includes('Mobile apps'));

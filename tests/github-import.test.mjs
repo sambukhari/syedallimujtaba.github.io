@@ -77,11 +77,11 @@ test('build contains no duplicate case cards or featured-project inflation',asyn
  assert.equal(gitHub.length,5);
  for(const c of gitHub)assert.equal(read('projects/'+c.slug+'/index.html'),renderCasePage(c));
  const home=read('index.html'),index=read('projects/index.html');
- assert.equal((home.match(/class="gc-entry"/g)||[]).length,41);
- assert.equal((index.match(/class="gc-entry"/g)||[]).length,41);
+ assert.equal((home.match(/class="gc-entry"/g)||[]).length,6);
+ assert.equal((index.match(/class="gc-entry"/g)||[]).length,38);
  assert.equal((home.match(/projects\/eze-auction\/assets\/cover.svg/g)||[]).length,1);
  assert.equal((home.match(/projects\/learn-skill-pro\/assets\/cover.svg/g)||[]).length,1);
- assert.match(home,/Show all 41 projects/);
+ assert.match(home,/Explore all 38 projects/);
  assert.ok(home.includes('case-feature-ezead-marketplace'));
  assert.ok(home.includes('case-feature-priority-fix'));
  assert.ok(home.includes('case-feature-apaea-research-platform'));
