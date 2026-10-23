@@ -1,25 +1,25 @@
 /* Single source of truth for the portfolio navigation, footer and document chrome. */
 const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 export function renderSiteHeader({root='',page='home'}={}){
- const home=root+'index.html',projects=root+'projects/';
+ const home=root+'index.html',local=page==='home'?'':home,projects=root+'projects/';
  const links=[
-  {text:'Selected work',url:home+'#work',key:'home'},
+  {text:'Selected work',url:local+'#work',key:'home'},
   {text:'All projects',url:projects,key:'projects'},
-  {text:'Experience',url:home+'#journey',key:'experience'},
-  {text:'Expertise',url:home+'#stack',key:'expertise'}
+  {text:'Experience',url:local+'#journey',key:'experience'},
+  {text:'Expertise',url:local+'#stack',key:'expertise'}
  ];
  return `<header id="top" class="site-header universal-header" data-site-header><div class="universal-shell universal-header-row">
- <a class="universal-brand" href="${home}#home" aria-label="Ali Mujtaba — portfolio home"><span class="universal-brand-mark" aria-hidden="true">a<span>m</span><i>.</i></span><span class="universal-brand-text">ALI MUJTABA<small>ENGINEER · TECH LEAD</small></span></a>
+ <a class="universal-brand" href="${local}#home" aria-label="Ali Mujtaba — portfolio home"><span class="universal-brand-mark" aria-hidden="true">a<span>m</span><i>.</i></span><span class="universal-brand-text">ALI MUJTABA<small>ENGINEER · TECH LEAD</small></span></a>
  <button class="menu-toggle universal-menu-toggle" type="button" data-site-menu aria-controls="navigation" aria-expanded="false" aria-label="Open site navigation"><span>Menu</span><i aria-hidden="true"></i></button>
  <nav class="universal-nav" id="navigation" aria-label="Main navigation">${links.map(x=>`<a href="${x.url}"${page===x.key?' aria-current="page"':''}>${escapeHTML(x.text)}</a>`).join('')}
- <a href="${home}#contact" class="universal-nav-cta">Start a conversation <span aria-hidden="true">↗</span></a></nav>
+ <a href="${local}#contact" class="universal-nav-cta">Start a conversation <span aria-hidden="true">↗</span></a></nav>
  </div></header>`;
 }
 export function renderSiteFooter({root='',page='home'}={}){
- const home=root+'index.html',projects=root+'projects/';
+ const home=root+'index.html',local=page==='home'?'':home,projects=root+'projects/';
  return `<footer class="universal-footer" data-site-footer><div class="universal-shell">
  <div class="universal-footer-main"><div class="universal-footer-intro"><p class="universal-overline">BUILT WITH INTENT · ENGINEERED TO LAST</p><a href="${home}#home" class="universal-footer-name">Let’s build<br><em>something useful.</em> <span aria-hidden="true">↗</span></a><p>AI-assisted workflows, dependable backend systems and products people enjoy using.</p></div>
- <nav class="universal-footer-links" aria-label="Footer navigation"><div><strong>Explore</strong><a href="${home}#work">Selected work</a><a href="${projects}">Project directory</a><a href="${home}#journey">Experience</a><a href="${home}#stack">Expertise</a></div><div><strong>Connect</strong><a href="mailto:syedallimujtaba@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/sambukhari/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/sambukhari" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="${root}assets/resume/Syed-Ali-Mujtaba-Tech-Lead-CV.pdf">Résumé ↗</a></div></nav></div>
+ <nav class="universal-footer-links" aria-label="Footer navigation"><div><strong>Explore</strong><a href="${local}#work">Selected work</a><a href="${projects}">Project directory</a><a href="${local}#journey">Experience</a><a href="${local}#stack">Expertise</a></div><div><strong>Connect</strong><a href="mailto:syedallimujtaba@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/sambukhari/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/sambukhari" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="${root}assets/resume/Syed-Ali-Mujtaba-Tech-Lead-CV.pdf">Résumé ↗</a></div></nav></div>
  <div class="universal-footer-bottom"><span>SYED ALI MUJTABA SHAH · BAHAWALPUR, PAKISTAN</span><span>DESIGNED FOR PEOPLE. BUILT FOR SCALE.</span><div><button id="motion-toggle" type="button" class="universal-motion" aria-pressed="true">Motion on</button><a href="#${page==='home'?'home':'top'}">Back to top ↑</a></div></div>
  </div></footer>`;
 }
