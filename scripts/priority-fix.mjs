@@ -1,5 +1,5 @@
 /* Priority Fix: a source-faithful renderer for short existing/proposed feature briefs. */
-x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))
+const safeText=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))
 const iconMap={"user":"<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>","edit":"<path d=\"m3 21 5-.8L20 8a3 3 0 0 0-4-4L4 16 3 21Z\"/><path d=\"m14 6 4 4\"/>","check":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m8 12 3 3 5-6\"/>","search":"<circle cx=\"10.5\" cy=\"10.5\" r=\"7\"/><path d=\"m16 16 5 5\"/>","spark":"<path d=\"m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z\"/>","shield":"<path d=\"m12 2 8 4v6c0 5-3 8-8 10-5-2-8-5-8-10V6l8-4Z\"/>","layers":"<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"3\"/><path d=\"M7 9h10M7 13h7\"/>","wallet":"<rect x=\"3\" y=\"6\" width=\"18\" height=\"15\" rx=\"3\"/><path d=\"M3 10h18m-5 5h2M6 6V4h12\"/>"};
 function shape(name){return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${iconMap[name]||iconMap.layers}</svg>`}
 function parsePriorityFixInventory(md){
