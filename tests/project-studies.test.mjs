@@ -1,0 +1,46 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {parseInventory,loadCaseStudies,renderCaseCard,renderCasePage} from '../scripts/project-studies.mjs';
+const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
+test('EzeAD inventory preserves source boundaries and all modules',()=>{
+ const parsed=parseInventory(read('projects/ezead-marketplace/FEATURE_AND_MODULE_INVENTORY.md'));
+ assert.deepEqual(parsed.counts,{main:60,core:19,excluded:3});
+ assert.equal(parsed.total,82);
+ assert.equal(parsed.groups.filter(x=>x.scope==='main').length,9);
+ assert.equal(parsed.groups.filter(x=>x.scope==='core').length,5);
+ const stripe=parsed.modules.find(x=>/Stripe card gateway/.test(x.title));
+ assert.equal(stripe.scope,'core');
+ assert.match(stripe.status,/public\/core ONLY/);
+ assert.equal(parsed.modules.find(x=>x.number===81).scope,'excluded');
+ assert.ok(parsed.modules.filter(x=>x.sources.length>0).length>65);
+});
+test('project directory drives homepage and semantic standalone page',async()=>{
+ const cases=await loadCaseStudies(new URL('..',import.meta.url).pathname);
+ assert.ok(cases.length>=1);
+ const e=cases.find(x=>x.slug==='ezead-marketplace');
+ assert.ok(e);
+ const card=renderCaseCard(e),page=renderCasePage(e);
+ assert.match(card,/Explore modules, workflows/);
+ assert.match(card,/projects\/ezead-marketplace\/assets\/cover.svg/);
+ assert.match(page,/data-scope-switch="core"/);
+ assert.match(page,/data-gallery-open="2"/);
+ assert.equal((page.match(/class="cs-module" data-module-scope=/g)||[]).length,79);
+ assert.ok(page.includes('Not confirmed by the inspected inventory'));
+ assert.ok(page.includes('Source-implemented')||page.includes('SOURCE-IMPLEMENTED'));
+ assert.equal(read('projects/ezead-marketplace/index.html'),page);
+ assert.ok(read('index.html').includes(card));
+});
+test('details view supports accessibility, search, status and reduced motion',()=>{
+ const html=read('projects/ezead-marketplace/index.html');
+ const css=read('assets/css/project-studies.css');
+ const js=read('assets/js/project-detail.js');
+ assert.match(html,/id="module-search"/);
+ assert.match(html,/aria-label="Project media viewer"/);
+ assert.match(html,/rel="noopener noreferrer"/);
+ assert.match(js,/showModal\(/);
+ assert.match(js,/filterModules\(/);
+ assert.match(css,/prefers-reduced-motion:reduce/);
+ assert.match(css,/max-width:650px/);
+ assert.ok(!html.includes('Not found in inspected business modules</span><strong>Verified'));
+});

@@ -40,3 +40,4 @@ jobs:
         run: |
           python tests/scroll_story_browser.py
           python tests/portrait_browser.py
+          python tests/project_detail_browser.py
