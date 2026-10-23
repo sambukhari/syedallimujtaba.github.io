@@ -1,0 +1,118 @@
+{
+  "slug": "prescription-drive",
+  "title": "Prescription Drive",
+  "purpose": "Pharmacy marketplace, ordering and delivery management system",
+  "stack": "Laravel, PHP, Passport, Firebase and payment integrations",
+  "repoPath": "sambukhari/prescription-drive",
+  "repository": "https://gitlab.com/sambukhari/prescription-drive",
+  "modules": [
+    {
+      "title": "Pharmacy & Products",
+      "detail": "Catalog, categories and pharmacy management"
+    },
+    {
+      "title": "Orders & Delivery",
+      "detail": "Orders, delivery staff and time slots"
+    },
+    {
+      "title": "Customers & Branches",
+      "detail": "Customer profiles and branch dashboards"
+    },
+    {
+      "title": "Offers & Payments",
+      "detail": "Coupons, payments and checkout integrations"
+    },
+    {
+      "title": "Support",
+      "detail": "Reviews, conversations and notifications"
+    }
+  ],
+  "checklist": [
+    "Present: customer/driver auth and admin/branch accounts",
+    "Present: versioned API V1 and Passport",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Commerce & marketplaces",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Pharmacy marketplace, ordering and delivery management system",
+  "summary": "Pharmacy marketplace, ordering and delivery management system",
+  "overview": "Pharmacy marketplace, ordering and delivery management system",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Prescription Drive — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Prescription Drive source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Prescription Drive"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Pharmacy & Products",
+      "body": "Catalog, categories and pharmacy management",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Orders & Delivery",
+      "body": "Orders, delivery staff and time slots",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Customers & Branches",
+      "body": "Customer profiles and branch dashboards",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Offers & Payments",
+      "body": "Coupons, payments and checkout integrations",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Pharmacy & Products",
+        "detail": "Catalog, categories and pharmacy management",
+        "icon": "layers"
+      },
+      {
+        "name": "Orders & Delivery",
+        "detail": "Orders, delivery staff and time slots",
+        "icon": "layers"
+      },
+      {
+        "name": "Customers & Branches",
+        "detail": "Customer profiles and branch dashboards",
+        "icon": "layers"
+      },
+      {
+        "name": "Offers & Payments",
+        "detail": "Coupons, payments and checkout integrations",
+        "icon": "layers"
+      },
+      {
+        "name": "Support",
+        "detail": "Reviews, conversations and notifications",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

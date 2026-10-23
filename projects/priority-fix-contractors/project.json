@@ -1,0 +1,122 @@
+{
+  "slug": "priority-fix-contractors",
+  "title": "Priority Fix — Contractors",
+  "purpose": "Contractor-facing property maintenance and job management app",
+  "stack": "React Native, Expo, Axios, Redux Toolkit",
+  "repoPath": "sambukhari/priority-fix-contractors",
+  "repository": "https://gitlab.com/sambukhari/priority-fix-contractors",
+  "modules": [
+    {
+      "title": "Jobs",
+      "detail": "Assigned work and job details"
+    },
+    {
+      "title": "Quotations",
+      "detail": "Create/view quotes and pending responses"
+    },
+    {
+      "title": "Properties & Reports",
+      "detail": "Property jobs, reports and media"
+    },
+    {
+      "title": "Calendar",
+      "detail": "Events and scheduled work"
+    }
+  ],
+  "checklist": [
+    "Present: sign-in, sign-up and profile screens",
+    "App-side API consumption; backend routes not contained here",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": "Priority Fix",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Contractor-facing property maintenance and job management app",
+  "summary": "Contractor-facing property maintenance and job management app",
+  "overview": "Contractor-facing property maintenance and job management app",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Priority Fix — Contractors — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Priority Fix — Contractors source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Priority Fix — Contractors"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Jobs",
+      "body": "Assigned work and job details",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Quotations",
+      "body": "Create/view quotes and pending responses",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Properties & Reports",
+      "body": "Property jobs, reports and media",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Calendar",
+      "body": "Events and scheduled work",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Jobs",
+        "detail": "Assigned work and job details",
+        "icon": "layers"
+      },
+      {
+        "name": "Quotations",
+        "detail": "Create/view quotes and pending responses",
+        "icon": "layers"
+      },
+      {
+        "name": "Properties & Reports",
+        "detail": "Property jobs, reports and media",
+        "icon": "layers"
+      },
+      {
+        "name": "Calendar",
+        "detail": "Events and scheduled work",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "priority-fix",
+      "title": "Priority Fix — Tenant App"
+    },
+    {
+      "slug": "priority-fix-admin-panel",
+      "title": "Priority Fix — Admin & API"
+    },
+    {
+      "slug": "priority-fix-landlord",
+      "title": "Priority Fix — Landlord"
+    }
+  ]
+}

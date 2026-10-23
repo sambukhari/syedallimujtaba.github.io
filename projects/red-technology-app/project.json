@@ -1,0 +1,94 @@
+{
+  "slug": "red-technology-app",
+  "title": "Red Technology — Attendance",
+  "purpose": "Attendance-oriented employee mobile application",
+  "stack": "Flutter, Dart",
+  "repoPath": "sambukhari/red-technology-app",
+  "repository": "https://gitlab.com/sambukhari/red-technology-app",
+  "modules": [
+    {
+      "title": "Login",
+      "detail": "User sign-in interface"
+    },
+    {
+      "title": "Attendance",
+      "detail": "Attendance page and tracking UI"
+    },
+    {
+      "title": "Auth Service",
+      "detail": "Authentication service integration"
+    }
+  ],
+  "checklist": [
+    "Partial: login present; admin user management not found",
+    "Auth service present; endpoint details unverified",
+    "Not evidenced in inspected files.",
+    "Partial: attendance page only; payroll/leave unverified."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Attendance-oriented employee mobile application",
+  "summary": "Attendance-oriented employee mobile application",
+  "overview": "Attendance-oriented employee mobile application",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Red Technology — Attendance — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Red Technology — Attendance source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Red Technology — Attendance"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Login",
+      "body": "User sign-in interface",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Attendance",
+      "body": "Attendance page and tracking UI",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Auth Service",
+      "body": "Authentication service integration",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Login",
+        "detail": "User sign-in interface",
+        "icon": "layers"
+      },
+      {
+        "name": "Attendance",
+        "detail": "Attendance page and tracking UI",
+        "icon": "layers"
+      },
+      {
+        "name": "Auth Service",
+        "detail": "Authentication service integration",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}
