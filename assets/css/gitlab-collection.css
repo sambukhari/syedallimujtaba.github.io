@@ -84,3 +84,11 @@
 @media(max-width:900px){.gc-collection-head{grid-template-columns:1fr}.gc-detail .gc-hero-media{transform:none!important}.gc-detail .cs-hero{grid-template-columns:1fr}}
 @media(max-width:640px){.gc-grid{grid-template-columns:1fr}.gc-collection{padding-top:43px}.gc-collection-bar{flex-direction:column;align-items:stretch}.gc-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.gc-filters button{padding:11px 7px;font-size:9px}.gc-search{width:100%;min-width:0}.gc-card-image{max-height:240px}.gc-card h3{font-size:23px}.gc-collection-head h3{font-size:clamp(36px,10vw,48px)}.gc-detail .gc-overview-grid{grid-template-columns:1fr}.gc-audit-row{grid-template-columns:30px 1fr;padding:17px 13px}.gc-audit-tag{grid-column:2;justify-self:start}.gc-index-hero h1{font-size:clamp(43px,11vw,63px)}}
 @media(prefers-reduced-motion:reduce){.gc-collection *, .gc-detail *{transition:none!important;animation:none!important;transform:none!important}}
+
+/* One genuine product can have a storefront and API repository without duplicate project cards. */
+.gc-companions{margin-top:14px;padding:20px 23px;border:1px solid #ff97406d;border-radius:14px;background:linear-gradient(125deg,#23160f,#141114);color:#f6e4d3}
+.gc-companions>strong{display:block;font:700 11px/1.4 "DM Sans",sans-serif;letter-spacing:.12em;color:#ffb46e}
+.gc-companions>p{margin:9px 0 15px;font:400 12px/1.65 "DM Sans",sans-serif;color:#d0baa7}
+.gc-companions>div{display:flex;flex-wrap:wrap;gap:9px}
+.gc-companions a{display:inline-flex;padding:10px 12px;border-radius:8px;border:1px solid #ff8b365c;color:#ffc591!important;font:700 11px/1.3 "DM Sans",sans-serif;text-decoration:none!important;background:#271a12}
+.gc-companions a:hover{background:#492714;color:#fff!important}
