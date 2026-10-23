@@ -115,3 +115,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 }
 @media(max-width:720px){.cs-page .cs-shell{width:calc(100% - 36px)}.cs-page .cs-hero{padding-top:15px}.cs-page .cs-hero h1{font-size:clamp(45px,11vw,70px)}.cs-page .cs-section{padding-block:51px}.cs-page .cs-section-nav{padding:9px 11px;gap:3px 9px}.cs-page .cs-section-nav a{font-size:10px}.cs-page .cs-gallery{grid-template-columns:1fr}.cs-page .cs-stage:hover,.cs-page .cs-gallery-item:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.cs-page *{animation:none!important;transition:none!important;transform:none!important}}
+
+/* Narrow phones: keep full brand and menu inside the 320px viewport, never clip navigation. */
+@media(max-width:380px){
+ .universal-header-row{gap:8px}
+ .universal-header .universal-brand{gap:7px;min-width:0}
+ .universal-brand-mark{width:34px;height:34px;font-size:21px;flex-shrink:0}
+ .universal-brand-text{font-size:9px;letter-spacing:.065em;min-width:0}
+ .universal-brand-text small{font-size:8px;letter-spacing:.035em}
+ .universal-header .universal-menu-toggle{gap:9px;padding:9px 10px;font-size:10px;flex-shrink:0}
+}
