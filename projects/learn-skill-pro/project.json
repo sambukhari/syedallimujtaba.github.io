@@ -1,0 +1,124 @@
+{
+  "slug": "learn-skill-pro",
+  "title": "Learn Skill Pro",
+  "repoPath": "ashiq/learn-skill-pro",
+  "repository": "https://github.com/ashiq/learn-skill-pro",
+  "category": "Web platforms",
+  "purpose": "Paid online course platform with protected lessons, enrollment reviews, certificates and affiliate management.",
+  "stack": "PHP 8.3+, Laravel 13, Blade/Vite, PDF generation, relational database",
+  "eyebrow": "LEARNING PLATFORM / CODE REVIEW",
+  "subtitle": "A course journey from discovery through enrollment to certificates.",
+  "summary": "Laravel learning platform for course discovery, paid enrollment, protected videos, learning administration, certificates and referral management.",
+  "overview": "The GitHub inventory describes an online learning and course-administration platform. Unlike the existing Test The Ummah examination system, this repository focuses on paid course enrollment, protected lecture media, certificate issuance and affiliate/referral workflows. Live payments and media protection were not runtime-audited.",
+  "focus": "A source-described learning experience spanning course discovery, paid enrollment decisions, protected content and certificates.",
+  "placeholder": false,
+  "reviewed": "2026-10-24",
+  "sourceBranch": "main",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "modules": [
+    {
+      "title": "Courses & learner onboarding",
+      "detail": "Course discovery, account signup and learner dashboard.",
+      "source": "Course discovery, signup and learner dashboard"
+    },
+    {
+      "title": "Lessons & protected video",
+      "detail": "Courses, lecture content and protected video playback.",
+      "source": "Courses, lectures and protected video playback"
+    },
+    {
+      "title": "Enrollment & payment review",
+      "detail": "Enrollment decisions and payment-proof review code paths.",
+      "source": "Enrollment decisions and payment-proof review"
+    },
+    {
+      "title": "Certificates & administration",
+      "detail": "Certificates and administrative course management features.",
+      "source": "Certificates and admin course management"
+    },
+    {
+      "title": "Affiliates & payment history",
+      "detail": "Affiliate/referral management and payment-history screens/services.",
+      "source": "Affiliate/referral management and payment history"
+    }
+  ],
+  "checklist": [
+    "Learner/admin authentication, profiles and role-controlled administration.",
+    "Primarily Laravel web controllers; a separate mobile app API was not verified.",
+    "Not evidenced; payment evidence is not identity verification.",
+    "Not evidenced."
+  ],
+  "renderer": "github-brief",
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Courses & learner onboarding",
+      "body": "Course discovery, account signup and learner dashboard.",
+      "icon": "layers"
+    },
+    {
+      "number": "02",
+      "title": "Lessons & protected video",
+      "body": "Courses, lecture content and protected video playback.",
+      "icon": "layers"
+    },
+    {
+      "number": "03",
+      "title": "Enrollment & payment review",
+      "body": "Enrollment decisions and payment-proof review code paths.",
+      "icon": "layers"
+    },
+    {
+      "number": "04",
+      "title": "Certificates & administration",
+      "body": "Certificates and administrative course management features.",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Courses & learner onboarding",
+        "detail": "Course discovery, account signup and learner dashboard.",
+        "icon": "layers"
+      },
+      {
+        "name": "Lessons & protected video",
+        "detail": "Courses, lecture content and protected video playback.",
+        "icon": "layers"
+      },
+      {
+        "name": "Enrollment & payment review",
+        "detail": "Enrollment decisions and payment-proof review code paths.",
+        "icon": "layers"
+      },
+      {
+        "name": "Certificates & administration",
+        "detail": "Certificates and administrative course management features.",
+        "icon": "layers"
+      },
+      {
+        "name": "Affiliates & payment history",
+        "detail": "Affiliate/referral management and payment-history screens/services.",
+        "icon": "layers"
+      }
+    ]
+  },
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Learn Skill Pro — engineering overview",
+      "caption": "Conceptual source-derived architecture illustration, not an app screenshot.",
+      "alt": "Conceptual overview diagram for Learn Skill Pro"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Learn Skill Pro — documented modules",
+      "caption": "Source-described modules, not a live workflow test or production screenshot.",
+      "alt": "Conceptual modules diagram for Learn Skill Pro"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "source": "GitHub_All_Projects_AI_Context_and_Modules(2).zip",
+  "reviewed": "2026-10-24",
+  "total": 15,
+  "added": [
+    {
+      "repository": "https://github.com/sambukhari/eze-auction",
+      "slug": "eze-auction",
+      "whyDistinct": "Bids and auction interaction not represented by existing classifieds case studies."
+    },
+    {
+      "repository": "https://github.com/ashiq/learn-skill-pro",
+      "slug": "learn-skill-pro",
+      "whyDistinct": "Paid course/enrollment/certificate/referral workflows differ from the existing quiz and examination platform."
+    }
+  ],
+  "skipped": [
+    {
+      "repository": "https://github.com/sambukhari/chat-saas",
+      "decision": "skipped",
+      "reason": "Already featured as a GitHub engineering project."
+    },
+    {
+      "repository": "https://github.com/sambukhari/grocery",
+      "decision": "skipped",
+      "reason": "Empty repo, and grocery administration project already documented."
+    },
+    {
+      "repository": "https://github.com/sambukhari/laraclassfied",
+      "decision": "skipped",
+      "reason": "Empty repo; overlaps existing Laraclassified case."
+    },
+    {
+      "repository": "https://github.com/sambukhari/laravel-exception-alert",
+      "decision": "skipped",
+      "reason": "Already featured as a GitHub engineering project."
+    },
+    {
+      "repository": "https://github.com/sambukhari/Priority-Fix",
+      "decision": "skipped",
+      "reason": "Empty repo; overlaps existing Priority Fix product family."
+    },
+    {
+      "repository": "https://github.com/sambukhari/priorityfix",
+      "decision": "skipped",
+      "reason": "Empty repo; duplicate name of Priority Fix product family."
+    },
+    {
+      "repository": "https://github.com/sambukhari/support-chat-core",
+      "decision": "skipped",
+      "reason": "Already featured as a GitHub engineering project; distinct human chat package, not AI."
+    },
+    {
+      "repository": "https://github.com/sambukhari/syedallimujtaba.github.io",
+      "decision": "skipped",
+      "reason": "Current portfolio repository, not a separate project case study."
+    },
+    {
+      "repository": "https://github.com/AR1AR1/My-Muslim-Burial",
+      "decision": "skipped",
+      "reason": "Same Muslim Burial product family as mobile and backend cases already included."
+    },
+    {
+      "repository": "https://github.com/atifsomro/zenith",
+      "decision": "skipped",
+      "reason": "Same vehicle rental/booking concept as the existing Zenith Super Cars case."
+    },
+    {
+      "repository": "https://github.com/ashiq/Ezead",
+      "decision": "skipped",
+      "reason": "Existing EzeAD Marketplace case already represents this product family."
+    },
+    {
+      "repository": "https://github.com/ashiq/ezadd",
+      "decision": "skipped",
+      "reason": "EzeAD mobile extension of already featured classifieds/EzeAD product family."
+    },
+    {
+      "repository": "https://github.com/ashiq/ezead-1",
+      "decision": "skipped",
+      "reason": "Underlying EzeAD repository already referenced by the featured detailed case study."
+    }
+  ]
+}

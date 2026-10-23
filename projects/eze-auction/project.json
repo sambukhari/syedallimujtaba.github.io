@@ -1,0 +1,124 @@
+{
+  "slug": "eze-auction",
+  "title": "Eze Auction",
+  "repoPath": "sambukhari/eze-auction",
+  "repository": "https://github.com/sambukhari/eze-auction",
+  "category": "Commerce & marketplaces",
+  "purpose": "An auction-capable classified ads marketplace with bidding, listing drafts, discovery, buyer interactions and checkout components.",
+  "stack": "Laravel, PHP, Blade, Sanctum, Socialite, Stripe, MySQL-compatible database",
+  "eyebrow": "BIDDING & CLASSIFIEDS / CODE REVIEW",
+  "subtitle": "From a listing draft to bids, discovery and paid placement.",
+  "summary": "Auction-capable marketplace spanning recoverable listing drafts, photo uploads, bids, comments, favorites, reviews and listing checkout.",
+  "overview": "The repository inventory describes a Laravel marketplace combining classified ads with a bidding workflow and payment-related code. Its bidding capability is the reason this is distinct from the existing classifieds projects; production auction execution was not independently tested.",
+  "focus": "A source-described marketplace experience connecting ad publishing, bid engagement and listing checkout.",
+  "placeholder": false,
+  "reviewed": "2026-10-24",
+  "sourceBranch": "main",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "modules": [
+    {
+      "title": "Recoverable ad drafts",
+      "detail": "Stepwise ad drafts include photo uploads and recovery.",
+      "source": "Stepwise ad drafts with photo uploads and recovery"
+    },
+    {
+      "title": "Listing publishing & discovery",
+      "detail": "Publish, browse and search ads using categories and locations.",
+      "source": "Publish, browse and search ads by category/location"
+    },
+    {
+      "title": "Bidding & engagement",
+      "detail": "Bids, comments, favorites and review capabilities are described.",
+      "source": "Bids, comments, favorites and reviews"
+    },
+    {
+      "title": "Listing checkout",
+      "detail": "Listing-related payments and checkout state exist in source descriptions; live settlement is not verified.",
+      "source": "Listing payments and checkout state"
+    },
+    {
+      "title": "Account & social sign-in",
+      "detail": "Account dashboard and social login components are described.",
+      "source": "Account dashboard and social sign-in components"
+    }
+  ],
+  "checklist": [
+    "Accounts, sign-in/social login and listing ownership.",
+    "`routes/api.php` is a mostly starter route file; a dedicated mobile API is not confirmed.",
+    "Not evidenced in reviewed marketplace controllers.",
+    "Not evidenced."
+  ],
+  "renderer": "github-brief",
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Recoverable ad drafts",
+      "body": "Stepwise ad drafts include photo uploads and recovery.",
+      "icon": "layers"
+    },
+    {
+      "number": "02",
+      "title": "Listing publishing & discovery",
+      "body": "Publish, browse and search ads using categories and locations.",
+      "icon": "layers"
+    },
+    {
+      "number": "03",
+      "title": "Bidding & engagement",
+      "body": "Bids, comments, favorites and review capabilities are described.",
+      "icon": "layers"
+    },
+    {
+      "number": "04",
+      "title": "Listing checkout",
+      "body": "Listing-related payments and checkout state exist in source descriptions; live settlement is not verified.",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Recoverable ad drafts",
+        "detail": "Stepwise ad drafts include photo uploads and recovery.",
+        "icon": "layers"
+      },
+      {
+        "name": "Listing publishing & discovery",
+        "detail": "Publish, browse and search ads using categories and locations.",
+        "icon": "layers"
+      },
+      {
+        "name": "Bidding & engagement",
+        "detail": "Bids, comments, favorites and review capabilities are described.",
+        "icon": "layers"
+      },
+      {
+        "name": "Listing checkout",
+        "detail": "Listing-related payments and checkout state exist in source descriptions; live settlement is not verified.",
+        "icon": "layers"
+      },
+      {
+        "name": "Account & social sign-in",
+        "detail": "Account dashboard and social login components are described.",
+        "icon": "layers"
+      }
+    ]
+  },
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Eze Auction — engineering overview",
+      "caption": "Conceptual source-derived architecture illustration, not an app screenshot.",
+      "alt": "Conceptual overview diagram for Eze Auction"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Eze Auction — documented modules",
+      "caption": "Source-described modules, not a live workflow test or production screenshot.",
+      "alt": "Conceptual modules diagram for Eze Auction"
+    }
+  ]
+}
