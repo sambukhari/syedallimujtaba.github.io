@@ -1,0 +1,55 @@
+{
+  "source": "GitHub_Ashiq_Unique_Projects_AI_Context_and_Modules(1).zip",
+  "reviewed": "2026-10-24",
+  "repositoriesReviewed": 9,
+  "decisionRule": "Add only distinct product/functionality; group companion frontend and backend of the same product; exclude unimplemented placeholders and similar product families already represented.",
+  "added": [
+    {
+      "slug": "boxes-by-swagify",
+      "title": "Boxes by Swagify",
+      "repositories": [
+        "https://github.com/ashiq/BoxesbySwagify",
+        "https://github.com/ashiq/BoxesbySwagifyBackend"
+      ],
+      "reason": "Custom build-a-merchandise-box shopping flow and its companion catalog/cart/order APIs form one novel product; keep frontend and backend together."
+    },
+    {
+      "slug": "resume-ezead",
+      "title": "Resume EzeAD",
+      "repositories": [
+        "https://github.com/ashiq/resume-ezead"
+      ],
+      "reason": "Professional resume/portfolio authoring, service profiles, testimonials and subscriptions differ from existing quiz systems and job boards."
+    },
+    {
+      "slug": "php-class-utilities",
+      "title": "PHP Class Utilities",
+      "repositories": [
+        "https://github.com/ashiq/PHP_CLASS"
+      ],
+      "reason": "Standalone legacy PHP utility classes for customer records, content pages and social feeds; a code library, not a full launched application."
+    }
+  ],
+  "skipped": [
+    {
+      "repository": "https://github.com/ashiq/Community-Ezead-com",
+      "reason": "README-only placeholder; no implementation evidenced and EzeAD community branding overlaps the existing product family."
+    },
+    {
+      "repository": "https://github.com/ashiq/Ezelive-com",
+      "reason": "README-only placeholder; no supported product features."
+    },
+    {
+      "repository": "https://github.com/ashiq/eze-autos",
+      "reason": "Vehicle marketplace/listings overlap the existing EzeAD classifieds and Zenith/Chauffeur vehicle product coverage; excluded under the no-similar-projects rule."
+    },
+    {
+      "repository": "https://github.com/ashiq/eze-homes",
+      "reason": "Property listings are already represented within the classifieds and property-related portfolio families; excluded under the no-similar-projects rule."
+    },
+    {
+      "repository": "https://github.com/ashiq/Ezead-Jobs",
+      "reason": "Employment marketplace and candidate features overlap the previously listed Apex staffing and other classified/job capabilities; not another separate card."
+    }
+  ]
+}
