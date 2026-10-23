@@ -22,3 +22,11 @@ The Markdown module parser recognizes headings `## Main — Identity`, `## Core 
 Only add media you own or can publish. Media isn't magically generated from a Markdown inventory. The gallery explicitly identifies architecture illustrations; replace or expand it with genuine screenshots/videos later. The project page has a gallery viewer that supports `screenshot`, `diagram`, and `video`.
 
 **Workflow:** drop the next project directory in, add the Markdown and assets, write an accurate manifest, run `npm run build && npm run check`, review the generated case study, and merge. Do not edit generated HTML by hand.
+
+
+## New: tabular feature inventories (APAEA)
+The generator now recognizes a second input format: a Markdown table headed `| # | Module | Short details | Source status |`. Every numbered row becomes a source-backed record with the **exact** supplied status, including `Present`, `Present (limited)`, `Present; live status unverified` and `Not found`.
+
+For this format set `renderer: "research"` (research-publication case-story layout), and optional `moduleGroups` arrays in `project.json` listing the exact feature numbers per domain. The parser validates that every source-present row belongs to exactly one group, while `Not found` rows stay in a separate evidence section. The research renderer adds an independent editorial workflow and full gallery, but uses the shared responsive CSS and accessible modal controls.
+
+For GitLab projects, `repository` may be a `https://gitlab.com/<owner>/<repo>` URL, with `commit` naming the pinned SHA. The case study links to the pinned repository tree, never invented per-feature file paths. Do not treat unprovided documents named in the inventory (such as `APAEA_AI_CONTEXT.md`) as if their content had been reviewed.

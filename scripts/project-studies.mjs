@@ -1,5 +1,6 @@
 import {readdir,readFile,stat} from 'node:fs/promises';
 import path from 'node:path';
+import {parseTableInventory,renderResearchCaseCard,renderResearchCasePage} from './research-case.mjs';
 function esc(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 
 function safeHref(url){const u=String(url||"");return /^https:\/\/github\.com\/[a-z0-9_.-]+\/[a-z0-9_.-]+(?:\/(?:blob|tree)\/[a-zA-Z0-9_./%-]+)?\/?$/i.test(u)?u:"#source"; }
@@ -16,7 +17,8 @@ check:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>'};
 return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.55">${paths[name]||paths.layers}</svg>`;
 }
 
-function parseInventory(md){
+function parseInventory(md,manifest={}){
+if(/^\|\s*#\s*\|\s*Module\s*\|\s*Short details\s*\|\s*Source status\s*\|/mi.test(md))return parseTableInventory(md,manifest);
 const lines=String(md||"").replace(/\r\n/g,"\n").split("\n");
 const mods=[]; let scope=null,group=null,current=null;
 for(const raw of lines){
@@ -56,7 +58,7 @@ function validateCase(item,parsed){
 const m=item.manifest;
 if(!m||!/^[a-z0-9-]+$/.test(m.slug)||m.slug!==item.slug)throw Error("Invalid case slug");
 for(const key of ["title","eyebrow","subtitle","summary","overview","category","cover","inventory"])if(typeof m[key]!=="string"||!m[key])throw Error("Missing "+key);
-if(!/^https:\/\/github\.com\/[^/\s]+\/[^/\s]+$/.test(m.repository||""))throw Error("Invalid repository reference");
+if(!/^https:\/\/(?:github|gitlab)\.com\/[a-z0-9_.-]+\/[a-z0-9_.-]+$/i.test(m.repository||""))throw Error("Invalid repository reference");
 if(!Array.isArray(m.media)||!m.media.length||!Array.isArray(m.highlights)||!Array.isArray(m.workflows?.main))throw Error("Missing project gallery, highlights, or workflow");
 for(const a of [m.cover,...m.media.map(x=>x.src),m.inventory])if(!/^(?:assets\/)?[a-zA-Z0-9_.\/-]+$/.test(a)||a.includes(".."))throw Error("Unsafe project asset reference: "+a);
 for(const x of m.media){if(!["diagram","screenshot","video"].includes(x.kind)||!x.alt||!x.title)throw Error("Invalid media record");}
@@ -65,6 +67,7 @@ return item;
 }
 
 function renderCaseCard(item){
+if(item.manifest?.renderer==='research')return renderResearchCaseCard(item);
 const m=item.manifest,stats=item.parsed.counts,url=`projects/${encodeURIComponent(m.slug)}/`;
 return `<article class="case-feature" aria-labelledby="case-feature-${esc(m.slug)}">
 <a class="case-feature-art" href="${url}" aria-label="Open ${esc(m.title)} detailed case study"><img loading="lazy" decoding="async" src="projects/${esc(m.slug)}/${esc(m.cover)}" alt="${esc(m.media?.[0]?.alt||m.title+' architecture illustration')}" width="1200" height="760"><span class="case-art-stamp">SYSTEM ILLUSTRATION · NOT A PRODUCT SCREENSHOT</span></a>
@@ -72,6 +75,7 @@ return `<article class="case-feature" aria-labelledby="case-feature-${esc(m.slug
 }
 
 function renderCasePage(item){
+if(item.manifest?.renderer==='research')return renderResearchCasePage(item);
 const m=item.manifest, d=item.parsed, slug=esc(m.slug);
 const canonical=`https://sambukhari.github.io/syedallimujtaba.github.io/projects/${encodeURIComponent(m.slug)}/`;
 const mediaURL=canonical+m.cover;
@@ -134,7 +138,7 @@ export async function loadCaseStudies(root){
    const home=path.join(directory,dir.name);
    const manifest=JSON.parse(await readFile(path.join(home,"project.json"),"utf8"));
    const md=await readFile(path.join(home,manifest.inventory||"PROJECT.md"),"utf8");
-   const parsed=parseInventory(md);
+   const parsed=parseInventory(md,manifest);
    const item=validateCase({slug:dir.name,manifest,parsed},parsed);
    for(const media of [manifest.cover,...manifest.media.map(x=>x.src)]){
      const filepath=path.resolve(home,media);

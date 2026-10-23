@@ -1,0 +1,221 @@
+{
+  "slug": "apaea-research-platform",
+  "renderer": "research",
+  "title": "APAEA Research Platform",
+  "eyebrow": "RESEARCH INFRASTRUCTURE / SOURCE-REVIEWED CASE STUDY",
+  "subtitle": "Where membership, research and scholarly publishing come together.",
+  "summary": "A research and membership platform spanning individual and institutional accounts, submissions, peer review, journals, conferences and publishing tools.",
+  "overview": "The APAEA source inventory describes an academic platform joining membership administration with paper submissions, editorial review, working papers, journal archives, conference registration and public research content. Its workflows are shown as conceptual maps of documented modules—not confirmed end-to-end runtime journeys.",
+  "focus": "One platform, several audiences: members, authors, reviewers, event participants and administrators. The architectural story is about reducing friction across the research lifecycle.",
+  "caveat": "This source-only profile follows 36 entries in the uploaded inventory, pinned to a specific GitLab commit: 34 modules are marked present, KYC and HR are not found, only eight API routes were identified, and live PayPal/email/deployment behavior was not tested. Exact controller paths and personal contribution details were not supplied.",
+  "category": "Academic platform · Membership & Publishing",
+  "repository": "https://gitlab.com/sambukhari/apaea",
+  "commit": "b0035edcc762299274b2da46345ded202b2a672b",
+  "reviewed": "2026-10-24",
+  "inventory": "APAEA_PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "stack": [
+    "Research workflows",
+    "Memberships",
+    "Peer review",
+    "Journals",
+    "Conference management",
+    "PayPal code",
+    "CMS"
+  ],
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Membership & identity",
+      "body": "Individual/institutional membership records, registration and dashboards with payment-handling code.",
+      "icon": "user"
+    },
+    {
+      "number": "02",
+      "title": "Editorial operations",
+      "body": "Conference and general paper submissions, reviewer assignment, decisions, feedback and proofreading requests.",
+      "icon": "edit"
+    },
+    {
+      "number": "03",
+      "title": "Research publishing",
+      "body": "Journal and issue management, RePEc-related archive metadata, working papers and research datasets.",
+      "icon": "layers"
+    },
+    {
+      "number": "04",
+      "title": "Events & discovery",
+      "body": "Conference publishing, event registration, partner pages, news, galleries and public information management.",
+      "icon": "spark"
+    }
+  ],
+  "moduleGroups": [
+    {
+      "title": "Membership & Accounts",
+      "numbers": [
+        1,
+        6,
+        7,
+        8,
+        35
+      ]
+    },
+    {
+      "title": "Research Submissions & Review",
+      "numbers": [
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "title": "Journals, Archives & Datasets",
+      "numbers": [
+        12,
+        19,
+        20,
+        21,
+        32
+      ]
+    },
+    {
+      "title": "Conferences & Events",
+      "numbers": [
+        9,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "title": "Community & Content",
+      "numbers": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33
+      ]
+    },
+    {
+      "title": "Platform & Integrations",
+      "numbers": [
+        2,
+        5,
+        34,
+        36
+      ]
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Prepare & submit",
+        "detail": "Public and member-facing submission records support conference, general and working-paper uploads.",
+        "icon": "edit"
+      },
+      {
+        "name": "Route to review",
+        "detail": "Reviewer assignments and feedback collection are source-present across paper and review services.",
+        "icon": "user"
+      },
+      {
+        "name": "Evaluate & decide",
+        "detail": "Review histories, responses and decision handling appear in the respective modules.",
+        "icon": "shield"
+      },
+      {
+        "name": "Publish & archive",
+        "detail": "Proceedings, journal issues and working-paper series can be managed and published.",
+        "icon": "layers"
+      },
+      {
+        "name": "Make discoverable",
+        "detail": "Journal pages, indexing content and dataset listings are documented discovery surfaces.",
+        "icon": "search"
+      }
+    ],
+    "core": [
+      {
+        "name": "Join the community",
+        "detail": "Individual and institutional membership forms capture separate member/application records.",
+        "icon": "user"
+      },
+      {
+        "name": "Manage account",
+        "detail": "Member dashboards surface account details and assigned or submitted research information.",
+        "icon": "layers"
+      },
+      {
+        "name": "Handle payments",
+        "detail": "PayPal member payment and administrative payment-link handlers exist; live processing was not tested.",
+        "icon": "wallet"
+      },
+      {
+        "name": "Explore events",
+        "detail": "Conference publishing and listings expose forums, workshops and upcoming events.",
+        "icon": "search"
+      },
+      {
+        "name": "Register & follow up",
+        "detail": "Event registration and payment confirmation handlers are source-present, not runtime-certified.",
+        "icon": "check"
+      }
+    ]
+  },
+  "scopeCards": [
+    {
+      "eyebrow": "01 / IMPLEMENTED SOURCE",
+      "title": "Research workflows",
+      "body": "Submission, peer review, proofreading, working papers, journal administration, conference proceedings and research data listings are present in the supplied source inventory."
+    },
+    {
+      "eyebrow": "02 / LIMITED INTERFACE",
+      "title": "Eight app API routes",
+      "body": "The inventory identifies just eight routes for authentication, account/review lookup and public content. It does not establish a complete mobile CRUD or payment API."
+    },
+    {
+      "eyebrow": "03 / NOT VERIFIED",
+      "title": "Payments and production",
+      "body": "PayPal checkout and payment-handling source exists, but merchant activation, processing success and deployment were not tested. Many database tables lack migrations in the inspected snapshot."
+    }
+  ],
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Academic platform landscape",
+      "caption": "Purpose-built conceptual overview of membership, editorial work, research archives and conference events; not a product screenshot.",
+      "alt": "Conceptual APAEA research platform graphic linking membership, paper review, journals and events."
+    },
+    {
+      "src": "assets/editorial-flow.svg",
+      "kind": "diagram",
+      "title": "Submission and peer-review lifecycle",
+      "caption": "Illustrative flow synthesized from modules describing submissions, reviewer assignments, feedback and publication. End-to-end runtime steps are unverified.",
+      "alt": "Illustrated research lifecycle with manuscript submission, reviewer assignments, decisions and publication."
+    },
+    {
+      "src": "assets/membership-events.svg",
+      "kind": "diagram",
+      "title": "Membership and events",
+      "caption": "Parallel conceptual views of individual and institutional membership and conference/event registrations. Actual cross-module integration was not tested.",
+      "alt": "Diagram of separate membership and event registration capabilities."
+    },
+    {
+      "src": "assets/research-network.svg",
+      "kind": "diagram",
+      "title": "Publishing and discovery surfaces",
+      "caption": "Conceptual content network including journals, proceedings, working papers, datasets and CMS. Not a live screenshot.",
+      "alt": "Research publication diagram with journals, archives, working papers, datasets and public content."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+/* APAEA: an editorial accent layer on the shared project system. */
+.cs-research-page{background-image:radial-gradient(ellipse 750px 370px at 83% 8%,#6230192e,transparent),radial-gradient(ellipse 630px 740px at 4% 40%,#4d24161b,transparent),repeating-linear-gradient(0deg,transparent 0,transparent 71px,#ff992805 72px),linear-gradient(130deg,#0b0b0e,#100e10 45%,#0a0a0c)}
+.cs-research-hero{padding-top:36px;padding-bottom:64px}
+.cs-research-hero .cs-eyebrow{letter-spacing:.16em}
+.cs-research-hero h1{font-size:clamp(72px,9vw,140px);letter-spacing:-.09em;margin:24px 0 7px}
+.cs-research-hero h1 small{display:block;margin:15px 0 25px;font:700 clamp(14px,1.8vw,21px)/1.4 "DM Sans",sans-serif;color:#ffbd82;letter-spacing:.3em}
+.cs-research-hero .cs-lead{font-size:clamp(24px,2.6vw,35px);max-width:24ch}
+.cs-research-art{border-radius:24px;box-shadow:0 32px 90px #000c,0 0 0 1px #ff851d15,0 0 45px #ff92191b}
+.cs-research-art:before{content:"";position:absolute;inset:12px;z-index:3;pointer-events:none;border:1px solid #ffbd7240;border-radius:16px}
+.cs-research-art img{aspect-ratio:1200/760;object-fit:cover}
+.cs-research-page .cs-metrics>div{background:linear-gradient(143deg,#241814,#131114)}
+.cs-research-page .cs-metrics strong{color:#ffbd7d}
+.cs-research-page .cs-stage[aria-pressed="true"]{border-color:#ffc089;background:linear-gradient(160deg,#4b291b,#241712)}
+.cs-research-roles{margin-top:25px;display:flex;flex-wrap:wrap;gap:10px;padding:18px;border:1px solid #ff8c2b39;border-radius:13px;background:#24171165}
+.cs-research-roles span{font:700 10px/1.3 "DM Sans",sans-serif;letter-spacing:.12em;color:#eccab2;padding:7px 10px;border-left:2px solid #ff8942}
+.cs-research-inventory-label{display:flex;align-items:center;gap:9px;font:700 11px/1.4 "DM Sans",sans-serif;letter-spacing:.08em;color:#ffb875}
+.cs-research-inventory-label small{font:600 11px/1.4 "DM Sans",sans-serif;color:#b4a092}
+.cs-research-page .cs-module-status.code{color:#ffb474;border-color:#ff9b4a98}
+.cs-module-provenance{font-size:10px!important;color:#a99483!important}
+.cs-research-proof{border:1px solid #ffa35647;padding:20px 22px;background:#25180f;border-radius:12px;margin-top:18px;color:#cdbdad}
+.cs-research-proof p{font-size:12px;line-height:1.75}
+.cs-research-proof strong{color:#ffbf8d}
+.case-feature-research{border-color:#e897504a;background:linear-gradient(130deg,#1f1715 0%,#0e0d10 63%,#23170f 100%)}
+.case-feature-research .case-counters{gap:19px}
+.case-feature-research .case-counters span{white-space:nowrap}
+.case-feature-research .case-feature-art{background:#211716}
+@media(max-width:1150px){.cs-research-hero h1{font-size:clamp(60px,8.2vw,100px)}.case-feature-research .case-counters{gap:13px}.case-feature-research .case-counters span{font-size:10px}}
+@media(max-width:900px){.cs-research-hero h1{font-size:clamp(70px,11vw,110px)}.cs-research-inventory-label{width:100%}.cs-research-art{transform:none!important}}
+@media(max-width:650px){.cs-research-hero h1{font-size:clamp(58px,16vw,94px)}.cs-research-hero h1 small{font-size:11px;letter-spacing:.2em}.cs-research-page .cs-module-status{font-size:8px}.cs-research-roles{gap:6px;padding:12px}.cs-research-roles span{font-size:9px}.case-feature-research .case-counters span{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.cs-research-page *{animation:none!important;transition:none!important}}
