@@ -56,7 +56,14 @@ test('directory-driven generator renders APAEA without altering EzeAD',async()=>
  assert.ok(!html.includes('Stripe card gateway variants'));
  assert.ok(file('index.html').includes('projects/ezead-marketplace/'));
 });
-test('all project SVG diagrams are XML-safe and do not impersonate screenshots',()=>{for(const name of ['cover.svg','editorial-flow.svg','membership-events.svg','research-network.svg']){const svg=file('projects/apaea-research-platform/assets/'+name);assert.match(svg,/<svg /);assert.match(svg,/<\\/svg>$/);assert.doesNotMatch(svg,/&(?!amp;|lt;|gt;|quot;|apos;|#\\d+;|#x[0-9a-f]+;)/i)}});
+test('project SVG media has valid XML-escaped text',()=>{
+ for(const name of ['cover.svg','editorial-flow.svg','membership-events.svg','research-network.svg']){
+   const svg=file('projects/apaea-research-platform/assets/'+name);
+   assert.ok(svg.startsWith('<svg '));
+   assert.ok(svg.endsWith('</svg>'));
+   assert.doesNotMatch(svg,/&(?!amp;|lt;|gt;|quot;|apos;|#\d+;|#x[0-9a-f]+;)/i);
+ }
+});
 test('case output is semantic, accessibly interactive and honest about evidence',()=>{
  const html=file('projects/apaea-research-platform/index.html');
  assert.match(html,/id="module-search"/);
