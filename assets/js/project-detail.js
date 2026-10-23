@@ -18,11 +18,7 @@
    // Text is already in the visible source cards: explanations are metadata-derived.
    if(selected&&header){
      header.textContent=$('b',selected)?.textContent||'';
-     const texts=Array.isArray(window.__unused)?[]:null; // Never infer production behavior from animation.
-     if(desc){ const notes={
-       main:['Accounts, verification, seller profiles and permission checks.','Listings, category fields, images and AI-assisted descriptions.','Country-aware search, geo filters, favourites and private messaging.','AI first response, agent handoff and human-reviewed outcomes.','Packages, boosts, payment code, moderation and administrative visibility.'],
-       core:['Separate store catalog, brands, filters and product details.','Cart updates, coupon logic and featured offers.','Shipping methods, gateway adapters and checkout controllers.','Order history, invoices, tracking and customer accounts.','Store tickets, deposits, withdrawals and administration.']
-     };desc.textContent=(notes[set.dataset.workflow]||[])[target]||desc.textContent;}
+     if(desc)desc.textContent=selected.dataset.flowDetail||desc.textContent;
    }
  }
  workflowButtons.forEach(button=>button.addEventListener('click',()=>{
