@@ -26,7 +26,7 @@ function renderGitlabCaseCard(item){
 }
 
 function renderGitlabPage(item){
- const provider=item.manifest.renderer==='github-brief'?'GitHub':'${provider}';const providerCaps=provider.toUpperCase();
+ const provider=item.manifest.renderer==='github-brief'?'GitHub':'GitLab';const providerCaps=provider.toUpperCase();
  const m=item.manifest,p=item.parsed,base=`https://sambukhari.github.io/syedallimujtaba.github.io/projects/${encodeURIComponent(m.slug)}/`;
  const good=m.modules.length>0;
  const stackTags=m.stack.split(",").map(s=>s.trim()).filter(Boolean).slice(0,7);
