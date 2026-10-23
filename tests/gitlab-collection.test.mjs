@@ -17,7 +17,7 @@ test('GitLab ZIP inventory includes exactly 36 unique repositories, 34 new',()=>
 });
 test('each new project has a source summary, responsive detail page and two valid conceptual diagrams',async()=>{
  const cases=await loadCaseStudies(root.pathname);
- assert.equal(cases.length,39);
+ assert.equal(cases.length,42);
  for(const record of archive){
    const item=cases.find(x=>x.slug===record.slug);assert.ok(item,'Missing case '+record.slug);
    assert.equal(item.manifest.renderer,'gitlab-brief');
@@ -42,15 +42,15 @@ test('each new project has a source summary, responsive detail page and two vali
  assert.equal(cases.find(x=>x.slug==='apaea-research-platform').parsed.total,36);
  assert.equal(cases.find(x=>x.slug==='priority-fix').parsed.total,8);
 });
-test('main portfolio and directory expose 38 repository cards without inflating featured cards',()=>{
+test('main portfolio and directory expose 41 project cards without inflating featured cards',()=>{
  const home=read('index.html'),directory=read('projects/index.html');
- assert.equal((home.match(/class="gc-entry"/g)||[]).length,38);
- assert.equal((directory.match(/class="gc-entry"/g)||[]).length,38);
+ assert.equal((home.match(/class="gc-entry"/g)||[]).length,41);
+ assert.equal((directory.match(/class="gc-entry"/g)||[]).length,41);
  assert.equal((home.match(/class="case-feature"/g)||[]).length,1);
  assert.ok(home.includes('case-feature-apaea-research-platform'));
  assert.ok(home.includes('case-feature-priority-fix'));
  assert.ok(home.includes('case-feature-ezead-marketplace'));
- assert.match(home,/Show all 38 repositories/);
+ assert.match(home,/Show all 41 projects/);
  assert.match(directory,/project directory/i);
  const categories=archive.map(x=>x.category);
  assert.ok(categories.includes('Mobile apps'));
