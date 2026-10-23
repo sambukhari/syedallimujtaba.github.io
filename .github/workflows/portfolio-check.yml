@@ -42,3 +42,4 @@ jobs:
           python tests/portrait_browser.py
           python tests/project_detail_browser.py
           python tests/apaea_browser.py
+          python tests/priority_fix_browser.py
