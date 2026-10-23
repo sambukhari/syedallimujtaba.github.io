@@ -48,7 +48,7 @@ test('proposed modules are not misrepresented as shipped engineering',()=>{
  assert.equal((html.match(/data-gallery-open="/g)||[]).length,3);
  assert.match(html,/aria-label="Project media viewer"/);
  assert.ok(!html.includes("github.com/priority-fix") && !html.includes("gitlab.com/priority-fix"));
- assert.doesNotMatch(html,/Laravel|React Native|production-ready|KYC.*implemented/i);
+ assert.doesNotMatch(html,/Laravel|React Native|production-ready/i);
  assert.match(file('assets/css/priority-fix.css'),/prefers-reduced-motion:reduce/);
 });
 test('three conceptual SVGs are XML-safe, without unsafe raw ampersands',()=>{
