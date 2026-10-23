@@ -41,3 +41,4 @@ jobs:
           python tests/scroll_story_browser.py
           python tests/portrait_browser.py
           python tests/project_detail_browser.py
+          python tests/apaea_browser.py
