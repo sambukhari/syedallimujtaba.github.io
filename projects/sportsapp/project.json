@@ -1,0 +1,126 @@
+{
+  "slug": "sportsapp",
+  "title": "Sportsapp",
+  "purpose": "Sports and creator social networking mobile app",
+  "stack": "React Native, Expo, Redux",
+  "repoPath": "sambukhari/Sportsapp",
+  "repository": "https://gitlab.com/sambukhari/Sportsapp",
+  "modules": [
+    {
+      "title": "Profiles & Followers",
+      "detail": "Creators, athletes, parents and followers"
+    },
+    {
+      "title": "Posts & Chat",
+      "detail": "Posts, comments, messages and albums"
+    },
+    {
+      "title": "Discovery & Scheduling",
+      "detail": "Discovery, location and schedule screens"
+    },
+    {
+      "title": "Donations & Subscriptions",
+      "detail": "Balance, donations and supporter plans"
+    }
+  ],
+  "checklist": [
+    "Present: registration, login and profile flows",
+    "Mobile API integration; backend routes not verified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": "Sports ecosystem",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Sports and creator social networking mobile app",
+  "summary": "Sports and creator social networking mobile app",
+  "overview": "Sports and creator social networking mobile app",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Sportsapp — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Sportsapp source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Sportsapp"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Profiles & Followers",
+      "body": "Creators, athletes, parents and followers",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Posts & Chat",
+      "body": "Posts, comments, messages and albums",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Discovery & Scheduling",
+      "body": "Discovery, location and schedule screens",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Donations & Subscriptions",
+      "body": "Balance, donations and supporter plans",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Profiles & Followers",
+        "detail": "Creators, athletes, parents and followers",
+        "icon": "layers"
+      },
+      {
+        "name": "Posts & Chat",
+        "detail": "Posts, comments, messages and albums",
+        "icon": "layers"
+      },
+      {
+        "name": "Discovery & Scheduling",
+        "detail": "Discovery, location and schedule screens",
+        "icon": "layers"
+      },
+      {
+        "name": "Donations & Subscriptions",
+        "detail": "Balance, donations and supporter plans",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "sport-me",
+      "title": "Sport Me — Backend"
+    },
+    {
+      "slug": "sport-me-flutter",
+      "title": "Sport Me Flutter — Placeholder"
+    },
+    {
+      "slug": "sportmenative",
+      "title": "SportMeNative"
+    },
+    {
+      "slug": "sportscms",
+      "title": "SportsCMS"
+    }
+  ]
+}

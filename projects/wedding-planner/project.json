@@ -1,0 +1,109 @@
+{
+  "slug": "wedding-planner",
+  "title": "Wedding Planner",
+  "purpose": "Event, meeting and booking platform with communications and payments",
+  "stack": "Laravel, PHP, Inertia, Sanctum, Stripe, Pusher",
+  "repoPath": "sambukhari/wedding-planner",
+  "repository": "https://gitlab.com/sambukhari/wedding-planner",
+  "modules": [
+    {
+      "title": "Events & Bookings",
+      "detail": "Event and booking administration"
+    },
+    {
+      "title": "Meetings",
+      "detail": "Meeting scheduling and user meetings"
+    },
+    {
+      "title": "Video & Chat",
+      "detail": "Agora meeting and chat controllers"
+    },
+    {
+      "title": "Payments",
+      "detail": "Stripe payment integration"
+    }
+  ],
+  "checklist": [
+    "Present: auth and admin user management",
+    "Laravel backend; standalone app API routes not verified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Event, meeting and booking platform with communications and payments",
+  "summary": "Event, meeting and booking platform with communications and payments",
+  "overview": "Event, meeting and booking platform with communications and payments",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Wedding Planner — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Wedding Planner source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Wedding Planner"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Events & Bookings",
+      "body": "Event and booking administration",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Meetings",
+      "body": "Meeting scheduling and user meetings",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Video & Chat",
+      "body": "Agora meeting and chat controllers",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Payments",
+      "body": "Stripe payment integration",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Events & Bookings",
+        "detail": "Event and booking administration",
+        "icon": "layers"
+      },
+      {
+        "name": "Meetings",
+        "detail": "Meeting scheduling and user meetings",
+        "icon": "layers"
+      },
+      {
+        "name": "Video & Chat",
+        "detail": "Agora meeting and chat controllers",
+        "icon": "layers"
+      },
+      {
+        "name": "Payments",
+        "detail": "Stripe payment integration",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

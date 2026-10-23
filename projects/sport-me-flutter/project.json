@@ -1,0 +1,63 @@
+{
+  "slug": "sport-me-flutter",
+  "title": "Sport Me Flutter — Placeholder",
+  "purpose": "Repository placeholder; no Flutter source is committed",
+  "stack": "Undetermined (README only)",
+  "repoPath": "sambukhari/sport-me-flutter",
+  "repository": "https://gitlab.com/sambukhari/sport-me-flutter",
+  "modules": [],
+  "checklist": [
+    "Not evidenced: no application code",
+    "Not evidenced: no application code",
+    "Not evidenced: no application code.",
+    "Not evidenced: no application code."
+  ],
+  "placeholder": true,
+  "category": "Archive only",
+  "family": "Sports ecosystem",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Repository placeholder; no Flutter source is committed",
+  "summary": "Repository placeholder; no Flutter source is committed",
+  "overview": "Repository placeholder; no Flutter source is committed",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Sport Me Flutter — Placeholder — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Sport Me Flutter — Placeholder source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Sport Me Flutter — Placeholder"
+    }
+  ],
+  "highlights": [],
+  "workflows": {
+    "main": []
+  },
+  "related": [
+    {
+      "slug": "sportsapp",
+      "title": "Sportsapp"
+    },
+    {
+      "slug": "sport-me",
+      "title": "Sport Me — Backend"
+    },
+    {
+      "slug": "sportmenative",
+      "title": "SportMeNative"
+    },
+    {
+      "slug": "sportscms",
+      "title": "SportsCMS"
+    }
+  ]
+}

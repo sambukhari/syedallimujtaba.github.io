@@ -1,0 +1,109 @@
+{
+  "slug": "redtech",
+  "title": "RedTech Commerce",
+  "purpose": "E-commerce web system built with the Aimeos commerce platform",
+  "stack": "Laravel, PHP, Aimeos, Breeze, Sanctum",
+  "repoPath": "sambukhari/redtech",
+  "repository": "https://gitlab.com/sambukhari/redtech",
+  "modules": [
+    {
+      "title": "Commerce Platform",
+      "detail": "Aimeos catalog, product, customer and order extensions"
+    },
+    {
+      "title": "Product Mapping",
+      "detail": "Application-level product mapping controller"
+    },
+    {
+      "title": "User Profiles",
+      "detail": "Laravel auth and profile controllers"
+    },
+    {
+      "title": "Administration",
+      "detail": "Aimeos administration extensions"
+    }
+  ],
+  "checklist": [
+    "Present: Breeze authentication and profile controller",
+    "Framework APIs present; custom mobile app API not verified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Commerce & marketplaces",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "E-commerce web system built with the Aimeos commerce platform",
+  "summary": "E-commerce web system built with the Aimeos commerce platform",
+  "overview": "E-commerce web system built with the Aimeos commerce platform",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "RedTech Commerce — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "RedTech Commerce source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for RedTech Commerce"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Commerce Platform",
+      "body": "Aimeos catalog, product, customer and order extensions",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Product Mapping",
+      "body": "Application-level product mapping controller",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "User Profiles",
+      "body": "Laravel auth and profile controllers",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Administration",
+      "body": "Aimeos administration extensions",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Commerce Platform",
+        "detail": "Aimeos catalog, product, customer and order extensions",
+        "icon": "layers"
+      },
+      {
+        "name": "Product Mapping",
+        "detail": "Application-level product mapping controller",
+        "icon": "layers"
+      },
+      {
+        "name": "User Profiles",
+        "detail": "Laravel auth and profile controllers",
+        "icon": "layers"
+      },
+      {
+        "name": "Administration",
+        "detail": "Aimeos administration extensions",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

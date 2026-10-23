@@ -1,0 +1,114 @@
+{
+  "slug": "test-the-ummah",
+  "title": "Test The Ummah — Earlier App",
+  "purpose": "Earlier quiz, question and examination web application",
+  "stack": "Laravel, PHP, Jetstream, Inertia, Sanctum",
+  "repoPath": "sambukhari/test-the-ummah",
+  "repository": "https://gitlab.com/sambukhari/test-the-ummah",
+  "modules": [
+    {
+      "title": "Exams",
+      "detail": "Exam creation and exam screens"
+    },
+    {
+      "title": "Quizzes",
+      "detail": "Quiz pages and controller"
+    },
+    {
+      "title": "Questions & Answers",
+      "detail": "Question types and answer handling"
+    },
+    {
+      "title": "Results",
+      "detail": "Result review and statistics components"
+    }
+  ],
+  "checklist": [
+    "Present: user controller and Jetstream authentication",
+    "Laravel/Inertia and Sanctum; standalone mobile API unverified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": "Test The Ummah",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Earlier quiz, question and examination web application",
+  "summary": "Earlier quiz, question and examination web application",
+  "overview": "Earlier quiz, question and examination web application",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Test The Ummah — Earlier App — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Test The Ummah — Earlier App source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Test The Ummah — Earlier App"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Exams",
+      "body": "Exam creation and exam screens",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Quizzes",
+      "body": "Quiz pages and controller",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Questions & Answers",
+      "body": "Question types and answer handling",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Results",
+      "body": "Result review and statistics components",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Exams",
+        "detail": "Exam creation and exam screens",
+        "icon": "layers"
+      },
+      {
+        "name": "Quizzes",
+        "detail": "Quiz pages and controller",
+        "icon": "layers"
+      },
+      {
+        "name": "Questions & Answers",
+        "detail": "Question types and answer handling",
+        "icon": "layers"
+      },
+      {
+        "name": "Results",
+        "detail": "Result review and statistics components",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "ttu-test-the-ummah",
+      "title": "TTU — Test The Ummah"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "marriage-events-management",
+  "title": "Marriage Events Management",
+  "purpose": "Administration platform for marriage-related events, matches and meetings",
+  "stack": "Laravel, PHP, Sanctum",
+  "repoPath": "sambukhari/marriage-events-management",
+  "repository": "https://gitlab.com/sambukhari/marriage-events-management",
+  "modules": [
+    {
+      "title": "Events",
+      "detail": "Event management controller"
+    },
+    {
+      "title": "Matches",
+      "detail": "Match management controller"
+    },
+    {
+      "title": "Meetings",
+      "detail": "Meeting administration"
+    },
+    {
+      "title": "Dashboard",
+      "detail": "Admin overview and user records"
+    }
+  ],
+  "checklist": [
+    "Present: admin auth and user controllers",
+    "Sanctum dependency; dedicated app endpoints not confirmed",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Administration platform for marriage-related events, matches and meetings",
+  "summary": "Administration platform for marriage-related events, matches and meetings",
+  "overview": "Administration platform for marriage-related events, matches and meetings",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Marriage Events Management — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Marriage Events Management source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Marriage Events Management"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Events",
+      "body": "Event management controller",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Matches",
+      "body": "Match management controller",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Meetings",
+      "body": "Meeting administration",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Dashboard",
+      "body": "Admin overview and user records",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Events",
+        "detail": "Event management controller",
+        "icon": "layers"
+      },
+      {
+        "name": "Matches",
+        "detail": "Match management controller",
+        "icon": "layers"
+      },
+      {
+        "name": "Meetings",
+        "detail": "Meeting administration",
+        "icon": "layers"
+      },
+      {
+        "name": "Dashboard",
+        "detail": "Admin overview and user records",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

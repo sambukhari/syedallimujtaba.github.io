@@ -1,0 +1,109 @@
+{
+  "slug": "grocery-app-admin-panel",
+  "title": "Grocery Admin & API",
+  "purpose": "Grocery commerce administration and mobile API backend",
+  "stack": "Laravel, PHP, Sanctum",
+  "repoPath": "sambukhari/grocery-app-admin-panel",
+  "repository": "https://gitlab.com/sambukhari/grocery-app-admin-panel",
+  "modules": [
+    {
+      "title": "Products & Categories",
+      "detail": "Product, category and banner management"
+    },
+    {
+      "title": "Orders & Shipping",
+      "detail": "Order lifecycle and shipment administration"
+    },
+    {
+      "title": "Wallet & Feedback",
+      "detail": "Transactions, ratings and customer feedback"
+    },
+    {
+      "title": "Notifications",
+      "detail": "Customer notifications and admin dashboards"
+    }
+  ],
+  "checklist": [
+    "Present: admin users and API user controllers",
+    "Present: API/v1 controllers for catalog/cart/orders",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Commerce & marketplaces",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Grocery commerce administration and mobile API backend",
+  "summary": "Grocery commerce administration and mobile API backend",
+  "overview": "Grocery commerce administration and mobile API backend",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Grocery Admin & API — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Grocery Admin & API source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Grocery Admin & API"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Products & Categories",
+      "body": "Product, category and banner management",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Orders & Shipping",
+      "body": "Order lifecycle and shipment administration",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Wallet & Feedback",
+      "body": "Transactions, ratings and customer feedback",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Notifications",
+      "body": "Customer notifications and admin dashboards",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Products & Categories",
+        "detail": "Product, category and banner management",
+        "icon": "layers"
+      },
+      {
+        "name": "Orders & Shipping",
+        "detail": "Order lifecycle and shipment administration",
+        "icon": "layers"
+      },
+      {
+        "name": "Wallet & Feedback",
+        "detail": "Transactions, ratings and customer feedback",
+        "icon": "layers"
+      },
+      {
+        "name": "Notifications",
+        "detail": "Customer notifications and admin dashboards",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

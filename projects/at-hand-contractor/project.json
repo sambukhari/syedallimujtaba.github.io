@@ -1,0 +1,109 @@
+{
+  "slug": "at-hand-contractor",
+  "title": "At-Hand Contractor",
+  "purpose": "Contractor mobile app for jobs related to property upkeep",
+  "stack": "React Native, Axios, Firebase",
+  "repoPath": "sambukhari/At-Hand-Contractor",
+  "repository": "https://gitlab.com/sambukhari/At-Hand-Contractor",
+  "modules": [
+    {
+      "title": "My Jobs",
+      "detail": "Assigned work and job screens"
+    },
+    {
+      "title": "My Cards",
+      "detail": "Job/card listings"
+    },
+    {
+      "title": "Report Handling",
+      "detail": "Issue reports and video media"
+    },
+    {
+      "title": "Profile",
+      "detail": "Contractor account details"
+    }
+  ],
+  "checklist": [
+    "Present: login, sign-up and profile screens",
+    "App-side Axios integration; server outside repo",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Contractor mobile app for jobs related to property upkeep",
+  "summary": "Contractor mobile app for jobs related to property upkeep",
+  "overview": "Contractor mobile app for jobs related to property upkeep",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "At-Hand Contractor — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "At-Hand Contractor source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for At-Hand Contractor"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "My Jobs",
+      "body": "Assigned work and job screens",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "My Cards",
+      "body": "Job/card listings",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Report Handling",
+      "body": "Issue reports and video media",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Profile",
+      "body": "Contractor account details",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "My Jobs",
+        "detail": "Assigned work and job screens",
+        "icon": "layers"
+      },
+      {
+        "name": "My Cards",
+        "detail": "Job/card listings",
+        "icon": "layers"
+      },
+      {
+        "name": "Report Handling",
+        "detail": "Issue reports and video media",
+        "icon": "layers"
+      },
+      {
+        "name": "Profile",
+        "detail": "Contractor account details",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

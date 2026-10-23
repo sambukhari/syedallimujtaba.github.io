@@ -1,0 +1,109 @@
+{
+  "slug": "classima",
+  "title": "Classima",
+  "purpose": "WordPress classifieds marketplace with listings and store extensions",
+  "stack": "WordPress, PHP, Classified Listing plugins",
+  "repoPath": "sambukhari/classima",
+  "repository": "https://gitlab.com/sambukhari/classima",
+  "modules": [
+    {
+      "title": "Ads & Categories",
+      "detail": "Classified listing plugin features"
+    },
+    {
+      "title": "Stores",
+      "detail": "Classified Listing Store extension"
+    },
+    {
+      "title": "Payments",
+      "detail": "Premium listing payment gateways in plugins"
+    },
+    {
+      "title": "Site Administration",
+      "detail": "WordPress theme/plugin management"
+    }
+  ],
+  "checklist": [
+    "WordPress account system and listing plugin user features",
+    "WordPress/API plugin code present; custom app integration unverified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Commerce & marketplaces",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "WordPress classifieds marketplace with listings and store extensions",
+  "summary": "WordPress classifieds marketplace with listings and store extensions",
+  "overview": "WordPress classifieds marketplace with listings and store extensions",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Classima — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Classima source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Classima"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Ads & Categories",
+      "body": "Classified listing plugin features",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Stores",
+      "body": "Classified Listing Store extension",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Payments",
+      "body": "Premium listing payment gateways in plugins",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Site Administration",
+      "body": "WordPress theme/plugin management",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Ads & Categories",
+        "detail": "Classified listing plugin features",
+        "icon": "layers"
+      },
+      {
+        "name": "Stores",
+        "detail": "Classified Listing Store extension",
+        "icon": "layers"
+      },
+      {
+        "name": "Payments",
+        "detail": "Premium listing payment gateways in plugins",
+        "icon": "layers"
+      },
+      {
+        "name": "Site Administration",
+        "detail": "WordPress theme/plugin management",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

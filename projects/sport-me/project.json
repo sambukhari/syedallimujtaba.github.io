@@ -1,0 +1,126 @@
+{
+  "slug": "sport-me",
+  "title": "Sport Me — Backend",
+  "purpose": "Sports programs, players and payment-oriented web backend",
+  "stack": "Laravel, PHP, Stripe",
+  "repoPath": "sambukhari/sport-me",
+  "repository": "https://gitlab.com/sambukhari/sport-me",
+  "modules": [
+    {
+      "title": "Players",
+      "detail": "Player administration"
+    },
+    {
+      "title": "Programs",
+      "detail": "Sports program administration"
+    },
+    {
+      "title": "Payments",
+      "detail": "Payment controller and Stripe dependency"
+    },
+    {
+      "title": "Dashboard",
+      "detail": "Admin dashboard and home pages"
+    }
+  ],
+  "checklist": [
+    "Present: Laravel user registration and login",
+    "Laravel backend; app-specific API not established",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": "Sports ecosystem",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Sports programs, players and payment-oriented web backend",
+  "summary": "Sports programs, players and payment-oriented web backend",
+  "overview": "Sports programs, players and payment-oriented web backend",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Sport Me — Backend — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Sport Me — Backend source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Sport Me — Backend"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Players",
+      "body": "Player administration",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Programs",
+      "body": "Sports program administration",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Payments",
+      "body": "Payment controller and Stripe dependency",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Dashboard",
+      "body": "Admin dashboard and home pages",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Players",
+        "detail": "Player administration",
+        "icon": "layers"
+      },
+      {
+        "name": "Programs",
+        "detail": "Sports program administration",
+        "icon": "layers"
+      },
+      {
+        "name": "Payments",
+        "detail": "Payment controller and Stripe dependency",
+        "icon": "layers"
+      },
+      {
+        "name": "Dashboard",
+        "detail": "Admin dashboard and home pages",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "sportsapp",
+      "title": "Sportsapp"
+    },
+    {
+      "slug": "sport-me-flutter",
+      "title": "Sport Me Flutter — Placeholder"
+    },
+    {
+      "slug": "sportmenative",
+      "title": "SportMeNative"
+    },
+    {
+      "slug": "sportscms",
+      "title": "SportsCMS"
+    }
+  ]
+}

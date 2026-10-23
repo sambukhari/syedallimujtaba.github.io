@@ -1,0 +1,109 @@
+{
+  "slug": "apse",
+  "title": "APSE",
+  "purpose": "Mobile ordering app with customer and admin workflows",
+  "stack": "React Native, Expo, Redux Toolkit, Firebase Messaging, Razorpay",
+  "repoPath": "main-lead/APSE",
+  "repository": "https://gitlab.com/main-lead/APSE",
+  "modules": [
+    {
+      "title": "Catalog & Cart",
+      "detail": "Product listings and shopping basket"
+    },
+    {
+      "title": "Orders",
+      "detail": "Order placement, history and tracking"
+    },
+    {
+      "title": "Admin Tools",
+      "detail": "Invoices, ledger and user list"
+    },
+    {
+      "title": "Profiles",
+      "detail": "Customer and admin account screens"
+    }
+  ],
+  "checklist": [
+    "Present: customer and admin login/profile screens",
+    "Client-side API integration; server code not verified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Mobile ordering app with customer and admin workflows",
+  "summary": "Mobile ordering app with customer and admin workflows",
+  "overview": "Mobile ordering app with customer and admin workflows",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "APSE — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "APSE source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for APSE"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Catalog & Cart",
+      "body": "Product listings and shopping basket",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Orders",
+      "body": "Order placement, history and tracking",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Admin Tools",
+      "body": "Invoices, ledger and user list",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Profiles",
+      "body": "Customer and admin account screens",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Catalog & Cart",
+        "detail": "Product listings and shopping basket",
+        "icon": "layers"
+      },
+      {
+        "name": "Orders",
+        "detail": "Order placement, history and tracking",
+        "icon": "layers"
+      },
+      {
+        "name": "Admin Tools",
+        "detail": "Invoices, ledger and user list",
+        "icon": "layers"
+      },
+      {
+        "name": "Profiles",
+        "detail": "Customer and admin account screens",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

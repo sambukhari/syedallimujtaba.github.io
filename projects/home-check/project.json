@@ -1,0 +1,109 @@
+{
+  "slug": "home-check",
+  "title": "Home Check",
+  "purpose": "Multi-step mobile onboarding and plan selection flow for Home Check",
+  "stack": "React Native, Expo, TypeScript, i18next",
+  "repoPath": "sambukhari/home-check",
+  "repository": "https://gitlab.com/sambukhari/home-check",
+  "modules": [
+    {
+      "title": "Plan Selection",
+      "detail": "Choose a plan and add-ons"
+    },
+    {
+      "title": "Personal Information",
+      "detail": "Collect details through guided steps"
+    },
+    {
+      "title": "Login",
+      "detail": "Login screen and components"
+    },
+    {
+      "title": "Localization",
+      "detail": "English and Chinese translation resources"
+    }
+  ],
+  "checklist": [
+    "Login screen present; full account administration unverified",
+    "Axios dependency present; app endpoints not verified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Multi-step mobile onboarding and plan selection flow for Home Check",
+  "summary": "Multi-step mobile onboarding and plan selection flow for Home Check",
+  "overview": "Multi-step mobile onboarding and plan selection flow for Home Check",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Home Check — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Home Check source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Home Check"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Plan Selection",
+      "body": "Choose a plan and add-ons",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Personal Information",
+      "body": "Collect details through guided steps",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Login",
+      "body": "Login screen and components",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Localization",
+      "body": "English and Chinese translation resources",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Plan Selection",
+        "detail": "Choose a plan and add-ons",
+        "icon": "layers"
+      },
+      {
+        "name": "Personal Information",
+        "detail": "Collect details through guided steps",
+        "icon": "layers"
+      },
+      {
+        "name": "Login",
+        "detail": "Login screen and components",
+        "icon": "layers"
+      },
+      {
+        "name": "Localization",
+        "detail": "English and Chinese translation resources",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

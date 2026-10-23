@@ -1,0 +1,123 @@
+{
+  "slug": "trade-core-apps",
+  "title": "Trade Core — Mobile",
+  "purpose": "Mobile trading, market information and social investment app",
+  "stack": "React Native, Expo Router, TypeScript, Supabase SDK, React Query, Zustand",
+  "repoPath": "sambukhari/trade-core-apps",
+  "repository": "https://gitlab.com/sambukhari/trade-core-apps",
+  "modules": [
+    {
+      "title": "Markets & Analysis",
+      "detail": "Stock pages, technical analysis, news and screeners"
+    },
+    {
+      "title": "Trading Tools",
+      "detail": "Paper trading, watchlists and trade history"
+    },
+    {
+      "title": "Investing",
+      "detail": "SIP, IPO and transaction screens"
+    },
+    {
+      "title": "Social & Chat",
+      "detail": "Groups, posts and direct messages"
+    },
+    {
+      "title": "Broker Verification",
+      "detail": "Broker-verification profile screen"
+    }
+  ],
+  "checklist": [
+    "Present: login, sign-up, settings and editable profiles",
+    "Client integrations and API adapter present",
+    "Partial: broker-verification screen; identity KYC not proven.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": "Trade Core",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Mobile trading, market information and social investment app",
+  "summary": "Mobile trading, market information and social investment app",
+  "overview": "Mobile trading, market information and social investment app",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Trade Core — Mobile — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Trade Core — Mobile source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Trade Core — Mobile"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Markets & Analysis",
+      "body": "Stock pages, technical analysis, news and screeners",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Trading Tools",
+      "body": "Paper trading, watchlists and trade history",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Investing",
+      "body": "SIP, IPO and transaction screens",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Social & Chat",
+      "body": "Groups, posts and direct messages",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Markets & Analysis",
+        "detail": "Stock pages, technical analysis, news and screeners",
+        "icon": "layers"
+      },
+      {
+        "name": "Trading Tools",
+        "detail": "Paper trading, watchlists and trade history",
+        "icon": "layers"
+      },
+      {
+        "name": "Investing",
+        "detail": "SIP, IPO and transaction screens",
+        "icon": "layers"
+      },
+      {
+        "name": "Social & Chat",
+        "detail": "Groups, posts and direct messages",
+        "icon": "layers"
+      },
+      {
+        "name": "Broker Verification",
+        "detail": "Broker-verification profile screen",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "trade-core",
+      "title": "Trade Core — Web & API"
+    }
+  ]
+}
