@@ -8,7 +8,7 @@ export function renderSiteHeader({root='',page='home'}={}){
   {text:'Experience',url:home+'#journey',key:'experience'},
   {text:'Expertise',url:home+'#stack',key:'expertise'}
  ];
- return `<header class="site-header universal-header" data-site-header><div class="universal-shell universal-header-row">
+ return `<header id="top" class="site-header universal-header" data-site-header><div class="universal-shell universal-header-row">
  <a class="universal-brand" href="${home}#home" aria-label="Ali Mujtaba — portfolio home"><span class="universal-brand-mark" aria-hidden="true">a<span>m</span><i>.</i></span><span class="universal-brand-text">ALI MUJTABA<small>ENGINEER · TECH LEAD</small></span></a>
  <button class="menu-toggle universal-menu-toggle" type="button" data-site-menu aria-controls="navigation" aria-expanded="false" aria-label="Open site navigation"><span>Menu</span><i aria-hidden="true"></i></button>
  <nav class="universal-nav" id="navigation" aria-label="Main navigation">${links.map(x=>`<a href="${x.url}"${page===x.key?' aria-current="page"':''}>${escapeHTML(x.text)}</a>`).join('')}
@@ -32,6 +32,5 @@ export function applySiteShell(html,{root='../../',page='detail',archived=false}
  const assets=`<link rel="stylesheet" href="${root}assets/css/site-shell.css"><script defer src="${root}assets/js/site-shell.js"></script>`;
  if(!output.includes('</head>'))throw Error('Missing document head');
  output=output.replace('</head>',(archived?'<meta name="robots" content="noindex,follow">':'')+assets+'</head>');
- if(page!=='home')output=output.replace(/<main\b/, '<main id="top"');
  return output;
 }
