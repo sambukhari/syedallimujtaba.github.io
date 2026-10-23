@@ -1,0 +1,98 @@
+{
+  "slug": "php-class-utilities",
+  "title": "PHP Class Utilities",
+  "repoPath": "ashiq/PHP_CLASS",
+  "repository": "https://github.com/ashiq/PHP_CLASS",
+  "sourceBranch": "master",
+  "reviewed": "2026-10-24",
+  "renderer": "github-brief",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "placeholder": false,
+  "modules": [
+    {
+      "title": "Customer data helper classes",
+      "detail": "Standalone PHP helper methods for customer information records; authorization enforcement is not independently verified.",
+      "source": "Customer-information helper methods"
+    },
+    {
+      "title": "Page & section content methods",
+      "detail": "Legacy content page and section management through PHP class methods.",
+      "source": "Page/section content-management methods"
+    },
+    {
+      "title": "Social wall & friend feed",
+      "detail": "Social posts and friend feed operations through PHP utilities; SQL safety requires separate audit.",
+      "source": "Social wall post and friend-feed utilities"
+    }
+  ],
+  "checklist": [
+    "Customer record helpers evidenced; robust authorization is not verified.",
+    "No dedicated app API evidenced; direct PHP class methods.",
+    "Not evidenced.",
+    "Not evidenced."
+  ],
+  "category": "Developer tools",
+  "purpose": "Three standalone legacy PHP utility classes for customer records, content pages and social feed operations; not a full application.",
+  "stack": "Legacy PHP, object-oriented classes, direct SQL database calls",
+  "eyebrow": "LEGACY CODE UTILITIES / SOURCE OVERVIEW",
+  "subtitle": "Reusable PHP helpers for records, pages and social content.",
+  "summary": "Compact legacy PHP classes for customer information, content management and social wall or friend-feed operations.",
+  "overview": "This repository holds three root-level PHP classes rather than a deployed application. Source evidence covers customer records, page/section content operations and social wall helpers. Direct SQL queries require input validation and SQL-injection safety review before any reuse.",
+  "focus": "A developer utility project—not a launched SaaS, current framework package, security-reviewed system or standalone mobile API.",
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Customer data helper classes",
+      "body": "Standalone PHP helper methods for customer information records; authorization enforcement is not independently verified.",
+      "icon": "layers"
+    },
+    {
+      "number": "02",
+      "title": "Page & section content methods",
+      "body": "Legacy content page and section management through PHP class methods.",
+      "icon": "layers"
+    },
+    {
+      "number": "03",
+      "title": "Social wall & friend feed",
+      "body": "Social posts and friend feed operations through PHP utilities; SQL safety requires separate audit.",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Customer data helper classes",
+        "detail": "Standalone PHP helper methods for customer information records; authorization enforcement is not independently verified.",
+        "icon": "layers"
+      },
+      {
+        "name": "Page & section content methods",
+        "detail": "Legacy content page and section management through PHP class methods.",
+        "icon": "layers"
+      },
+      {
+        "name": "Social wall & friend feed",
+        "detail": "Social posts and friend feed operations through PHP utilities; SQL safety requires separate audit.",
+        "icon": "layers"
+      }
+    ]
+  },
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "PHP Class Utilities — source overview",
+      "alt": "Conceptual overview for PHP Class Utilities",
+      "caption": "Illustrated from source-described modules, not an application screenshot."
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "PHP Class Utilities — module relationships",
+      "alt": "Source module diagram for PHP Class Utilities",
+      "caption": "Illustrative relationships only; production operation and runtime integration were not independently verified."
+    }
+  ]
+}
