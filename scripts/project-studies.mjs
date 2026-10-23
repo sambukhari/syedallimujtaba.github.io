@@ -4,6 +4,7 @@ import {parseTableInventory,renderResearchCaseCard,renderResearchCasePage} from 
 import {parsePriorityFixInventory,renderPriorityFixCard,renderPriorityFixPage} from './priority-fix.mjs';
 import {parseGitlabBrief,renderGitlabCaseCard,renderGitlabPage} from './gitlab-brief.mjs';
 import {parseGithubBrief} from './github-brief.mjs';
+import {applySiteShell} from './site-shell.mjs';
 function esc(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 
 function safeHref(url){const u=String(url||"");return /^https:\/\/github\.com\/[a-z0-9_.-]+\/[a-z0-9_.-]+(?:\/(?:blob|tree)\/[a-zA-Z0-9_./%-]+)?\/?$/i.test(u)?u:"#source"; }
@@ -83,7 +84,7 @@ return `<article class="case-feature" aria-labelledby="case-feature-${esc(m.slug
 <div class="case-feature-body"><p class="case-kicker">FEATURED CASE STUDY / SOURCE-REVIEWED</p><h3 id="case-feature-${esc(m.slug)}">${esc(m.title)} <span>↗</span></h3><p class="case-summary">${esc(m.summary)}</p><div class="case-counters"><span><b>${stats.main}</b> main-app modules</span>${stats.core?`<span><b>${stats.core}</b> separate storefront modules</span>`:""}</div><div class="case-tagline">${m.stack.slice(0,4).map(t=>`<span>${esc(t)}</span>`).join("")}</div><a class="case-feature-link" href="${url}">Explore modules, workflows &amp; gallery <span aria-hidden="true">↗</span></a><p class="case-disclosure">Code inventory, not production-performance claims.</p></div></article>`;
 }
 
-function renderCasePage(item){
+function renderCasePageRaw(item){
 if(item.manifest?.renderer==='github-brief')return renderGitlabPage(item);
 if(item.manifest?.renderer==='gitlab-brief')return renderGitlabPage(item);
 if(item.manifest?.renderer==='tenant')return renderPriorityFixPage(item);
@@ -141,6 +142,7 @@ return `<!doctype html>
 </body>
 </html>\n`;
 }
+function renderCasePage(item){return applySiteShell(renderCasePageRaw(item),{root:'../../',page:'detail',archived:!!item.manifest?.placeholder});}
 export {parseInventory,renderCaseCard,renderCasePage,validateCase};
 export async function loadCaseStudies(root){
  const directory=path.join(root,"projects");

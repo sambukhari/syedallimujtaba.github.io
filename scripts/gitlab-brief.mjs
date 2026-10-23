@@ -1,4 +1,5 @@
 /* Reusable GitLab repository portfolio renderer: evidence-accurate static HTML. */
+import {applySiteShell} from './site-shell.mjs';
 
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))
 
@@ -90,9 +91,10 @@ function renderCollection(repos,prefix="projects/",teaser=true){
  <p class="gc-footnote">Source: uploaded GitLab and GitHub documentation ZIPs. Architecture art is illustrative. Application code and production status have not been independently audited; empty repositories are labeled as such.</p></section>`;
 }
 
-function renderProjectIndex(repos){
+function renderProjectIndexRaw(repos){
  const content=renderCollection(repos,"",false);
  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Engineering Project Directory | Ali Mujtaba</title><meta name="description" content="Explore ${repos.length} GitHub and GitLab project entries, real module summaries, responsive case studies and source evidence from Ali Mujtaba's software engineering portfolio."><meta name="theme-color" content="#09090b"><link rel="canonical" href="https://sambukhari.github.io/syedallimujtaba.github.io/projects/"><link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/css/project-studies.css"><link rel="stylesheet" href="../assets/css/gitlab-collection.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><script defer src="../assets/js/gitlab-collection.js"></script></head><body class="cs-page gc-index"><a class="cs-skip" href="#directory">Skip to project directory</a><header class="cs-header"><div class="cs-shell cs-header-inner"><a href="../index.html#home" class="cs-brand"><span class="cs-brand-icon">a<span>m</span></span><span>ALI MUJTABA<small>ENGINEER &amp; TECH LEAD</small></span></a><nav><a href="../index.html#work">Portfolio</a><a href="../index.html#about">About</a><a class="cs-nav-contact" href="../index.html#contact">Contact ↗</a></nav></div></header><main id="directory" class="cs-shell"><nav class="cs-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html#home">Home</a><span>/</span><strong>Engineering project directory</strong></nav><div class="gc-index-hero"><span class="cs-section-index">ENGINEERING WORK / DOCUMENTED REPOSITORIES</span><h1>Products, systems,<br><em>&amp; everything behind them.</em></h1><p>Every distinct project gets a dedicated explanation. Companion frontend/backend repositories share one entry, and empty placeholders are clearly labeled.</p></div>${content}</main><footer class="cs-footer"><div class="cs-shell"><span>ALI MUJTABA · ENGINEERING WITH INTENT</span><a href="../index.html#work">← Featured work</a><span>${repos.length} DISTINCT PROJECTS</span></div></footer></body></html>\n`;
 }
 
+function renderProjectIndex(repos){return applySiteShell(renderProjectIndexRaw(repos),{root:'../',page:'projects'});}
 export {parseGitlabBrief,renderGitlabCaseCard,renderGitlabPage,renderCollection,renderProjectIndex};
