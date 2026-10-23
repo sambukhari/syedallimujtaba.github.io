@@ -47,7 +47,7 @@ test('proposed modules are not misrepresented as shipped engineering',()=>{
  assert.match(html,/data-flow-detail=/);
  assert.equal((html.match(/data-gallery-open="/g)||[]).length,3);
  assert.match(html,/aria-label="Project media viewer"/);
- assert.doesNotMatch(html,/github.com/.*priority-fix|gitlab.com/.*priority-fix/i);
+ assert.ok(!html.includes("github.com/priority-fix") && !html.includes("gitlab.com/priority-fix"));
  assert.doesNotMatch(html,/Laravel|React Native|production-ready|KYC.*implemented/i);
  assert.match(file('assets/css/priority-fix.css'),/prefers-reduced-motion:reduce/);
 });
