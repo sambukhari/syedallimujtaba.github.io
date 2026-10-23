@@ -1,5 +1,5 @@
 /* Source-derived GitLab case generation. SVGs are labeled diagrams, not screenshots. */
-s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;"}[c]))
+const xml=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;"}[c]))
 function makeDiagram(m,kind="cover"){
  const title=xml(m.title.length>29?m.title.slice(0,27)+"…":m.title);
  const category=xml(m.category.toUpperCase());
