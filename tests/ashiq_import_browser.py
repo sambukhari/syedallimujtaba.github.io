@@ -32,7 +32,7 @@ try:
     page.locator('[data-collection-search]').fill('swagify')
     verify(page.locator('.gc-entry:visible').count()==1,f'{width}: one Swagify product despite two repositories')
     page.locator('[data-collection-search]').fill('')
-   for slug,count,term in [('boxes-by-swagify',8,'logo'),('resume-ezead',4,'testimonial'),('php-class-utilities',3,'friend')]:
+   for slug,count,term in [('boxes-by-swagify',8,'logo-related'),('resume-ezead',4,'testimonial'),('php-class-utilities',3,'friend')]:
     response=page.goto(url+'projects/'+slug+'/',wait_until='domcontentloaded')
     verify(response.status==200,f'{width}: {slug} page available')
     verify(page.locator('#case-title').is_visible(),f'{width}: {slug} heading')
