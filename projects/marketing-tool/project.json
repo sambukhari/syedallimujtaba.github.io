@@ -1,0 +1,46 @@
+{
+  "slug": "marketing-tool",
+  "title": "Marketing Tool — Placeholder",
+  "purpose": "Minimal marketing-tool placeholder project",
+  "stack": "Undetermined (README and .gitignore only)",
+  "repoPath": "sambukhari/marketing-tool",
+  "repository": "https://gitlab.com/sambukhari/marketing-tool",
+  "modules": [],
+  "checklist": [
+    "Not evidenced: no application code",
+    "Not evidenced: no application code",
+    "Not evidenced: no application code.",
+    "Not evidenced: no application code."
+  ],
+  "placeholder": true,
+  "category": "Archive only",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Minimal marketing-tool placeholder project",
+  "summary": "Minimal marketing-tool placeholder project",
+  "overview": "Minimal marketing-tool placeholder project",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Marketing Tool — Placeholder — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Marketing Tool — Placeholder source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Marketing Tool — Placeholder"
+    }
+  ],
+  "highlights": [],
+  "workflows": {
+    "main": []
+  },
+  "related": []
+}

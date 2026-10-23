@@ -1,0 +1,46 @@
+{
+  "slug": "hc",
+  "title": "HC — Empty Repository",
+  "purpose": "Empty GitLab project; purpose and implementation are not verifiable",
+  "stack": "No application files committed",
+  "repoPath": "sambukhari/hc",
+  "repository": "https://gitlab.com/sambukhari/hc",
+  "modules": [],
+  "checklist": [
+    "Not implemented in current repository",
+    "Not implemented in current repository",
+    "Not implemented in current repository.",
+    "Not implemented in current repository."
+  ],
+  "placeholder": true,
+  "category": "Archive only",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Empty GitLab project; purpose and implementation are not verifiable",
+  "summary": "Empty GitLab project; purpose and implementation are not verifiable",
+  "overview": "Empty GitLab project; purpose and implementation are not verifiable",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "HC — Empty Repository — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "HC — Empty Repository source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for HC — Empty Repository"
+    }
+  ],
+  "highlights": [],
+  "workflows": {
+    "main": []
+  },
+  "related": []
+}

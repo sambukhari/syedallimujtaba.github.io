@@ -1,0 +1,109 @@
+{
+  "slug": "muslimburial-community",
+  "title": "MuslimBurial Community",
+  "purpose": "Community and support mobile app around Muslim burial planning",
+  "stack": "React Native, Expo, Redux Toolkit",
+  "repoPath": "sambukhari/MuslimBurial",
+  "repository": "https://gitlab.com/sambukhari/MuslimBurial",
+  "modules": [
+    {
+      "title": "Communities & Groups",
+      "detail": "Create and discover communities and groups"
+    },
+    {
+      "title": "Donations",
+      "detail": "Single payments, direct debits and transaction history"
+    },
+    {
+      "title": "Family & Mosques",
+      "detail": "Next of kin and local mosque screens"
+    },
+    {
+      "title": "Messaging & Articles",
+      "detail": "Chat and article screens"
+    }
+  ],
+  "checklist": [
+    "Present: registration, sign-in, verification and profile views",
+    "Client services directory present; endpoints should be checked",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Community and support mobile app around Muslim burial planning",
+  "summary": "Community and support mobile app around Muslim burial planning",
+  "overview": "Community and support mobile app around Muslim burial planning",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "MuslimBurial Community — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "MuslimBurial Community source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for MuslimBurial Community"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Communities & Groups",
+      "body": "Create and discover communities and groups",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Donations",
+      "body": "Single payments, direct debits and transaction history",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Family & Mosques",
+      "body": "Next of kin and local mosque screens",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Messaging & Articles",
+      "body": "Chat and article screens",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Communities & Groups",
+        "detail": "Create and discover communities and groups",
+        "icon": "layers"
+      },
+      {
+        "name": "Donations",
+        "detail": "Single payments, direct debits and transaction history",
+        "icon": "layers"
+      },
+      {
+        "name": "Family & Mosques",
+        "detail": "Next of kin and local mosque screens",
+        "icon": "layers"
+      },
+      {
+        "name": "Messaging & Articles",
+        "detail": "Chat and article screens",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

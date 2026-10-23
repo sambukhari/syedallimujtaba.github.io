@@ -1,0 +1,114 @@
+{
+  "slug": "muslim-burial-mobile",
+  "title": "Muslim Burial Mobile",
+  "purpose": "Mobile religious, bereavement, community and donation app",
+  "stack": "React Native, Expo, Redux Toolkit, Stripe SDK",
+  "repoPath": "sambukhari/muslim-burial",
+  "repository": "https://gitlab.com/sambukhari/muslim-burial",
+  "modules": [
+    {
+      "title": "Quran & Duas",
+      "detail": "Reading, prayer and tasbih tools"
+    },
+    {
+      "title": "Community",
+      "detail": "Groups, chat and posts"
+    },
+    {
+      "title": "Donations",
+      "detail": "Wallet, one-time and recurring giving"
+    },
+    {
+      "title": "Family & Support",
+      "detail": "Next of kin and ghusal resources"
+    }
+  ],
+  "checklist": [
+    "Present: sign-in, sign-up and profile verification",
+    "Mobile API dependencies; server endpoints not verified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": "Muslim Burial",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Mobile religious, bereavement, community and donation app",
+  "summary": "Mobile religious, bereavement, community and donation app",
+  "overview": "Mobile religious, bereavement, community and donation app",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Muslim Burial Mobile — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Muslim Burial Mobile source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Muslim Burial Mobile"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Quran & Duas",
+      "body": "Reading, prayer and tasbih tools",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Community",
+      "body": "Groups, chat and posts",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Donations",
+      "body": "Wallet, one-time and recurring giving",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Family & Support",
+      "body": "Next of kin and ghusal resources",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Quran & Duas",
+        "detail": "Reading, prayer and tasbih tools",
+        "icon": "layers"
+      },
+      {
+        "name": "Community",
+        "detail": "Groups, chat and posts",
+        "icon": "layers"
+      },
+      {
+        "name": "Donations",
+        "detail": "Wallet, one-time and recurring giving",
+        "icon": "layers"
+      },
+      {
+        "name": "Family & Support",
+        "detail": "Next of kin and ghusal resources",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "my-muslim-burial",
+      "title": "My Muslim Burial — Backend"
+    }
+  ]
+}
