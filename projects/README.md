@@ -46,3 +46,15 @@ The upload `GitHub_All_Projects_AI_Context_and_Modules(2).zip` included 15 GitHu
 The source files for both added cases were preserved in their own directories without editing: `AI_CONTEXT.md` and `PROJECT_MODULES_AND_FEATURES.md`. These use `renderer: "github-brief"` and the shared project visual system; the parser requires exact correspondence between feature bullets, the repository URL, and the four evidence-checklist statuses. `projects/<slug>/assets/` holds labeled conceptual artwork, not screenshots. Update case media only when real, authorized assets are provided.
 
 The collection count is calculated dynamically from the existing GitLab catalog, two featured product cases, and the separately audited GitHub additions. Never include an already featured repository again, and never promote a placeholder or an unverified KYC/HR/API claim into a production feature.
+
+## Ashiq GitHub ZIP — unique project imports (October 2026)
+
+The uploaded `GitHub_Ashiq_Unique_Projects_AI_Context_and_Modules(1).zip` contains **nine repositories**, reduced to **three genuinely new project case studies** representing four original codebases:
+
+- **Boxes by Swagify:** Vue storefront plus Laravel API, combined into one project and one portfolio card. Exact original source documents are retained in `projects/boxes-by-swagify/sources/frontend/` and `sources/backend/`. Module summaries are collected in its main inventory; integration is unverified.
+- **Resume EzeAD:** professional profile, resume and portfolio authoring, distinct from the existing job-board/staffing projects.
+- **PHP Class Utilities:** three legacy PHP helper classes for customer records, page management and social wall utilities—not a production-certified application.
+
+Five repositories were skipped, including two README-only placeholders and similar EzeAD Jobs, Eze Autos and Eze Homes listings. See `projects/github-ashiq-import-audit.json` for full justifications. The build compares both GitHub ZIP audits against all 41 case entries and the existing featured GitHub repositories to reject duplicates.
+
+The gallery SVGs are original, source-inspired diagrams **not product screenshots**. Do not claim verified live integrations, KYC, HR implementations, individual attribution or production outcomes without further evidence. The case directory total is **41 project entries**; Boxes by Swagify links two companion source repositories but appears only once.

@@ -13,7 +13,7 @@
      const restrict=!expanded&&!term&&filter==='All';
      let shown=0;
      cards.forEach(el=>{const visible=matched.includes(el)&&(!restrict||shown<Number(root.dataset.limit));el.hidden=!visible;if(visible)shown++});
-     if(results)results.textContent=(shown===matched.length?shown+' projects shown':shown+' of '+matched.length+' shown')+' · '+cards.length+' repositories documented';
+     if(results)results.textContent=(shown===matched.length?shown+' projects shown':shown+' of '+matched.length+' shown')+' · '+cards.length+' projects documented';
      if(empty)empty.hidden=matched.length!==0;
      if(expand){
        expand.hidden=expanded||matched.length<=Number(root.dataset.limit)||!!term||filter!=='All';

@@ -70,18 +70,18 @@ test('GitHub import parser rejects repository mismatch and unsupported feature e
 });
 test('build contains no duplicate case cards or featured-project inflation',async()=>{
  const cases=await loadCaseStudies(root.pathname);
- assert.equal(cases.length,39);
+ assert.equal(cases.length,42);
  const featured=cases.filter(c=>!['gitlab-brief','github-brief'].includes(c.manifest.renderer));
  assert.equal(featured.length,3);
  const gitHub=cases.filter(c=>c.manifest.renderer==='github-brief');
- assert.equal(gitHub.length,2);
+ assert.equal(gitHub.length,5);
  for(const c of gitHub)assert.equal(read('projects/'+c.slug+'/index.html'),renderCasePage(c));
  const home=read('index.html'),index=read('projects/index.html');
- assert.equal((home.match(/class="gc-entry"/g)||[]).length,38);
- assert.equal((index.match(/class="gc-entry"/g)||[]).length,38);
+ assert.equal((home.match(/class="gc-entry"/g)||[]).length,41);
+ assert.equal((index.match(/class="gc-entry"/g)||[]).length,41);
  assert.equal((home.match(/projects\/eze-auction\/assets\/cover.svg/g)||[]).length,1);
  assert.equal((home.match(/projects\/learn-skill-pro\/assets\/cover.svg/g)||[]).length,1);
- assert.match(home,/Show all 38 repositories/);
+ assert.match(home,/Show all 41 projects/);
  assert.ok(home.includes('case-feature-ezead-marketplace'));
  assert.ok(home.includes('case-feature-priority-fix'));
  assert.ok(home.includes('case-feature-apaea-research-platform'));

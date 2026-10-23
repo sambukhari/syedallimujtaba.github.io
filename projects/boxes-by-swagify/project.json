@@ -1,0 +1,144 @@
+{
+  "slug": "boxes-by-swagify",
+  "title": "Boxes by Swagify",
+  "repoPath": "ashiq/BoxesbySwagify",
+  "repository": "https://github.com/ashiq/BoxesbySwagify",
+  "companionRepository": "https://github.com/ashiq/BoxesbySwagifyBackend",
+  "sourceDirectories": [
+    "sources/frontend",
+    "sources/backend"
+  ],
+  "category": "Commerce & marketplaces",
+  "purpose": "Custom branded merchandise-box shopping experience with a Vue 2 storefront and a separate Laravel 8 ordering API.",
+  "stack": "Vue 2, Vue Router, Vuex, Axios, BootstrapVue, Laravel 8, PHP, Sanctum",
+  "eyebrow": "CUSTOM MERCHANDISE / TWO CODEBASES, ONE PRODUCT",
+  "subtitle": "Build a merchandise box, explore the catalog and manage orders.",
+  "summary": "Build-a-box and ready-made merchandise storefront with Vue shopping journeys and Laravel catalog, customization, account and order endpoints.",
+  "overview": "The ZIP describes two companion repositories: a Vue 2 customer storefront and a Laravel 8 API for box catalogs, cart and custom logo pricing, customer accounts and orders. They represent one product rather than two distinct case studies. The real frontend/backend connection and live commerce outcomes were not independently tested.",
+  "focus": "What differentiates this work is the customer-led box-building and logo-pricing workflow, not generic e-commerce alone.",
+  "placeholder": false,
+  "sourceBranch": "master",
+  "reviewed": "2026-10-24",
+  "renderer": "github-brief",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "modules": [
+    {
+      "title": "Storefront · Build a box",
+      "detail": "Select custom merchandise box contents or explore prebuilt packages; described in the Vue storefront.",
+      "source": "Storefront: Build-a-box, prebuilt boxes and product selection"
+    },
+    {
+      "title": "Storefront · Basket & order",
+      "detail": "Shopping cart, order information and order detail views are represented in Vue.",
+      "source": "Storefront: Shopping cart, order information and order details"
+    },
+    {
+      "title": "Storefront · Customer access",
+      "detail": "Sign-in, registration, password reset and account dashboard screens.",
+      "source": "Storefront: Sign-in, registration, password reset and customer dashboard"
+    },
+    {
+      "title": "Storefront · Informational pages",
+      "detail": "FAQs, contact pages, services and public information views.",
+      "source": "Storefront: FAQs, contact, services and informational pages"
+    },
+    {
+      "title": "Backend · Catalog API",
+      "detail": "Laravel API routes for products, boxes, categories and filtered product discovery.",
+      "source": "Backend API: Product, box, category and filtered catalog APIs"
+    },
+    {
+      "title": "Backend · Customization pricing",
+      "detail": "Cart updates, custom box configuration and logo-related pricing described in backend source.",
+      "source": "Backend API: Cart updates, box customization and logo pricing"
+    },
+    {
+      "title": "Backend · Authentication",
+      "detail": "Registration, login/logout and password recovery endpoints.",
+      "source": "Backend API: Customer registration, login, logout and password recovery"
+    },
+    {
+      "title": "Backend · Order & content API",
+      "detail": "Order creation, customer dashboard and contact/FAQ endpoints.",
+      "source": "Backend API: Order creation, customer dashboard, FAQs and contact endpoints"
+    }
+  ],
+  "checklist": [
+    "Customer sign-in, registration, reset and dashboard screens in Vue; Laravel register, login, logout and password-recovery endpoints.",
+    "Axios frontend integration and Laravel API routes for auth, boxes, products, carts and orders; real request/response compatibility was not runtime-verified.",
+    "Not evidenced in either reviewed repository.",
+    "Not evidenced; a careers page is not an HR system."
+  ],
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Storefront · Build a box",
+      "body": "Select custom merchandise box contents or explore prebuilt packages; described in the Vue storefront.",
+      "icon": "layers"
+    },
+    {
+      "number": "02",
+      "title": "Storefront · Basket & order",
+      "body": "Shopping cart, order information and order detail views are represented in Vue.",
+      "icon": "layers"
+    },
+    {
+      "number": "03",
+      "title": "Storefront · Customer access",
+      "body": "Sign-in, registration, password reset and account dashboard screens.",
+      "icon": "layers"
+    },
+    {
+      "number": "04",
+      "title": "Storefront · Informational pages",
+      "body": "FAQs, contact pages, services and public information views.",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Storefront · Build a box",
+        "detail": "Select custom merchandise box contents or explore prebuilt packages; described in the Vue storefront.",
+        "icon": "layers"
+      },
+      {
+        "name": "Storefront · Basket & order",
+        "detail": "Shopping cart, order information and order detail views are represented in Vue.",
+        "icon": "layers"
+      },
+      {
+        "name": "Storefront · Customer access",
+        "detail": "Sign-in, registration, password reset and account dashboard screens.",
+        "icon": "layers"
+      },
+      {
+        "name": "Storefront · Informational pages",
+        "detail": "FAQs, contact pages, services and public information views.",
+        "icon": "layers"
+      },
+      {
+        "name": "Backend · Catalog API",
+        "detail": "Laravel API routes for products, boxes, categories and filtered product discovery.",
+        "icon": "layers"
+      }
+    ]
+  },
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Boxes by Swagify — source overview",
+      "alt": "Conceptual overview for Boxes by Swagify",
+      "caption": "Illustrated from source-described modules, not an application screenshot."
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Boxes by Swagify — module relationships",
+      "alt": "Source module diagram for Boxes by Swagify",
+      "caption": "Illustrative relationships only; production operation and runtime integration were not independently verified."
+    }
+  ]
+}
