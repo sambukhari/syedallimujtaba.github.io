@@ -1,6 +1,6 @@
 /* Reusable GitLab repository portfolio renderer: evidence-accurate static HTML. */
 
-x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))
+const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))
 
 function categoryIcon(type){
  const icons={mobile:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',web:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M8 9v11"/>',commerce:'<path d="M4 7h16l-2 14H6L4 7Z"/><path d="M9 9V5a3 3 0 0 1 6 0v4"/>',community:'<circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2"/><path d="M16 6a3 3 0 0 1 0 6m2 3a4 4 0 0 1 3 4"/>',archive:'<rect x="4" y="8" width="16" height="13" rx="1"/><path d="M3 3h18v5H3zM10 13h4"/>'};
