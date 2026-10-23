@@ -30,3 +30,10 @@ The generator now recognizes a second input format: a Markdown table headed `| #
 For this format set `renderer: "research"` (research-publication case-story layout), and optional `moduleGroups` arrays in `project.json` listing the exact feature numbers per domain. The parser validates that every source-present row belongs to exactly one group, while `Not found` rows stay in a separate evidence section. The research renderer adds an independent editorial workflow and full gallery, but uses the shared responsive CSS and accessible modal controls.
 
 For GitLab projects, `repository` may be a `https://gitlab.com/<owner>/<repo>` URL, with `commit` naming the pinned SHA. The case study links to the pinned repository tree, never invented per-feature file paths. Do not treat unprovided documents named in the inventory (such as `APAEA_AI_CONTEXT.md`) as if their content had been reviewed.
+
+
+## Priority Fix: short existing/proposed feature briefs
+
+For short briefs headed `# Project Modules and Features - Priority Fix`, the `renderer: "tenant"` parser reads `## Existing App Features` and `## Requested Modules (Proposed Scope)` separately. The former powers the current-capabilities cards and a conceptual repair journey. The latter renders a visually distinct **PROPOSED · NOT BUILT** roadmap, never an implemented badge or delivery metric.
+
+A `repository` property is **not required** for a source-free feature brief; do not invent GitHub links, tech stacks, exact engineering ownership or live metrics. Project assets live in `projects/priority-fix/assets/`, and media entries in its manifest feed the existing gallery viewer. The current SVG diagrams are expressly conceptual; add genuine screenshots and videos only when supplied and approved.

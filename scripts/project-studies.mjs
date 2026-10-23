@@ -1,6 +1,7 @@
 import {readdir,readFile,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {parseTableInventory,renderResearchCaseCard,renderResearchCasePage} from './research-case.mjs';
+import {parsePriorityFixInventory,renderPriorityFixCard,renderPriorityFixPage} from './priority-fix.mjs';
 function esc(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 
 function safeHref(url){const u=String(url||"");return /^https:\/\/github\.com\/[a-z0-9_.-]+\/[a-z0-9_.-]+(?:\/(?:blob|tree)\/[a-zA-Z0-9_./%-]+)?\/?$/i.test(u)?u:"#source"; }
@@ -18,6 +19,7 @@ return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentC
 }
 
 function parseInventory(md,manifest={}){
+if(manifest.renderer==='tenant')return parsePriorityFixInventory(md);
 if(/^\|\s*#\s*\|\s*Module\s*\|\s*Short details\s*\|\s*Source status\s*\|/mi.test(md))return parseTableInventory(md,manifest);
 const lines=String(md||"").replace(/\r\n/g,"\n").split("\n");
 const mods=[]; let scope=null,group=null,current=null;
@@ -58,7 +60,7 @@ function validateCase(item,parsed){
 const m=item.manifest;
 if(!m||!/^[a-z0-9-]+$/.test(m.slug)||m.slug!==item.slug)throw Error("Invalid case slug");
 for(const key of ["title","eyebrow","subtitle","summary","overview","category","cover","inventory"])if(typeof m[key]!=="string"||!m[key])throw Error("Missing "+key);
-if(!/^https:\/\/(?:github|gitlab)\.com\/[a-z0-9_.-]+\/[a-z0-9_.-]+$/i.test(m.repository||""))throw Error("Invalid repository reference");
+if(m.renderer==='tenant'){if(m.repository)throw Error("Tenant brief has no verified repository reference");}else if(!/^https:\/\/(?:github|gitlab)\.com\/[a-z0-9_.-]+\/[a-z0-9_.-]+$/i.test(m.repository||""))throw Error("Invalid repository reference");
 if(!Array.isArray(m.media)||!m.media.length||!Array.isArray(m.highlights)||!Array.isArray(m.workflows?.main))throw Error("Missing project gallery, highlights, or workflow");
 for(const a of [m.cover,...m.media.map(x=>x.src),m.inventory])if(!/^(?:assets\/)?[a-zA-Z0-9_.\/-]+$/.test(a)||a.includes(".."))throw Error("Unsafe project asset reference: "+a);
 for(const x of m.media){if(!["diagram","screenshot","video"].includes(x.kind)||!x.alt||!x.title)throw Error("Invalid media record");}
@@ -67,6 +69,7 @@ return item;
 }
 
 function renderCaseCard(item){
+if(item.manifest?.renderer==='tenant')return renderPriorityFixCard(item);
 if(item.manifest?.renderer==='research')return renderResearchCaseCard(item);
 const m=item.manifest,stats=item.parsed.counts,url=`projects/${encodeURIComponent(m.slug)}/`;
 return `<article class="case-feature" aria-labelledby="case-feature-${esc(m.slug)}">
@@ -75,6 +78,7 @@ return `<article class="case-feature" aria-labelledby="case-feature-${esc(m.slug
 }
 
 function renderCasePage(item){
+if(item.manifest?.renderer==='tenant')return renderPriorityFixPage(item);
 if(item.manifest?.renderer==='research')return renderResearchCasePage(item);
 const m=item.manifest, d=item.parsed, slug=esc(m.slug);
 const canonical=`https://sambukhari.github.io/syedallimujtaba.github.io/projects/${encodeURIComponent(m.slug)}/`;

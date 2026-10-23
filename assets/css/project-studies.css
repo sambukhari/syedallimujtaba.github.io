@@ -287,3 +287,6 @@
  .cs-page *, .case-feature *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .cs-hero-visual,.cs-stage,.cs-stage[aria-pressed="true"],.cs-highlight,.cs-highlight-icon{transform:none!important}
 }
+
+/* Separate featured case studies into visually distinct editorial chapters. */
+.case-study-grid{display:grid;gap:19px}
