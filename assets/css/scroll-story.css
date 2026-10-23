@@ -12,7 +12,7 @@
 #home .story-mobile-beat strong{font:700 clamp(17px,1.65vw,23px)/1.23 var(--display);margin-top:10px;color:#fff}
 #home .story-mobile-beat p{font:400 13px/1.7 var(--body);margin-top:10px;color:#d2c0b4;max-width:38ch}
 #home .system-studio{width:100%;max-width:none;margin:0;padding:12px}
-#home .scene-view{height:clamp(220px,30vh,295px)}
+#home .scene-view{height:clamp(400px,30vh,295px)}
 #home .studio-heading{padding:5px 8px 8px}
 #home .studio-toolbar{margin-block:6px}
 #home .system-caption{padding:7px 8px}
@@ -20,7 +20,7 @@
 #home .system-caption p{font-size:12px;line-height:1.5}
 #home .client-flow{margin:7px 3px;padding:10px}
 #home .client-flow-context,#home .client-flow-footnote{display:none}
-#home .client-flow-steps{gap:4px}
+#home .client-flow-steps{gap:4px; margin-top:12px}
 #home .client-flow-steps li{padding:7px 4px}
 #home .client-flow-steps li strong{font-size:clamp(9px,.8vw,12px)}
 #home .client-flow-steps li small{font-size:8px}
