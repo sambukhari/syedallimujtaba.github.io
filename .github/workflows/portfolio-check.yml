@@ -43,3 +43,4 @@ jobs:
           python tests/project_detail_browser.py
           python tests/apaea_browser.py
           python tests/priority_fix_browser.py
+          python tests/gitlab_collection_browser.py
