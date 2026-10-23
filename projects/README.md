@@ -37,3 +37,12 @@ For GitLab projects, `repository` may be a `https://gitlab.com/<owner>/<repo>` U
 For short briefs headed `# Project Modules and Features - Priority Fix`, the `renderer: "tenant"` parser reads `## Existing App Features` and `## Requested Modules (Proposed Scope)` separately. The former powers the current-capabilities cards and a conceptual repair journey. The latter renders a visually distinct **PROPOSED · NOT BUILT** roadmap, never an implemented badge or delivery metric.
 
 A `repository` property is **not required** for a source-free feature brief; do not invent GitHub links, tech stacks, exact engineering ownership or live metrics. Project assets live in `projects/priority-fix/assets/`, and media entries in its manifest feed the existing gallery viewer. The current SVG diagrams are expressly conceptual; add genuine screenshots and videos only when supplied and approved.
+
+
+## GitHub ZIP import: no duplicate or similar project entries
+
+The upload `GitHub_All_Projects_AI_Context_and_Modules(2).zip` included 15 GitHub repositories. Only two were distinct from the 36 already in the portfolio: `eze-auction` (auction bidding, listing drafts and payment components) and `learn-skill-pro` (paid enrollment, protected lesson videos, certificates and referrals). The other **13** were already featured, part of an existing product family, the portfolio itself or empty repositories. Their full skip decisions are preserved in `projects/github-import-audit.json`.
+
+The source files for both added cases were preserved in their own directories without editing: `AI_CONTEXT.md` and `PROJECT_MODULES_AND_FEATURES.md`. These use `renderer: "github-brief"` and the shared project visual system; the parser requires exact correspondence between feature bullets, the repository URL, and the four evidence-checklist statuses. `projects/<slug>/assets/` holds labeled conceptual artwork, not screenshots. Update case media only when real, authorized assets are provided.
+
+The collection count is calculated dynamically from the existing GitLab catalog, two featured product cases, and the separately audited GitHub additions. Never include an already featured repository again, and never promote a placeholder or an unverified KYC/HR/API claim into a production feature.

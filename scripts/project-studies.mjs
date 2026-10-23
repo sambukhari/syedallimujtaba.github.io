@@ -3,6 +3,7 @@ import path from 'node:path';
 import {parseTableInventory,renderResearchCaseCard,renderResearchCasePage} from './research-case.mjs';
 import {parsePriorityFixInventory,renderPriorityFixCard,renderPriorityFixPage} from './priority-fix.mjs';
 import {parseGitlabBrief,renderGitlabCaseCard,renderGitlabPage} from './gitlab-brief.mjs';
+import {parseGithubBrief} from './github-brief.mjs';
 function esc(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 
 function safeHref(url){const u=String(url||"");return /^https:\/\/github\.com\/[a-z0-9_.-]+\/[a-z0-9_.-]+(?:\/(?:blob|tree)\/[a-zA-Z0-9_./%-]+)?\/?$/i.test(u)?u:"#source"; }
@@ -20,6 +21,7 @@ return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentC
 }
 
 function parseInventory(md,manifest={}){
+if(manifest.renderer==='github-brief')return parseGithubBrief(md,manifest);
 if(manifest.renderer==='gitlab-brief')return parseGitlabBrief(md,manifest);
 if(manifest.renderer==='tenant')return parsePriorityFixInventory(md);
 if(/^\|\s*#\s*\|\s*Module\s*\|\s*Short details\s*\|\s*Source status\s*\|/mi.test(md))return parseTableInventory(md,manifest);
@@ -71,6 +73,7 @@ return item;
 }
 
 function renderCaseCard(item){
+if(item.manifest?.renderer==='github-brief')return renderGitlabCaseCard(item);
 if(item.manifest?.renderer==='gitlab-brief')return renderGitlabCaseCard(item);
 if(item.manifest?.renderer==='tenant')return renderPriorityFixCard(item);
 if(item.manifest?.renderer==='research')return renderResearchCaseCard(item);
@@ -81,6 +84,7 @@ return `<article class="case-feature" aria-labelledby="case-feature-${esc(m.slug
 }
 
 function renderCasePage(item){
+if(item.manifest?.renderer==='github-brief')return renderGitlabPage(item);
 if(item.manifest?.renderer==='gitlab-brief')return renderGitlabPage(item);
 if(item.manifest?.renderer==='tenant')return renderPriorityFixPage(item);
 if(item.manifest?.renderer==='research')return renderResearchCasePage(item);
