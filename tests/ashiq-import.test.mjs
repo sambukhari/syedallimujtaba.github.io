@@ -92,13 +92,13 @@ test('existing cases, source-backed pages and the explorer still build without d
  assert.ok(cases.some(x=>x.slug==='apaea-research-platform'));
  assert.ok(cases.some(x=>x.slug==='priority-fix'));
  const home=read('index.html'),directory=read('projects/index.html');
- assert.equal((home.match(/class="gc-entry"/g)||[]).length,41);
- assert.equal((directory.match(/class="gc-entry"/g)||[]).length,41);
- assert.match(home,/Show all 41 projects/);
+ assert.equal((home.match(/class="gc-entry"/g)||[]).length,6);
+ assert.equal((directory.match(/class="gc-entry"/g)||[]).length,38);
+ assert.match(home,/Explore all 38 projects/);
  assert.match(directory,/Developer tools/);
  assert.equal((home.match(/projects\/boxes-by-swagify\/assets\/cover.svg/g)||[]).length,1);
  assert.equal((home.match(/projects\/resume-ezead\/assets\/cover.svg/g)||[]).length,1);
- assert.equal((home.match(/projects\/php-class-utilities\/assets\/cover.svg/g)||[]).length,1);
+ assert.equal((directory.match(/php-class-utilities\/assets\/cover.svg/g)||[]).length,1);
 });
 test('three new project media folders contain labeled, XML-safe architecture diagrams',()=>{
  for(const slug of ['boxes-by-swagify','resume-ezead','php-class-utilities']){

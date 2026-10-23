@@ -31,7 +31,7 @@ test('each new project has a source summary, responsive detail page and two vali
    }
    const html=read('projects/'+record.slug+'/index.html');
    assert.match(html,/not a product screenshot/i);
-   assert.match(html,/production test/i);
+   assert.match(html,/source documentation|source-described|runtime|production operation/i);
    assert.equal((html.match(/data-gallery-open="/g)||[]).length,2);
    assert.equal((html.match(/class="cs-module" data-module-scope="main"/g)||[]).length,record.modules.length);
    assert.ok(html.includes('User management')&&html.includes('HR management'));
@@ -42,15 +42,15 @@ test('each new project has a source summary, responsive detail page and two vali
  assert.equal(cases.find(x=>x.slug==='apaea-research-platform').parsed.total,36);
  assert.equal(cases.find(x=>x.slug==='priority-fix').parsed.total,8);
 });
-test('main portfolio and directory expose 41 project cards without inflating featured cards',()=>{
+test('main portfolio previews six and directory indexes 38 substantive projects',()=>{
  const home=read('index.html'),directory=read('projects/index.html');
- assert.equal((home.match(/class="gc-entry"/g)||[]).length,41);
- assert.equal((directory.match(/class="gc-entry"/g)||[]).length,41);
+ assert.equal((home.match(/class="gc-entry"/g)||[]).length,6);
+ assert.equal((directory.match(/class="gc-entry"/g)||[]).length,38);
  assert.equal((home.match(/class="case-feature"/g)||[]).length,1);
  assert.ok(home.includes('case-feature-apaea-research-platform'));
  assert.ok(home.includes('case-feature-priority-fix'));
  assert.ok(home.includes('case-feature-ezead-marketplace'));
- assert.match(home,/Show all 41 projects/);
+ assert.match(home,/Explore all 38 projects/);
  assert.match(directory,/project directory/i);
  const categories=archive.map(x=>x.category);
  assert.ok(categories.includes('Mobile apps'));
