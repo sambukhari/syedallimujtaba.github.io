@@ -20,11 +20,11 @@
  function advance(){if(!playing)return;if(document.hidden)return;if(stage>=2){atReview();return;}setStage(stage+1);timer=setTimeout(advance,1100);}
  flow.addEventListener('click',()=>{if(awaitingReview){awaitingReview=false;setStage(4);flow.textContent='Replay the flow \u21bb';$('#model-status').textContent='Approved in this conceptual demonstration. No external action was performed.';return;}if(playing){stopFlow();return;}stopFlow();if(!motion){atReview();return;}setStage(0);playing=true;studio.classList.add('flow-playing');flow.textContent='Pause flow';timer=setTimeout(advance,1100);});
  $$('[data-stage]').forEach(b=>b.addEventListener('click',()=>{stopFlow();setStage(Number(b.dataset.stage));}));
- document.addEventListener('portfolio:scroll-stage',event=>{
+ document.addEventListener('portfolio:section-stage',event=>{
    const index=Number(event.detail?.stage);
    if(!Number.isInteger(index)||index<0||index>4)return;
    if(playing||awaitingReview)stopFlow();
-   // Scroll and preview are narrative only; they do not approve or execute an action.
+   // The section-triggered illustration is explanatory only and never executes a real action.
    if(index!==stage)setStage(index,false);
  });
  $$('.segmented [data-mode]').forEach(b=>b.addEventListener('click',()=>{stopFlow();mode=b.dataset.mode;studio.dataset.mode=mode;$$('.segmented [data-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));setStage(mode==='mobile'?4:mode==='web'?2:1);}));
@@ -34,12 +34,7 @@
  motionButton.addEventListener('click',()=>setMotion(!motion));reduced.addEventListener('change',()=>setMotion(!reduced.matches));setMotion(motion);
  document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing){clearTimeout(timer);timer=null;}else if(playing&&!timer)timer=setTimeout(advance,600);});
  if('IntersectionObserver'in window)new IntersectionObserver(entries=>{if(!entries[0].isIntersecting&&playing)stopFlow();},{threshold:0}).observe(studio);
- const menu=$('.menu-toggle'),nav=$('#navigation');
- function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
- menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus();}});
- nav.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const wasOpen=nav.classList.contains('open');closeMenu();if(wasOpen&&a.hash){const target=$(a.hash);target?.setAttribute('tabindex','-1');target?.focus({preventScroll:true});}});
- document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))closeMenu();});
+ // Shared navigation is owned by assets/js/site-shell.js on every page.
  const skills=$$('.skill');
  $$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{const filter=b.dataset.filter;skills.forEach(s=>s.hidden=filter!=='all'&&s.dataset.category!==filter);$$('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('#skill-status').textContent=`${skills.filter(s=>!s.hidden).length} technologies and capabilities shown.`;document.dispatchEvent(new Event('portfolio:layout'));}));
  async function copy(text){if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(text);}

@@ -3,13 +3,13 @@
  const buttons=[...document.querySelectorAll('[data-vision]')], machine=document.getElementById('vision-machine');
  if(!machine||!buttons.length)return;
  const chapters=[
- ['2015–2016','BAM Techsoft','Web Developer','WEB FOUNDATIONS','PHP, databases, Laravel and the foundations of software built for real users.'],
- ['2016–2017','Micro Techsoft','Web Developer','CLIENT DELIVERY','Responsive products and practical engineering for small-business requirements.'],
- ['2017–2021','The Art Valley + Service Sales','PHP Developer / Data Analyst','WEB SYSTEMS + DATA','Laravel websites, data analysis and operations reporting informed a broader view of product value.'],
- ['2021–2023','Syntax Software House','Full Stack Web Developer','FULL-STACK PRODUCTS','From discovery to deployment: backend services, interactive frontends and collaboration with delivery teams.'],
- ['2022–Present','MyTechPal','Full Stack Developer','LARAVEL + MOBILE','Laravel, React Native and automated business systems for international clients; this role overlaps later positions.'],
+ ['2025–Present','EzeAD Media Group','Development Team Lead','LEADERSHIP + AI ERA','Engineering direction, team leadership and mobile delivery; AI agents and automation are now a key focus.'],
  ['2023–2025','Pixart Pte. Ltd.','Senior Web & Mobile App Developer','COMMERCE ENGINEERING','Commerce, integrations, content systems and production delivery across client products.'],
- ['2025–Present','EzeAD Media Group','Development Team Lead','LEADERSHIP + AI ERA','Engineering direction, team leadership and mobile delivery; AI agents and automation are now a key focus.']
+ ['2022–Present','MyTechPal','Full Stack Developer','LARAVEL + MOBILE','Laravel, React Native and automated business systems for international clients; this role overlaps later positions.'],
+ ['2021–2023','Syntax Software House','Full Stack Web Developer','FULL-STACK PRODUCTS','From discovery to deployment: backend services, interactive frontends and collaboration with delivery teams.'],
+ ['2017–2021','The Art Valley + Service Sales','PHP Developer / Data Analyst','WEB SYSTEMS + DATA','Laravel websites, data analysis and operations reporting informed a broader view of product value.'],
+ ['2016–2017','Micro Techsoft','Web Developer','CLIENT DELIVERY','Responsive products and practical engineering for small-business requirements.'],
+ ['2015–2016','BAM Techsoft','Web Developer','WEB FOUNDATIONS','PHP, databases, Laravel and the foundations of software built for real users.']
  ];
  const ids=['vision-dates','vision-company','vision-role','vision-capability','vision-narrative'];
  const count=document.getElementById('vision-count'),progress=document.getElementById('vision-progress'),theatre=document.getElementById('vision-theatre'),play=document.getElementById('vision-play');

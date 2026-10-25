@@ -22,7 +22,7 @@ try:
    errors=[]
    page.on('pageerror',lambda e:errors.append(str(e)))
    page.goto(url+'projects/',wait_until='domcontentloaded')
-   verify(page.locator('.gc-entry').count()==41,f'{width}: exactly 41 distinct project cards')
+   verify(page.locator('.gc-entry').count()==38,f'{width}: exactly 38 active project cards')
    verify(page.evaluate('document.documentElement.scrollWidth<=innerWidth'),f'{width}: archive fits width')
    if width in (390,1440):
     page.locator('[data-filter="Developer tools"]').click()
@@ -58,10 +58,8 @@ try:
    context.close()
   context=browser.new_context(viewport={'width':390,'height':844},reduced_motion='reduce')
   page=context.new_page();page.goto(url+'?no3d=1',wait_until='domcontentloaded')
-  verify(page.locator('.gc-entry').count()==41,'homepage has unique 41 entries')
-  verify(page.locator('.gc-entry:visible').count()==9,'homepage compact curated grid')
-  page.locator('[data-expand-collection]').click()
-  verify(page.locator('.gc-entry:visible').count()==41,'expansion shows all 41')
+  verify(page.locator('.gc-entry').count()==6,'homepage contains six curated case studies')
+  verify(page.locator('.gc-explore-link').is_visible(),'deduplicated project directory has visible entry point')
   page.goto(url+'projects/boxes-by-swagify/',wait_until='domcontentloaded')
   verify(page.locator('.gc-companions').is_visible(),'reduced motion keeps grouped source links')
   context.close();browser.close()
