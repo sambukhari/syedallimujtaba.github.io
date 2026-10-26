@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Project Modules and Features — Laraclassified Ads Platform
+=======
+# Project Modules and Features — Laraclassified
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Listings** — Ad posting, photos, editing and search.

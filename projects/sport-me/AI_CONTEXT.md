@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # AI Context — Sport Me Backend
+=======
+# AI Context — Sport Me — Backend
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 - **Repository:** https://gitlab.com/sambukhari/sport-me
 - **Reviewed branch:** `main` (read-only in uploaded source)

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Project Modules and Features — Trade Core Mobile
+=======
+# Project Modules and Features — Trade Core — Mobile
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Markets & Analysis** — Stock pages, technical analysis, news and screeners.

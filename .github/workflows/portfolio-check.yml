@@ -40,3 +40,10 @@ jobs:
         run: |
           python tests/scroll_story_browser.py
           python tests/portrait_browser.py
+          python tests/project_detail_browser.py
+          python tests/apaea_browser.py
+          python tests/priority_fix_browser.py
+          python tests/gitlab_collection_browser.py
+          python tests/github_import_browser.py
+          python tests/ashiq_import_browser.py
+          python tests/premium_shell_browser.py

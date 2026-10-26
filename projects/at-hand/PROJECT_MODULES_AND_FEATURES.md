@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Project Modules and Features — At-Hand Tenant Reports
+=======
+# Project Modules and Features — At-Hand
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Repair Reports** — Submit property issues and media.

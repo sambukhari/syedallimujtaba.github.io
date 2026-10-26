@@ -1,6 +1,10 @@
 {
   "slug": "trade-core-apps",
+<<<<<<< HEAD
   "title": "Trade Core Mobile",
+=======
+  "title": "Trade Core — Mobile",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Mobile trading, market information and social investment app",
   "stack": "React Native, Expo Router, TypeScript, Supabase SDK, React Query, Zustand",
   "repoPath": "sambukhari/trade-core-apps",
@@ -47,16 +51,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "Trade Core Mobile — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Trade Core Mobile source architecture overview"
+=======
+      "title": "Trade Core — Mobile — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Trade Core — Mobile source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for Trade Core Mobile"
+=======
+      "alt": "Conceptual system module overview for Trade Core — Mobile"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -120,4 +134,8 @@
       "title": "Trade Core — Web & API"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

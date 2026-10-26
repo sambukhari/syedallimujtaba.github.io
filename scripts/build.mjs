@@ -4,7 +4,10 @@ import path from 'node:path';
 import {loadCaseStudies,renderCaseCard,renderCasePage} from './project-studies.mjs';
 import {renderCollection,renderProjectIndex} from './gitlab-brief.mjs';
 import {renderSiteHeader,renderSiteFooter} from './site-shell.mjs';
+<<<<<<< HEAD
 import {renderProof} from './proof.mjs';
+=======
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>readFile(path.join(root,p),'utf8');
 export const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -44,7 +47,10 @@ async function build(){const projects=validateProjects(JSON.parse(await read('as
  const directoryHTML=renderProjectIndex(archive);
  const featured=skills.filter(s=>s.featured);const rest=skills.filter(s=>!s.featured);
  let html=await read('src/page.html');html=html.replace('{{CASE_STUDIES}}',cases.filter(c=>!['gitlab-brief','github-brief'].includes(c.manifest.renderer)).map(renderCaseCard).join('\n')).replace('{{PROJECTS}}',projects.map(project).join('\n')).replace('{{GITLAB_COLLECTION}}',renderCollection(archive,'projects/',true)).replace('{{FEATURED_SKILLS}}',featured.map(s=>skill(s,true)).join('\n')).replace('{{SKILLS}}',rest.map(s=>skill(s)).join('\n')).replace('{{CAREER}}',await read('src/career.html')).replace('{{SITE_HEADER}}',renderSiteHeader({root:'',page:'home'})).replace('{{SITE_FOOTER}}',renderSiteFooter({root:'',page:'home'}));
+<<<<<<< HEAD
  html=html.replace('{{PROOF}}',renderProof(archive,skills));
+=======
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
  if(/{{[A-Z_]+}}/.test(html))throw Error('Unresolved template');
  if(process.argv.includes('--check')){if(await read('index.html')!==html)throw Error('Generated index.html is stale');if(await read('projects/index.html')!==directoryHTML)throw Error('Generated project directory is stale');for(const c of cases){if(await read(`projects/${c.slug}/index.html`)!==renderCasePage(c))throw Error(`Generated case page is stale: ${c.slug}`)}console.log('Generated markup and case studies are current');return;}
  await writeFile(path.join(root,'index.html'),html);await writeFile(path.join(root,'projects/index.html'),directoryHTML);await mkdir(path.join(root,'dist'),{recursive:true});await writeFile(path.join(root,'dist/index.html'),html);await mkdir(path.join(root,'dist/projects'),{recursive:true});await writeFile(path.join(root,'dist/projects/index.html'),directoryHTML);await cp(path.join(root,'assets'),path.join(root,'dist/assets'),{recursive:true});for(const c of cases){const html=renderCasePage(c);await writeFile(path.join(root,'projects',c.slug,'index.html'),html);await mkdir(path.join(root,'dist/projects',c.slug),{recursive:true});await writeFile(path.join(root,'dist/projects',c.slug,'index.html'),html);await cp(path.join(root,'projects',c.slug,'assets'),path.join(root,'dist/projects',c.slug,'assets'),{recursive:true});await cp(path.join(root,'projects',c.slug,c.manifest.inventory),path.join(root,'dist/projects',c.slug,c.manifest.inventory));for(const sub of c.manifest.sourceDirectories||[]){if(!/^sources\/[a-z0-9-]+$/.test(sub))throw Error('Unsafe companion source directory: '+sub);await mkdir(path.join(root,'dist/projects',c.slug,sub),{recursive:true});await cp(path.join(root,'projects',c.slug,sub),path.join(root,'dist/projects',c.slug,sub),{recursive:true});}}console.log(`Built ${projects.length} public projects and ${skills.length} skills`);}

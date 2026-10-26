@@ -1,6 +1,10 @@
 {
   "slug": "trade-core",
+<<<<<<< HEAD
   "title": "Trade Core Web & API",
+=======
+  "title": "Trade Core — Web & API",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Backend, admin portal and web features for a trading community",
   "stack": "Laravel, PHP, Inertia, Sanctum",
   "repoPath": "sambukhari/trade-core",
@@ -43,16 +47,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "Trade Core Web & API — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Trade Core Web & API source architecture overview"
+=======
+      "title": "Trade Core — Web & API — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Trade Core — Web & API source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for Trade Core Web & API"
+=======
+      "alt": "Conceptual system module overview for Trade Core — Web & API"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -111,4 +125,8 @@
       "title": "Trade Core — Mobile"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

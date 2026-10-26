@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Project Modules and Features — Trade Core Web & API
+=======
+# Project Modules and Features — Trade Core — Web & API
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Market Data** — Feeds, snapshots and economic calendar APIs.

@@ -1,6 +1,10 @@
 {
   "slug": "at-hand",
+<<<<<<< HEAD
   "title": "At-Hand Tenant Reports",
+=======
+  "title": "At-Hand",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Tenant-facing property issue reporting mobile app",
   "stack": "React Native, Axios, Firebase Storage",
   "repoPath": "sambukhari/At-Hand",
@@ -39,16 +43,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "At-Hand Tenant Reports — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "At-Hand Tenant Reports source architecture overview"
+=======
+      "title": "At-Hand — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "At-Hand source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for At-Hand Tenant Reports"
+=======
+      "alt": "Conceptual system module overview for At-Hand"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -91,4 +105,8 @@
     ]
   },
   "related": []
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

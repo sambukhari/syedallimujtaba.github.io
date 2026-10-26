@@ -1,6 +1,10 @@
 {
   "slug": "priority-fix-contractors",
+<<<<<<< HEAD
   "title": "Priority Fix Contractor App",
+=======
+  "title": "Priority Fix — Contractors",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Contractor-facing property maintenance and job management app",
   "stack": "React Native, Expo, Axios, Redux Toolkit",
   "repoPath": "sambukhari/priority-fix-contractors",
@@ -43,16 +47,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "Priority Fix Contractor App — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Priority Fix Contractor App source architecture overview"
+=======
+      "title": "Priority Fix — Contractors — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Priority Fix — Contractors source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for Priority Fix Contractor App"
+=======
+      "alt": "Conceptual system module overview for Priority Fix — Contractors"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -119,4 +133,8 @@
       "title": "Priority Fix — Landlord"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

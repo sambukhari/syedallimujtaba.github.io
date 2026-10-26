@@ -1,6 +1,10 @@
 {
   "slug": "hc",
+<<<<<<< HEAD
   "title": "HC (Inactive · Empty Repository)",
+=======
+  "title": "HC — Empty Repository",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Empty GitLab project; purpose and implementation are not verifiable",
   "stack": "No application files committed",
   "repoPath": "sambukhari/hc",
@@ -26,22 +30,37 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "HC (Inactive · Empty Repository) — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "HC (Inactive · Empty Repository) source architecture overview"
+=======
+      "title": "HC — Empty Repository — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "HC — Empty Repository source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for HC (Inactive · Empty Repository)"
+=======
+      "alt": "Conceptual system module overview for HC — Empty Repository"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [],
   "workflows": {
     "main": []
   },
+<<<<<<< HEAD
   "related": [],
   "status": "inactive"
 }
+=======
+  "related": []
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

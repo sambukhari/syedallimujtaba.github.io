@@ -1,6 +1,10 @@
 {
   "slug": "muslim-burial-mobile",
+<<<<<<< HEAD
   "title": "Muslim Burial Mobile App",
+=======
+  "title": "Muslim Burial Mobile",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Mobile religious, bereavement, community and donation app",
   "stack": "React Native, Expo, Redux Toolkit, Stripe SDK",
   "repoPath": "sambukhari/muslim-burial",
@@ -43,16 +47,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "Muslim Burial Mobile App — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Muslim Burial Mobile App source architecture overview"
+=======
+      "title": "Muslim Burial Mobile — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Muslim Burial Mobile source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for Muslim Burial Mobile App"
+=======
+      "alt": "Conceptual system module overview for Muslim Burial Mobile"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -111,4 +125,8 @@
       "title": "My Muslim Burial — Backend"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

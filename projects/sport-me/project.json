@@ -1,6 +1,10 @@
 {
   "slug": "sport-me",
+<<<<<<< HEAD
   "title": "Sport Me Backend",
+=======
+  "title": "Sport Me — Backend",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Sports programs, players and payment-oriented web backend",
   "stack": "Laravel, PHP, Stripe",
   "repoPath": "sambukhari/sport-me",
@@ -43,16 +47,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "Sport Me Backend — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Sport Me Backend source architecture overview"
+=======
+      "title": "Sport Me — Backend — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Sport Me — Backend source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for Sport Me Backend"
+=======
+      "alt": "Conceptual system module overview for Sport Me — Backend"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -123,4 +137,8 @@
       "title": "SportsCMS"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

@@ -1,6 +1,10 @@
 {
   "slug": "test-the-ummah",
+<<<<<<< HEAD
   "title": "Test The Ummah Legacy Quiz App",
+=======
+  "title": "Test The Ummah — Earlier App",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Earlier quiz, question and examination web application",
   "stack": "Laravel, PHP, Jetstream, Inertia, Sanctum",
   "repoPath": "sambukhari/test-the-ummah",
@@ -43,16 +47,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "Test The Ummah Legacy Quiz App — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Test The Ummah Legacy Quiz App source architecture overview"
+=======
+      "title": "Test The Ummah — Earlier App — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Test The Ummah — Earlier App source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for Test The Ummah Legacy Quiz App"
+=======
+      "alt": "Conceptual system module overview for Test The Ummah — Earlier App"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -111,4 +125,8 @@
       "title": "TTU — Test The Ummah"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

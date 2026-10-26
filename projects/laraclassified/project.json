@@ -1,6 +1,10 @@
 {
   "slug": "laraclassified",
+<<<<<<< HEAD
   "title": "Laraclassified Ads Platform",
+=======
+  "title": "Laraclassified",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Classified ads web platform with APIs and account workflows",
   "stack": "Laravel, PHP, Sanctum, Socialite, payment packages",
   "repoPath": "sambukhari/laraclassified",
@@ -47,16 +51,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "Laraclassified Ads Platform — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Laraclassified Ads Platform source architecture overview"
+=======
+      "title": "Laraclassified — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Laraclassified source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for Laraclassified Ads Platform"
+=======
+      "alt": "Conceptual system module overview for Laraclassified"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -120,4 +134,8 @@
       "title": "Classified Mobile"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

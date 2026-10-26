@@ -1,6 +1,10 @@
 {
   "slug": "sportscms",
+<<<<<<< HEAD
   "title": "SportsCMS Community Backend",
+=======
+  "title": "SportsCMS",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Sports-oriented social community and content management backend",
   "stack": "Laravel, PHP, Sanctum, social login, payment integrations",
   "repoPath": "sambukhari/sportscms",
@@ -47,16 +51,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "SportsCMS Community Backend — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "SportsCMS Community Backend source architecture overview"
+=======
+      "title": "SportsCMS — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "SportsCMS source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for SportsCMS Community Backend"
+=======
+      "alt": "Conceptual system module overview for SportsCMS"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -132,4 +146,8 @@
       "title": "SportMeNative"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

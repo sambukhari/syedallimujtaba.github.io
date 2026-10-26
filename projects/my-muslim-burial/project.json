@@ -1,6 +1,10 @@
 {
   "slug": "my-muslim-burial",
+<<<<<<< HEAD
   "title": "My Muslim Burial Backend",
+=======
+  "title": "My Muslim Burial — Backend",
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Laravel web/backend system for burial community and account services",
   "stack": "Laravel, PHP, Sanctum, Stripe, chat package",
   "repoPath": "sambukhari/my-muslim-burial",
@@ -43,16 +47,26 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
+<<<<<<< HEAD
       "title": "My Muslim Burial Backend — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "My Muslim Burial Backend source architecture overview"
+=======
+      "title": "My Muslim Burial — Backend — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "My Muslim Burial — Backend source architecture overview"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+<<<<<<< HEAD
       "alt": "Conceptual system module overview for My Muslim Burial Backend"
+=======
+      "alt": "Conceptual system module overview for My Muslim Burial — Backend"
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -111,4 +125,8 @@
       "title": "Muslim Burial Mobile"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

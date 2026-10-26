@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # AI Context — At-Hand Contractor Jobs
+=======
+# AI Context — At-Hand Contractor
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 - **Repository:** https://gitlab.com/sambukhari/At-Hand-Contractor
 - **Reviewed branch:** `main` (read-only in uploaded source)

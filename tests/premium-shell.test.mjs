@@ -35,6 +35,7 @@ test('38 substantive projects appear, three archived placeholders do not',()=>{
  }
  assert.ok(!home.includes('professional-work'));
 });
+<<<<<<< HEAD
 test('motion is scroll-driven, 5-stage, theme-linked and reduced-motion safe',()=>{
  const src=read('src/page.html'),home=read('index.html'),js=read('assets/js/scroll-scene.js'),css=read('assets/css/premium.css'),fx=read('assets/css/motion.css');
  assert.ok(src.includes('assets/js/scroll-scene.js'));
@@ -46,6 +47,21 @@ test('motion is scroll-driven, 5-stage, theme-linked and reduced-motion safe',()
  assert.match(css,/--ui-accent/);
  assert.match(fx,/prefers-reduced-motion:reduce/);
  assert.match(fx,/position:sticky/);
+=======
+test('motion is section visible, 5-stage, theme-linked, reduced-motion safe and not scroll-controlled',()=>{
+ const src=read('src/page.html'),home=read('index.html'),js=read('assets/js/section-flow.js'),css=read('assets/css/premium.css');
+ assert.ok(src.includes('assets/js/section-flow.js'));
+ assert.ok(home.includes('assets/js/section-flow.js'));
+ assert.ok(!home.includes('scroll-story.js'));
+ assert.equal((home.match(/class="story-mobile-beat"/g)||[]).length,5);
+ assert.match(js,/new IntersectionObserver/);
+ assert.match(js,/setTimeout\(next/);
+ assert.match(js,/prefers-reduced-motion/);
+ assert.match(css,/--ui-accent/);
+ assert.match(css,/section-flowing/);
+ assert.match(css,/prefers-reduced-motion:reduce/);
+ assert.doesNotMatch(js,/addEventListener\(['"]scroll|scrollY|scrollIntoView/);
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 });
 test('career is newest to oldest, including overlapping employment dates',()=>{
  const home=read('index.html'),js=read('assets/js/v4.js');

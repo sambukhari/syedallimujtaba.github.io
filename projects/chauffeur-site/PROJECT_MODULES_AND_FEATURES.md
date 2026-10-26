@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Project Modules and Features — Chauffeur Booking Site
+=======
+# Project Modules and Features — Chauffeur Site
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Cars** — Vehicle listings and detail pages.

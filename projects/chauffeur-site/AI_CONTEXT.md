@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # AI Context — Chauffeur Booking Site
+=======
+# AI Context — Chauffeur Site
+>>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 - **Repository:** https://gitlab.com/main-lead/chauffeur-site
 - **Reviewed branch:** `main` (read-only in uploaded source)
