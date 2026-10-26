@@ -1,0 +1,114 @@
+{
+  "slug": "resume-ezead",
+  "title": "Resume EzeAD",
+  "repoPath": "ashiq/resume-ezead",
+  "repository": "https://github.com/ashiq/resume-ezead",
+  "sourceBranch": "master",
+  "reviewed": "2026-10-24",
+  "renderer": "github-brief",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "placeholder": false,
+  "modules": [
+    {
+      "title": "Resumes & professional history",
+      "detail": "Resume pages connect education, skills, professional profiles and work history.",
+      "source": "Resumes, profile pages, education, skills and work history"
+    },
+    {
+      "title": "Portfolios & client presence",
+      "detail": "Portfolio and service pages combine social links and testimonials.",
+      "source": "Portfolios, services, social links and testimonials"
+    },
+    {
+      "title": "Content & subscription plans",
+      "detail": "Blog/posts, subscription packages and payment-related workflow code are described; live billing was not tested.",
+      "source": "Blog/posts, subscription packages and payment workflows"
+    },
+    {
+      "title": "User & admin dashboards",
+      "detail": "Dashboard, account settings and administrative management modules.",
+      "source": "User dashboards, profile settings and admin management"
+    }
+  ],
+  "checklist": [
+    "User registration, profile editing and admin accounts/controllers.",
+    "Web controllers/routes evidenced; dedicated app API not confirmed.",
+    "Not evidenced.",
+    "Not evidenced; professional profiles are not HR employee records."
+  ],
+  "category": "Web platforms",
+  "purpose": "Laravel platform for professional resume, portfolio and service-page creation, with subscription and profile administration.",
+  "stack": "PHP 8.2, Laravel 11, Blade, QR code packages, payment packages",
+  "eyebrow": "PROFESSIONAL IDENTITY / RESUME PLATFORM",
+  "subtitle": "Turn experience and projects into a professional online presence.",
+  "summary": "Professional profiles, resumes, portfolios, work history, services, testimonials, publishing and subscription packages.",
+  "overview": "The source summary describes a Laravel 11 platform for resume and professional portfolio management, with user and admin workflows. Unlike the EzeAD Jobs codebase, it centers on authoring profiles and showcasing work instead of employer job listings.",
+  "focus": "Distinct from the existing employment and quiz products: it is a professional identity and portfolio builder.",
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Resumes & professional history",
+      "body": "Resume pages connect education, skills, professional profiles and work history.",
+      "icon": "layers"
+    },
+    {
+      "number": "02",
+      "title": "Portfolios & client presence",
+      "body": "Portfolio and service pages combine social links and testimonials.",
+      "icon": "layers"
+    },
+    {
+      "number": "03",
+      "title": "Content & subscription plans",
+      "body": "Blog/posts, subscription packages and payment-related workflow code are described; live billing was not tested.",
+      "icon": "layers"
+    },
+    {
+      "number": "04",
+      "title": "User & admin dashboards",
+      "body": "Dashboard, account settings and administrative management modules.",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Resumes & professional history",
+        "detail": "Resume pages connect education, skills, professional profiles and work history.",
+        "icon": "layers"
+      },
+      {
+        "name": "Portfolios & client presence",
+        "detail": "Portfolio and service pages combine social links and testimonials.",
+        "icon": "layers"
+      },
+      {
+        "name": "Content & subscription plans",
+        "detail": "Blog/posts, subscription packages and payment-related workflow code are described; live billing was not tested.",
+        "icon": "layers"
+      },
+      {
+        "name": "User & admin dashboards",
+        "detail": "Dashboard, account settings and administrative management modules.",
+        "icon": "layers"
+      }
+    ]
+  },
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Resume EzeAD — source overview",
+      "alt": "Conceptual overview for Resume EzeAD",
+      "caption": "Illustrated from source-described modules, not an application screenshot."
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Resume EzeAD — module relationships",
+      "alt": "Source module diagram for Resume EzeAD",
+      "caption": "Illustrative relationships only; production operation and runtime integration were not independently verified."
+    }
+  ]
+}

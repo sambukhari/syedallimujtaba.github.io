@@ -1,0 +1,114 @@
+{
+  "slug": "trade-core",
+  "title": "Trade Core Web & API",
+  "purpose": "Backend, admin portal and web features for a trading community",
+  "stack": "Laravel, PHP, Inertia, Sanctum",
+  "repoPath": "sambukhari/trade-core",
+  "repository": "https://gitlab.com/sambukhari/trade-core",
+  "modules": [
+    {
+      "title": "Market Data",
+      "detail": "Feeds, snapshots and economic calendar APIs"
+    },
+    {
+      "title": "Trade Ideas & Posts",
+      "detail": "Ideas, posts and leaderboard management"
+    },
+    {
+      "title": "Chat & Notifications",
+      "detail": "Chat, push tokens and notification APIs"
+    },
+    {
+      "title": "Verification",
+      "detail": "Broker verification and admin review"
+    }
+  ],
+  "checklist": [
+    "Present: authentication, user and profile controllers",
+    "Present: dedicated Api controllers with Sanctum",
+    "Partial: broker-verification flow; full KYC not verified.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": "Trade Core",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Backend, admin portal and web features for a trading community",
+  "summary": "Backend, admin portal and web features for a trading community",
+  "overview": "Backend, admin portal and web features for a trading community",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Trade Core Web & API — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Trade Core Web & API source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Trade Core Web & API"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Market Data",
+      "body": "Feeds, snapshots and economic calendar APIs",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Trade Ideas & Posts",
+      "body": "Ideas, posts and leaderboard management",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Chat & Notifications",
+      "body": "Chat, push tokens and notification APIs",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Verification",
+      "body": "Broker verification and admin review",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Market Data",
+        "detail": "Feeds, snapshots and economic calendar APIs",
+        "icon": "layers"
+      },
+      {
+        "name": "Trade Ideas & Posts",
+        "detail": "Ideas, posts and leaderboard management",
+        "icon": "layers"
+      },
+      {
+        "name": "Chat & Notifications",
+        "detail": "Chat, push tokens and notification APIs",
+        "icon": "layers"
+      },
+      {
+        "name": "Verification",
+        "detail": "Broker verification and admin review",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "trade-core-apps",
+      "title": "Trade Core — Mobile"
+    }
+  ]
+}

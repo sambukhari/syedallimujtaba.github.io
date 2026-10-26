@@ -1,0 +1,114 @@
+{
+  "slug": "classified",
+  "title": "Classified Mobile Marketplace",
+  "purpose": "Mobile marketplace for classified listings and stores",
+  "stack": "React Native, Expo, Stripe SDK",
+  "repoPath": "sambukhari/Classified",
+  "repository": "https://gitlab.com/sambukhari/Classified",
+  "modules": [
+    {
+      "title": "Listings",
+      "detail": "Create, edit and promote adverts"
+    },
+    {
+      "title": "Discovery",
+      "detail": "Category, location and listing search"
+    },
+    {
+      "title": "Shops & Chat",
+      "detail": "Storefronts, chat and favorites"
+    },
+    {
+      "title": "Memberships & Payments",
+      "detail": "Membership and payment screens"
+    }
+  ],
+  "checklist": [
+    "Present: login, sign-up, OTP and profile screens",
+    "Present: app-side API clients in api/",
+    "Document screen exists; full identity KYC unverified.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": "Classifieds",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Mobile marketplace for classified listings and stores",
+  "summary": "Mobile marketplace for classified listings and stores",
+  "overview": "Mobile marketplace for classified listings and stores",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Classified Mobile Marketplace — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Classified Mobile Marketplace source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Classified Mobile Marketplace"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Listings",
+      "body": "Create, edit and promote adverts",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Discovery",
+      "body": "Category, location and listing search",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Shops & Chat",
+      "body": "Storefronts, chat and favorites",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Memberships & Payments",
+      "body": "Membership and payment screens",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Listings",
+        "detail": "Create, edit and promote adverts",
+        "icon": "layers"
+      },
+      {
+        "name": "Discovery",
+        "detail": "Category, location and listing search",
+        "icon": "layers"
+      },
+      {
+        "name": "Shops & Chat",
+        "detail": "Storefronts, chat and favorites",
+        "icon": "layers"
+      },
+      {
+        "name": "Memberships & Payments",
+        "detail": "Membership and payment screens",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "laraclassified",
+      "title": "Laraclassified"
+    }
+  ]
+}

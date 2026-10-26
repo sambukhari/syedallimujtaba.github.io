@@ -1,0 +1,122 @@
+{
+  "slug": "priority-fix-admin-panel",
+  "title": "Priority Fix Admin & API",
+  "purpose": "Administration and API backend for Priority Fix property repair operations",
+  "stack": "Laravel, PHP, Sanctum, Spatie permissions, Firebase integration",
+  "repoPath": "sambukhari/priority-fix-admin-panel",
+  "repository": "https://gitlab.com/sambukhari/priority-fix-admin-panel",
+  "modules": [
+    {
+      "title": "Companies & Users",
+      "detail": "Company users, roles and account handling"
+    },
+    {
+      "title": "Properties",
+      "detail": "Company properties and property records"
+    },
+    {
+      "title": "Repairs & Quotes",
+      "detail": "Report and quotation administration"
+    },
+    {
+      "title": "Plans & Subscriptions",
+      "detail": "Packages and company subscriptions"
+    }
+  ],
+  "checklist": [
+    "Present: user, company user and authorization controllers",
+    "Present: API controllers and Laravel Sanctum",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Web platforms",
+  "family": "Priority Fix",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Administration and API backend for Priority Fix property repair operations",
+  "summary": "Administration and API backend for Priority Fix property repair operations",
+  "overview": "Administration and API backend for Priority Fix property repair operations",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Priority Fix Admin & API — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Priority Fix Admin & API source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Priority Fix Admin & API"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Companies & Users",
+      "body": "Company users, roles and account handling",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Properties",
+      "body": "Company properties and property records",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Repairs & Quotes",
+      "body": "Report and quotation administration",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Plans & Subscriptions",
+      "body": "Packages and company subscriptions",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Companies & Users",
+        "detail": "Company users, roles and account handling",
+        "icon": "layers"
+      },
+      {
+        "name": "Properties",
+        "detail": "Company properties and property records",
+        "icon": "layers"
+      },
+      {
+        "name": "Repairs & Quotes",
+        "detail": "Report and quotation administration",
+        "icon": "layers"
+      },
+      {
+        "name": "Plans & Subscriptions",
+        "detail": "Packages and company subscriptions",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "priority-fix",
+      "title": "Priority Fix — Tenant App"
+    },
+    {
+      "slug": "priority-fix-contractors",
+      "title": "Priority Fix — Contractors"
+    },
+    {
+      "slug": "priority-fix-landlord",
+      "title": "Priority Fix — Landlord"
+    }
+  ]
+}

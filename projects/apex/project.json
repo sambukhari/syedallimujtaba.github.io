@@ -1,0 +1,109 @@
+{
+  "slug": "apex",
+  "title": "Apex Staffing",
+  "purpose": "Job and staffing mobile app with applicant vetting and shifts",
+  "stack": "React Native, Redux Toolkit, Firebase",
+  "repoPath": "sambukhari/Apex",
+  "repository": "https://gitlab.com/sambukhari/Apex",
+  "modules": [
+    {
+      "title": "Jobs",
+      "detail": "Job listings and job detail screens"
+    },
+    {
+      "title": "Vetting",
+      "detail": "References, financial history and criminal-offense forms"
+    },
+    {
+      "title": "Shifts & Pay",
+      "detail": "Shift changes and pay screens"
+    },
+    {
+      "title": "Messaging",
+      "detail": "Chat, messages and notifications"
+    }
+  ],
+  "checklist": [
+    "Present: signup, login and profile views",
+    "App API folder and Firebase services",
+    "Partial: applicant vetting flows; formal KYC unverified.",
+    "Partial: job, shifts and pay screens; full HR suite unverified."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Job and staffing mobile app with applicant vetting and shifts",
+  "summary": "Job and staffing mobile app with applicant vetting and shifts",
+  "overview": "Job and staffing mobile app with applicant vetting and shifts",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Apex Staffing — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Apex Staffing source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Apex Staffing"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Jobs",
+      "body": "Job listings and job detail screens",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Vetting",
+      "body": "References, financial history and criminal-offense forms",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Shifts & Pay",
+      "body": "Shift changes and pay screens",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Messaging",
+      "body": "Chat, messages and notifications",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Jobs",
+        "detail": "Job listings and job detail screens",
+        "icon": "layers"
+      },
+      {
+        "name": "Vetting",
+        "detail": "References, financial history and criminal-offense forms",
+        "icon": "layers"
+      },
+      {
+        "name": "Shifts & Pay",
+        "detail": "Shift changes and pay screens",
+        "icon": "layers"
+      },
+      {
+        "name": "Messaging",
+        "detail": "Chat, messages and notifications",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

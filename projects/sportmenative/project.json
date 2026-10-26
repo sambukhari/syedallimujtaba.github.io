@@ -1,0 +1,126 @@
+{
+  "slug": "sportmenative",
+  "title": "SportMeNative Fan App",
+  "purpose": "Sports creator, fan and supporter social mobile app",
+  "stack": "React Native, Expo, Redux Toolkit, Stripe SDK",
+  "repoPath": "sambukhari/sportmenative",
+  "repository": "https://gitlab.com/sambukhari/sportmenative",
+  "modules": [
+    {
+      "title": "Profiles & Creators",
+      "detail": "Athlete/creator profiles and followers"
+    },
+    {
+      "title": "Posts & Messaging",
+      "detail": "Feed, comments and chat"
+    },
+    {
+      "title": "Discovery & Schedule",
+      "detail": "Sports discovery and scheduled activities"
+    },
+    {
+      "title": "Donations & Subscriptions",
+      "detail": "Supporter payments and subscription screens"
+    }
+  ],
+  "checklist": [
+    "Present: sign-in, registration, profile and guardian flows",
+    "Client integration present; backend routes not contained here",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": "Sports ecosystem",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Sports creator, fan and supporter social mobile app",
+  "summary": "Sports creator, fan and supporter social mobile app",
+  "overview": "Sports creator, fan and supporter social mobile app",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "SportMeNative Fan App — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "SportMeNative Fan App source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for SportMeNative Fan App"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Profiles & Creators",
+      "body": "Athlete/creator profiles and followers",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Posts & Messaging",
+      "body": "Feed, comments and chat",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Discovery & Schedule",
+      "body": "Sports discovery and scheduled activities",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Donations & Subscriptions",
+      "body": "Supporter payments and subscription screens",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Profiles & Creators",
+        "detail": "Athlete/creator profiles and followers",
+        "icon": "layers"
+      },
+      {
+        "name": "Posts & Messaging",
+        "detail": "Feed, comments and chat",
+        "icon": "layers"
+      },
+      {
+        "name": "Discovery & Schedule",
+        "detail": "Sports discovery and scheduled activities",
+        "icon": "layers"
+      },
+      {
+        "name": "Donations & Subscriptions",
+        "detail": "Supporter payments and subscription screens",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "sportsapp",
+      "title": "Sportsapp"
+    },
+    {
+      "slug": "sport-me",
+      "title": "Sport Me — Backend"
+    },
+    {
+      "slug": "sport-me-flutter",
+      "title": "Sport Me Flutter — Placeholder"
+    },
+    {
+      "slug": "sportscms",
+      "title": "SportsCMS"
+    }
+  ]
+}

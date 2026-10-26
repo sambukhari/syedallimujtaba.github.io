@@ -1,0 +1,94 @@
+{
+  "slug": "priority-fix",
+  "renderer": "tenant",
+  "title": "Priority Fix Tenant Repairs",
+  "eyebrow": "TENANT REPAIR PLATFORM / FEATURE BRIEF",
+  "subtitle": "Making the repair journey easier to understand—from first report to completion.",
+  "summary": "A tenant-focused repair app with account access, issue reporting with video attachments, repair-status tracking and push notification support.",
+  "overview": "The supplied Priority Fix feature brief identifies four existing app capabilities: tenant access, repair requests, repair tracking and push notifications. It also lists four proposed modules. This case study keeps those two sets completely separate.",
+  "category": "Tenant services · Repair tracking",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "focus": "An app experience organized around the tenant's essential questions: How do I report a problem? What is happening next? Who is visiting? Has the repair been completed?",
+  "caveat": "The uploaded file is a short feature list, not source-code evidence or a runtime audit. No repository, implementation dates, individual contributions, screenshots, usage metrics or production outcome evidence were provided. The four requested modules are proposals only.",
+  "stack": [
+    "Tenant accounts",
+    "Repair requests",
+    "Video attachments",
+    "Status tracking",
+    "Push notifications"
+  ],
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Tenant access",
+      "body": "The brief lists sign-up, sign-in, terms acceptance and profile editing.",
+      "icon": "user"
+    },
+    {
+      "number": "02",
+      "title": "Report an issue",
+      "body": "Tenants can report problems, attach videos and view request details.",
+      "icon": "edit"
+    },
+    {
+      "number": "03",
+      "title": "Track a repair",
+      "body": "Repair status, contractor or visit information and completion confirmation are listed.",
+      "icon": "check"
+    },
+    {
+      "number": "04",
+      "title": "Stay informed",
+      "body": "The brief includes push-notification support, without specifying event triggers.",
+      "icon": "spark"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Tenant access",
+        "detail": "Sign up or sign in, accept terms and maintain profile details.",
+        "icon": "user"
+      },
+      {
+        "name": "Report an issue",
+        "detail": "Create a repair request and attach a supporting video.",
+        "icon": "edit"
+      },
+      {
+        "name": "Check progress",
+        "detail": "Review status plus contractor and visit information.",
+        "icon": "search"
+      },
+      {
+        "name": "Confirm completion",
+        "detail": "The tenant can confirm that the repair has been completed.",
+        "icon": "check"
+      }
+    ]
+  },
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Priority Fix — product journey",
+      "alt": "Concept illustration of a mobile tenant repair app and its four documented features",
+      "caption": "Conceptual portfolio artwork representing source-described features, not an app screenshot."
+    },
+    {
+      "src": "assets/tenant-repair-flow.svg",
+      "kind": "diagram",
+      "title": "From report to completion",
+      "alt": "Four-stage diagram showing tenant access, issue reporting, repair tracking and completion confirmation",
+      "caption": "Illustrative sequence of listed tenant capabilities. End-to-end integration is not proven by the feature brief."
+    },
+    {
+      "src": "assets/proposed-scope.svg",
+      "kind": "diagram",
+      "title": "Future module requests",
+      "alt": "Diagram showing four proposed and unbuilt modules: user management, API, KYC and HR",
+      "caption": "Roadmap-only illustration. User Management, API for App, KYC and HR are requested modules—not claimed as implemented."
+    }
+  ]
+}

@@ -96,3 +96,10 @@ Tailwind v4.1.10 utilities are compiled to the committed lightweight `assets/css
 
 ## Executive hero portrait (October 2026)
 The right side of the header uses `assets/images/ali-mujtaba-executive.webp`, optimized to approximately 100 KB from the executive-styled image the site owner approved. The raw identity-reference photos are not committed. The image is intentionally rendered as a normal accessible asset with subtle CSS perspective/pointer motion; it is not a separate heavy 3D mesh. Reduced-motion preferences and the site's motion toggle disable effects. The established scroll-driven AI workflow follows below the introduction unchanged. Run `npm run build` after editing `src/page.html` so the root `index.html` stays in sync.
+
+
+## V6 motion and career flow (October 2026)
+- `assets/js/scroll-scene.js` replaces the old timer-driven hero flow. The diagram is CSS-sticky while five chapters scroll past; the chapter crossing the viewport centre selects the stage (IntersectionObserver, no timers). The five stages — Discover, Architect, Build, Integrate, Lead & ship — summarise the career in `src/career.html` and the reviewed project stacks.
+- `assets/css/motion.css` + `assets/js/motion.js` add the site-wide layer (also injected into every generated page through `scripts/site-shell.mjs`): scroll progress bar, hiding glass header, reveal-on-view, split headline, counters, animated stack bars, spotlight/tilt/magnetic pointer effects and page transitions. All of it honours `prefers-reduced-motion` and the footer motion toggle.
+- `scripts/proof.mjs` renders the "Engineering at a glance" band. Figures come from the CV timeline (11+ years, 8 employers) and from the reviewed project inventories (project count, mobile count, stack footprint). They are source-breadth counts, not production metrics.
+- Project titles are unique and not look-alike prefixes (`tests/titles.test.mjs`). The three empty repositories (`hc`, `marketing-tool`, `sport-me-flutter`) carry `"status": "inactive"`, an "Inactive" title, a visible badge, `noindex`, and stay out of every listing.

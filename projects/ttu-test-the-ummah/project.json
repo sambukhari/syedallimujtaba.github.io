@@ -1,0 +1,123 @@
+{
+  "slug": "ttu-test-the-ummah",
+  "title": "TTU Learning & Exam Platform",
+  "purpose": "Learning, practice, exam and quiz management platform",
+  "stack": "Laravel, PHP, Jetstream, Inertia, Sanctum, Stripe",
+  "repoPath": "sambukhari/ttu-test-the-ummah",
+  "repository": "https://gitlab.com/sambukhari/ttu-test-the-ummah",
+  "modules": [
+    {
+      "title": "Question Bank",
+      "detail": "Questions, categories, topics and sections"
+    },
+    {
+      "title": "Exams & Quizzes",
+      "detail": "Schedules, attempts and leaderboards"
+    },
+    {
+      "title": "Practice Lessons",
+      "detail": "Practice sets, videos and learning progress"
+    },
+    {
+      "title": "Subscriptions",
+      "detail": "Plans, checkout and payments"
+    },
+    {
+      "title": "Analytics",
+      "detail": "Exam, quiz and practice analytics"
+    }
+  ],
+  "checklist": [
+    "Present: groups, user import and admin user management",
+    "Present: Api controller and Sanctum",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": "Test The Ummah",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Learning, practice, exam and quiz management platform",
+  "summary": "Learning, practice, exam and quiz management platform",
+  "overview": "Learning, practice, exam and quiz management platform",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "TTU Learning & Exam Platform — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "TTU Learning & Exam Platform source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for TTU Learning & Exam Platform"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Question Bank",
+      "body": "Questions, categories, topics and sections",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Exams & Quizzes",
+      "body": "Schedules, attempts and leaderboards",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Practice Lessons",
+      "body": "Practice sets, videos and learning progress",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Subscriptions",
+      "body": "Plans, checkout and payments",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Question Bank",
+        "detail": "Questions, categories, topics and sections",
+        "icon": "layers"
+      },
+      {
+        "name": "Exams & Quizzes",
+        "detail": "Schedules, attempts and leaderboards",
+        "icon": "layers"
+      },
+      {
+        "name": "Practice Lessons",
+        "detail": "Practice sets, videos and learning progress",
+        "icon": "layers"
+      },
+      {
+        "name": "Subscriptions",
+        "detail": "Plans, checkout and payments",
+        "icon": "layers"
+      },
+      {
+        "name": "Analytics",
+        "detail": "Exam, quiz and practice analytics",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "test-the-ummah",
+      "title": "Test The Ummah — Earlier App"
+    }
+  ]
+}

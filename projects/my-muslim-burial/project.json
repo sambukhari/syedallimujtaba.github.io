@@ -1,0 +1,114 @@
+{
+  "slug": "my-muslim-burial",
+  "title": "My Muslim Burial Backend",
+  "purpose": "Laravel web/backend system for burial community and account services",
+  "stack": "Laravel, PHP, Sanctum, Stripe, chat package",
+  "repoPath": "sambukhari/my-muslim-burial",
+  "repository": "https://gitlab.com/sambukhari/my-muslim-burial",
+  "modules": [
+    {
+      "title": "Next of Kin",
+      "detail": "Kin controller and model"
+    },
+    {
+      "title": "News",
+      "detail": "News publishing and access"
+    },
+    {
+      "title": "Feedback",
+      "detail": "Feedback submissions"
+    },
+    {
+      "title": "Payments & Chat",
+      "detail": "Payment and chat models/integrations"
+    }
+  ],
+  "checklist": [
+    "Present: registration, login and profile controllers",
+    "Backend with Sanctum; exact mobile endpoints unverified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": "Muslim Burial",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Laravel web/backend system for burial community and account services",
+  "summary": "Laravel web/backend system for burial community and account services",
+  "overview": "Laravel web/backend system for burial community and account services",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "My Muslim Burial Backend — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "My Muslim Burial Backend source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for My Muslim Burial Backend"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Next of Kin",
+      "body": "Kin controller and model",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "News",
+      "body": "News publishing and access",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Feedback",
+      "body": "Feedback submissions",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Payments & Chat",
+      "body": "Payment and chat models/integrations",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Next of Kin",
+        "detail": "Kin controller and model",
+        "icon": "layers"
+      },
+      {
+        "name": "News",
+        "detail": "News publishing and access",
+        "icon": "layers"
+      },
+      {
+        "name": "Feedback",
+        "detail": "Feedback submissions",
+        "icon": "layers"
+      },
+      {
+        "name": "Payments & Chat",
+        "detail": "Payment and chat models/integrations",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "muslim-burial-mobile",
+      "title": "Muslim Burial Mobile"
+    }
+  ]
+}

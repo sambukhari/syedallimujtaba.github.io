@@ -1,0 +1,109 @@
+{
+  "slug": "chauffeur-site",
+  "title": "Chauffeur Booking Site",
+  "purpose": "Chauffeur and car booking website with an admin area",
+  "stack": "Laravel, PHP, Sanctum",
+  "repoPath": "main-lead/chauffeur-site",
+  "repository": "https://gitlab.com/main-lead/chauffeur-site",
+  "modules": [
+    {
+      "title": "Cars",
+      "detail": "Vehicle listings and detail pages"
+    },
+    {
+      "title": "Locations",
+      "detail": "Pickup/service locations"
+    },
+    {
+      "title": "Bookings",
+      "detail": "Booking management controller"
+    },
+    {
+      "title": "Services",
+      "detail": "Chauffeur service listings and pages"
+    }
+  ],
+  "checklist": [
+    "Present: login, registration, profile and user controllers",
+    "Laravel backend; mobile-specific API not verified",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Web platforms",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Chauffeur and car booking website with an admin area",
+  "summary": "Chauffeur and car booking website with an admin area",
+  "overview": "Chauffeur and car booking website with an admin area",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Chauffeur Booking Site — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Chauffeur Booking Site source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Chauffeur Booking Site"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Cars",
+      "body": "Vehicle listings and detail pages",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Locations",
+      "body": "Pickup/service locations",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Bookings",
+      "body": "Booking management controller",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Services",
+      "body": "Chauffeur service listings and pages",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Cars",
+        "detail": "Vehicle listings and detail pages",
+        "icon": "layers"
+      },
+      {
+        "name": "Locations",
+        "detail": "Pickup/service locations",
+        "icon": "layers"
+      },
+      {
+        "name": "Bookings",
+        "detail": "Booking management controller",
+        "icon": "layers"
+      },
+      {
+        "name": "Services",
+        "detail": "Chauffeur service listings and pages",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

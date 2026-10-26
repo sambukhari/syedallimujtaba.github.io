@@ -1,0 +1,42 @@
+/* Priority Fix / tenant service case-study visual identity on shared portfolio design */
+.pf-page{background-image:radial-gradient(ellipse 660px 420px at 88% 7%,#d65c1429,transparent),radial-gradient(ellipse 640px 590px at 4% 49%,#c86f1611,transparent),linear-gradient(135deg,#0a090b,#141010 54%,#09090c)}
+.pf-hero{padding:25px 0 60px}
+.pf-hero h1{font-size:clamp(72px,8.6vw,136px);letter-spacing:-.09em;margin:27px 0 8px}
+.pf-hero h1 small{display:block;font:700 clamp(13px,1.6vw,20px)/1.5 "DM Sans",sans-serif;letter-spacing:.31em;color:#ffb67c;margin:15px 0 24px}
+.pf-hero .cs-lead{font-size:clamp(22px,2.45vw,35px)}
+.pf-art{box-shadow:0 32px 100px #000b,0 0 53px #ff64151c;overflow:hidden}
+.pf-art::before{content:"";inset:11px;position:absolute;border:1px solid #ffb36f47;border-radius:12px;z-index:3;pointer-events:none}
+.pf-art img{aspect-ratio:1200/760}
+.pf-metrics>div{background:linear-gradient(140deg,#241811,#120f12)}
+.pf-metrics strong{color:#ffad69}
+.pf-capabilities-note{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;align-items:center;margin-top:17px;border:1px solid #ff852b48;border-radius:13px;padding:19px 22px;background:linear-gradient(115deg,#2c1a13,#151114)}
+.pf-capabilities-note strong{font:700 17px/1.3 "Space Grotesk",sans-serif;color:#fff1e6}
+.pf-capabilities-note p{grid-column:2;color:#c7b2a3;font-size:12px}
+.pf-orb{display:block;width:36px;height:36px;grid-row:span 2;border-radius:11px;border:1px solid #ffa14c7c;background:radial-gradient(circle,#ffb271,#ff7b18 32%,#492010 33%,#251411 65%);box-shadow:0 0 0 7px #ff751315,0 0 24px #ff721829;animation:pf-orb 5s ease-in-out infinite}
+.pf-page .cs-stage-track{background:radial-gradient(circle at 50% -30%,#ef7e1922,transparent 63%),repeating-linear-gradient(90deg,transparent 0,transparent 49px,#ffa4210b 50px),#120f11}
+.pf-page .cs-stage[aria-pressed="true"]{background:linear-gradient(150deg,#462310,#231612);border-color:#ffa457}
+.pf-inventory-label{display:flex;align-items:center;gap:11px;font:700 11px/1.5 "DM Sans",sans-serif;letter-spacing:.08em;color:#ffb47e;flex-wrap:wrap}
+.pf-inventory-label small{font:600 10px/1.4 "DM Sans",sans-serif;color:#ac9d90}
+.pf-page .cs-module-status.source{color:#ffb06b;border-color:#fa883e64}
+.pf-roadmap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;perspective:1000px}
+.pf-roadmap-card{position:relative;min-width:0;min-height:288px;border:1px dashed #fd9b535f;border-radius:16px;background:linear-gradient(150deg,#231915,#141216 65%);padding:22px 20px 18px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.pf-roadmap-card::after{content:"";position:absolute;right:-62px;bottom:-85px;width:205px;height:205px;border-radius:50%;border:1px solid #ff842d26;box-shadow:0 0 0 25px #ff8d2407,0 0 0 54px #ff8d2407;pointer-events:none}
+.pf-roadmap-card:hover{transform:translateY(-6px) rotateX(2deg);border-color:#ff9e568c;box-shadow:0 15px 46px #0006}
+.pf-roadmap-top{display:flex;justify-content:space-between;align-items:start;gap:8px}
+.pf-roadmap-count{font:700 9px/1.4 "DM Sans",sans-serif;letter-spacing:.1em;color:#bdac9f}
+.pf-roadmap-status{font:700 8px/1.4 "DM Sans",sans-serif;color:#ffc296;background:#ff8d1c10;border:1px solid #ff9d535c;border-radius:5px;padding:5px 6px;text-align:right}
+.pf-roadmap-icon{display:grid;place-items:center;width:52px;height:52px;border:1px solid #ffa15688;border-radius:14px;background:#ff8b2716;color:#ffb36f;margin-top:30px;transform:perspective(260px) rotateY(-12deg) rotateX(7deg);box-shadow:8px 9px 0 -4px #ff8c2819}
+.pf-roadmap-icon svg{height:27px;width:27px}
+.pf-roadmap-card h3{font-size:20px;line-height:1.2;letter-spacing:-.035em;color:#fff3e8;margin:20px 0 11px}
+.pf-roadmap-card p{font-size:12px;line-height:1.75;color:#c6b4a5}
+.pf-roadmap-foot{display:flex;justify-content:space-between;border-top:1px solid #ff8b243c;margin-top:19px;padding-top:13px;font:700 9px/1.5 "DM Sans",sans-serif;letter-spacing:.1em;color:#ffa96b}
+.pf-scope-disclaimer{border:1px solid #fa9a4a54;background:#29190e;padding:19px 22px;border-radius:11px;color:#d9bba3;font-size:12px;line-height:1.8;margin-top:20px!important}
+.pf-scope-disclaimer strong{color:#ffbd80}
+.case-feature-priority{background:linear-gradient(142deg,#241910 0%,#0e0d0f 60%,#20140f 100%);border-color:#ff903750}
+.case-feature-priority .case-feature-art{background:#1d1410}
+.case-feature-priority .case-counters span{white-space:nowrap}
+@keyframes pf-orb{0%,100%{box-shadow:0 0 0 7px #ff751315,0 0 24px #ff721829}50%{box-shadow:0 0 0 13px #ff75130c,0 0 35px #ff72184f}}
+@media(max-width:1190px){.pf-roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-roadmap-card{min-height:250px}.pf-hero h1{font-size:clamp(65px,8vw,100px)}}
+@media(max-width:900px){.pf-hero h1{font-size:clamp(64px,11vw,108px)}.pf-art{transform:none!important}}
+@media(max-width:650px){.pf-hero h1{font-size:clamp(57px,15.5vw,90px)}.pf-hero h1 small{font-size:11px;letter-spacing:.16em}.pf-roadmap-grid{grid-template-columns:1fr}.pf-roadmap-card{min-height:0;padding:18px}.pf-roadmap-icon{margin-top:15px}.pf-inventory-label{width:100%}.pf-page .cs-module-status{font-size:8px}.pf-capabilities-note{padding:16px}}
+@media(prefers-reduced-motion:reduce){.pf-orb,.pf-roadmap-card{animation:none!important;transition:none!important;transform:none!important}}

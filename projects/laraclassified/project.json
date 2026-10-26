@@ -1,0 +1,123 @@
+{
+  "slug": "laraclassified",
+  "title": "Laraclassified Ads Platform",
+  "purpose": "Classified ads web platform with APIs and account workflows",
+  "stack": "Laravel, PHP, Sanctum, Socialite, payment packages",
+  "repoPath": "sambukhari/laraclassified",
+  "repository": "https://gitlab.com/sambukhari/laraclassified",
+  "modules": [
+    {
+      "title": "Listings",
+      "detail": "Ad posting, photos, editing and search"
+    },
+    {
+      "title": "Locations & Categories",
+      "detail": "Geographic and category browsing"
+    },
+    {
+      "title": "Chats & Saved Items",
+      "detail": "Messages, saved posts and saved searches"
+    },
+    {
+      "title": "Paid Features",
+      "detail": "Packages, payment methods and checkout"
+    },
+    {
+      "title": "Account Settings",
+      "detail": "Registration, login and profile management"
+    }
+  ],
+  "checklist": [
+    "Present: registration, login, profile and verification flows",
+    "Present: full Api controllers and Sanctum",
+    "Phone/email verification exists; document identity KYC unverified.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Commerce & marketplaces",
+  "family": "Classifieds",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Classified ads web platform with APIs and account workflows",
+  "summary": "Classified ads web platform with APIs and account workflows",
+  "overview": "Classified ads web platform with APIs and account workflows",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Laraclassified Ads Platform — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Laraclassified Ads Platform source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Laraclassified Ads Platform"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Listings",
+      "body": "Ad posting, photos, editing and search",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Locations & Categories",
+      "body": "Geographic and category browsing",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Chats & Saved Items",
+      "body": "Messages, saved posts and saved searches",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Paid Features",
+      "body": "Packages, payment methods and checkout",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Listings",
+        "detail": "Ad posting, photos, editing and search",
+        "icon": "layers"
+      },
+      {
+        "name": "Locations & Categories",
+        "detail": "Geographic and category browsing",
+        "icon": "layers"
+      },
+      {
+        "name": "Chats & Saved Items",
+        "detail": "Messages, saved posts and saved searches",
+        "icon": "layers"
+      },
+      {
+        "name": "Paid Features",
+        "detail": "Packages, payment methods and checkout",
+        "icon": "layers"
+      },
+      {
+        "name": "Account Settings",
+        "detail": "Registration, login and profile management",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "classified",
+      "title": "Classified Mobile"
+    }
+  ]
+}

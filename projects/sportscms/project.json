@@ -1,0 +1,135 @@
+{
+  "slug": "sportscms",
+  "title": "SportsCMS Community Backend",
+  "purpose": "Sports-oriented social community and content management backend",
+  "stack": "Laravel, PHP, Sanctum, social login, payment integrations",
+  "repoPath": "sambukhari/sportscms",
+  "repository": "https://gitlab.com/sambukhari/sportscms",
+  "modules": [
+    {
+      "title": "Social Content",
+      "detail": "Stories, videos, blogs and profiles"
+    },
+    {
+      "title": "Groups & Chat",
+      "detail": "Group communications and messages"
+    },
+    {
+      "title": "Events & Sponsorship",
+      "detail": "Event and sponsor controllers"
+    },
+    {
+      "title": "Wallet & Payments",
+      "detail": "Wallet, payments and payment history"
+    },
+    {
+      "title": "Moderation",
+      "detail": "Admin operations and notifications"
+    }
+  ],
+  "checklist": [
+    "Present: registration, roles and custom user controllers",
+    "Present: ApiController and Sanctum",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Community & platforms",
+  "family": "Sports ecosystem",
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Sports-oriented social community and content management backend",
+  "summary": "Sports-oriented social community and content management backend",
+  "overview": "Sports-oriented social community and content management backend",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "SportsCMS Community Backend — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "SportsCMS Community Backend source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for SportsCMS Community Backend"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Social Content",
+      "body": "Stories, videos, blogs and profiles",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Groups & Chat",
+      "body": "Group communications and messages",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Events & Sponsorship",
+      "body": "Event and sponsor controllers",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Wallet & Payments",
+      "body": "Wallet, payments and payment history",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Social Content",
+        "detail": "Stories, videos, blogs and profiles",
+        "icon": "layers"
+      },
+      {
+        "name": "Groups & Chat",
+        "detail": "Group communications and messages",
+        "icon": "layers"
+      },
+      {
+        "name": "Events & Sponsorship",
+        "detail": "Event and sponsor controllers",
+        "icon": "layers"
+      },
+      {
+        "name": "Wallet & Payments",
+        "detail": "Wallet, payments and payment history",
+        "icon": "layers"
+      },
+      {
+        "name": "Moderation",
+        "detail": "Admin operations and notifications",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": [
+    {
+      "slug": "sportsapp",
+      "title": "Sportsapp"
+    },
+    {
+      "slug": "sport-me",
+      "title": "Sport Me — Backend"
+    },
+    {
+      "slug": "sport-me-flutter",
+      "title": "Sport Me Flutter — Placeholder"
+    },
+    {
+      "slug": "sportmenative",
+      "title": "SportMeNative"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "supply-source",
+  "title": "Supply Source",
+  "purpose": "Mobile catalog, ordering and administration experience",
+  "stack": "React Native, Expo, Redux Toolkit, Firebase Messaging, Razorpay",
+  "repoPath": "sambukhari/supply-source",
+  "repository": "https://gitlab.com/sambukhari/supply-source",
+  "modules": [
+    {
+      "title": "Catalog & Cart",
+      "detail": "Product browse, detail and cart views"
+    },
+    {
+      "title": "Orders",
+      "detail": "Order history, tracking and feedback"
+    },
+    {
+      "title": "Admin Tools",
+      "detail": "Invoices, ledger and user lists"
+    },
+    {
+      "title": "Notifications",
+      "detail": "Push messaging integration"
+    }
+  ],
+  "checklist": [
+    "Present: login, registration, profile and admin users",
+    "Client-side ordering integration; backend outside repo",
+    "Not evidenced in inspected files.",
+    "Not evidenced in inspected files."
+  ],
+  "placeholder": false,
+  "category": "Mobile apps",
+  "family": null,
+  "renderer": "gitlab-brief",
+  "eyebrow": "GITLAB SOURCE CASE STUDY",
+  "subtitle": "Mobile catalog, ordering and administration experience",
+  "summary": "Mobile catalog, ordering and administration experience",
+  "overview": "Mobile catalog, ordering and administration experience",
+  "inventory": "PROJECT_MODULES_AND_FEATURES.md",
+  "cover": "assets/cover.svg",
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "Supply Source — engineering overview",
+      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
+      "alt": "Supply Source source architecture overview"
+    },
+    {
+      "src": "assets/workflow.svg",
+      "kind": "diagram",
+      "title": "Modules and source boundaries",
+      "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
+      "alt": "Conceptual system module overview for Supply Source"
+    }
+  ],
+  "highlights": [
+    {
+      "number": "1",
+      "title": "Catalog & Cart",
+      "body": "Product browse, detail and cart views",
+      "icon": "layers"
+    },
+    {
+      "number": "2",
+      "title": "Orders",
+      "body": "Order history, tracking and feedback",
+      "icon": "layers"
+    },
+    {
+      "number": "3",
+      "title": "Admin Tools",
+      "body": "Invoices, ledger and user lists",
+      "icon": "layers"
+    },
+    {
+      "number": "4",
+      "title": "Notifications",
+      "body": "Push messaging integration",
+      "icon": "layers"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Catalog & Cart",
+        "detail": "Product browse, detail and cart views",
+        "icon": "layers"
+      },
+      {
+        "name": "Orders",
+        "detail": "Order history, tracking and feedback",
+        "icon": "layers"
+      },
+      {
+        "name": "Admin Tools",
+        "detail": "Invoices, ledger and user lists",
+        "icon": "layers"
+      },
+      {
+        "name": "Notifications",
+        "detail": "Push messaging integration",
+        "icon": "layers"
+      }
+    ]
+  },
+  "related": []
+}

@@ -1,0 +1,130 @@
+{
+  "slug": "ezead-marketplace",
+  "title": "EzeAD Marketplace",
+  "eyebrow": "SYSTEM CASE STUDY · CLASSIFIEDS / AI AUTOMATION",
+  "subtitle": "A connected marketplace, from the first listing to the last human handoff.",
+  "summary": "Multi-country classifieds with dynamic listings, location search, messaging, seller storefronts, payments, AI-assisted support and administration.",
+  "overview": "A source-reviewed look inside a multi-country classifieds ecosystem: flexible publishing, geo-aware discovery, direct buyer–seller conversations, monetization, moderation and an AI-to-human customer support path.",
+  "focus": "The engineering story is about connecting marketplace complexity into workflows people can use—not claiming unverified production metrics.",
+  "caveat": "This page reflects an uploaded source inventory at a pinned commit, not an independent production audit. Specific individual code contributions and live deployment outcomes require confirmation.",
+  "category": "Marketplace · AI operations",
+  "repository": "https://github.com/ashiq/ezead-1",
+  "commit": "39e700d3faa33f2b5eddd5ad80dfc15b34ab7eb1",
+  "reviewed": "2026-10-23",
+  "inventory": "FEATURE_AND_MODULE_INVENTORY.md",
+  "cover": "assets/cover.svg",
+  "stack": [
+    "Laravel",
+    "PHP",
+    "REST APIs",
+    "AI assistance",
+    "PayPal integration",
+    "Location search",
+    "Admin tooling"
+  ],
+  "highlights": [
+    {
+      "number": "01",
+      "title": "Marketplace engine",
+      "body": "Publish and moderate classified ads, custom category fields, shop profiles and location-specific discovery.",
+      "icon": "layers"
+    },
+    {
+      "number": "02",
+      "title": "AI + human support",
+      "body": "AI first-response eligibility, confusion detection, agent queues and human escalation paths.",
+      "icon": "spark"
+    },
+    {
+      "number": "03",
+      "title": "Commercial layer",
+      "body": "Packages, listing boosts, PayPal subscription code and a tracked webhook/audit workflow.",
+      "icon": "wallet"
+    },
+    {
+      "number": "04",
+      "title": "Back-office control",
+      "body": "KYC review, roles, permissions, content management, analytics screens and operational tools.",
+      "icon": "shield"
+    }
+  ],
+  "workflows": {
+    "main": [
+      {
+        "name": "Identity & trust",
+        "detail": "Accounts, verification, seller profiles and permission checks.",
+        "icon": "user"
+      },
+      {
+        "name": "Publish & enrich",
+        "detail": "Listings, category fields, images and AI-assisted descriptions.",
+        "icon": "edit"
+      },
+      {
+        "name": "Discover & connect",
+        "detail": "Country-aware search, geo filters, favourites and private messaging.",
+        "icon": "search"
+      },
+      {
+        "name": "Support & escalate",
+        "detail": "AI first response, agent handoff and human-reviewed outcomes.",
+        "icon": "spark"
+      },
+      {
+        "name": "Monetize & govern",
+        "detail": "Packages, boosts, payment code, moderation and administrative visibility.",
+        "icon": "shield"
+      }
+    ],
+    "core": [
+      {
+        "name": "Explore products",
+        "detail": "Separate store catalog, brands, filters and product details.",
+        "icon": "layers"
+      },
+      {
+        "name": "Cart & promotions",
+        "detail": "Cart updates, coupon logic and featured offers.",
+        "icon": "wallet"
+      },
+      {
+        "name": "Checkout & delivery",
+        "detail": "Shipping methods, gateway adapters and checkout controllers.",
+        "icon": "check"
+      },
+      {
+        "name": "Orders & accounts",
+        "detail": "Order history, invoices, tracking and customer accounts.",
+        "icon": "user"
+      },
+      {
+        "name": "Support & finance",
+        "detail": "Store tickets, deposits, withdrawals and administration.",
+        "icon": "shield"
+      }
+    ]
+  },
+  "media": [
+    {
+      "src": "assets/cover.svg",
+      "kind": "diagram",
+      "title": "EzeAD systems landscape",
+      "caption": "Architecture illustration of the main classifieds ecosystem; not an application screenshot.",
+      "alt": "Illustrated EzeAD marketplace architecture with product, discovery, support and commercial systems."
+    },
+    {
+      "src": "assets/architecture.svg",
+      "kind": "diagram",
+      "title": "Two applications, distinct boundaries",
+      "caption": "Conceptual map separating the main marketplace from the storefront inside public/core.",
+      "alt": "Diagram with two separate application boundaries for main Laravel classifieds and a secondary Laravel storefront."
+    },
+    {
+      "src": "assets/ai-handoff.svg",
+      "kind": "diagram",
+      "title": "AI response to human escalation",
+      "caption": "Illustrative flow based on source-described support code; runtime provider configuration is unverified.",
+      "alt": "Concept workflow from inbound support message to AI response assessment, live agent escalation and resolution."
+    }
+  ]
+}
