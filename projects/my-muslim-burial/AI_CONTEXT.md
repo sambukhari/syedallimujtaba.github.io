@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # AI Context — My Muslim Burial Backend
-=======
-# AI Context — My Muslim Burial — Backend
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 - **Repository:** https://gitlab.com/sambukhari/my-muslim-burial
 - **Reviewed branch:** `main` (read-only in uploaded source)

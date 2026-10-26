@@ -1,11 +1,7 @@
 {
   "slug": "priority-fix",
   "renderer": "tenant",
-<<<<<<< HEAD
   "title": "Priority Fix Tenant Repairs",
-=======
-  "title": "Priority Fix",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "eyebrow": "TENANT REPAIR PLATFORM / FEATURE BRIEF",
   "subtitle": "Making the repair journey easier to understand—from first report to completion.",
   "summary": "A tenant-focused repair app with account access, issue reporting with video attachments, repair-status tracking and push notification support.",

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Project Modules and Features — MuslimBurial Community Support App
-=======
-# Project Modules and Features — MuslimBurial Community
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Communities & Groups** — Create and discover communities and groups.

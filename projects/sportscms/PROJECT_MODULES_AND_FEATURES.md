@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Project Modules and Features — SportsCMS Community Backend
-=======
-# Project Modules and Features — SportsCMS
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Social Content** — Stories, videos, blogs and profiles.

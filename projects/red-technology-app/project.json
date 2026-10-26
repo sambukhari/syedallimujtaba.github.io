@@ -1,10 +1,6 @@
 {
   "slug": "red-technology-app",
-<<<<<<< HEAD
   "title": "Red Technology Attendance",
-=======
-  "title": "Red Technology — Attendance",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Attendance-oriented employee mobile application",
   "stack": "Flutter, Dart",
   "repoPath": "sambukhari/red-technology-app",
@@ -43,26 +39,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "Red Technology Attendance — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Red Technology Attendance source architecture overview"
-=======
-      "title": "Red Technology — Attendance — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "Red Technology — Attendance source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for Red Technology Attendance"
-=======
-      "alt": "Conceptual system module overview for Red Technology — Attendance"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -105,8 +91,4 @@
     ]
   },
   "related": []
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

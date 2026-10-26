@@ -1,10 +1,6 @@
 {
   "slug": "at-hand-contractor",
-<<<<<<< HEAD
   "title": "At-Hand Contractor Jobs",
-=======
-  "title": "At-Hand Contractor",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Contractor mobile app for jobs related to property upkeep",
   "stack": "React Native, Axios, Firebase",
   "repoPath": "sambukhari/At-Hand-Contractor",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "At-Hand Contractor Jobs — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "At-Hand Contractor Jobs source architecture overview"
-=======
-      "title": "At-Hand Contractor — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "At-Hand Contractor source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for At-Hand Contractor Jobs"
-=======
-      "alt": "Conceptual system module overview for At-Hand Contractor"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -120,8 +106,4 @@
     ]
   },
   "related": []
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Project Modules and Features — Sport Me Flutter (Inactive · Placeholder)
-=======
-# Project Modules and Features — Sport Me Flutter — Placeholder
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 *No application modules were found in the inspected repository.*

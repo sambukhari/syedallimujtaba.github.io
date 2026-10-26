@@ -1,10 +1,6 @@
 {
   "slug": "priority-fix-landlord",
-<<<<<<< HEAD
   "title": "Priority Fix Landlord App",
-=======
-  "title": "Priority Fix — Landlord",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Landlord-facing app for properties and repair workflows",
   "stack": "React Native, Expo, Axios, Redux Toolkit",
   "repoPath": "sambukhari/priority-fix-landlord",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "Priority Fix Landlord App — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Priority Fix Landlord App source architecture overview"
-=======
-      "title": "Priority Fix — Landlord — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "Priority Fix — Landlord source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for Priority Fix Landlord App"
-=======
-      "alt": "Conceptual system module overview for Priority Fix — Landlord"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -133,8 +119,4 @@
       "title": "Priority Fix — Contractors"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

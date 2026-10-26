@@ -1,10 +1,6 @@
 {
   "slug": "apse",
-<<<<<<< HEAD
   "title": "APSE Ordering",
-=======
-  "title": "APSE",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Mobile ordering app with customer and admin workflows",
   "stack": "React Native, Expo, Redux Toolkit, Firebase Messaging, Razorpay",
   "repoPath": "main-lead/APSE",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "APSE Ordering — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "APSE Ordering source architecture overview"
-=======
-      "title": "APSE — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "APSE source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for APSE Ordering"
-=======
-      "alt": "Conceptual system module overview for APSE"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -120,8 +106,4 @@
     ]
   },
   "related": []
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

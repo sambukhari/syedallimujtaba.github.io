@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # AI Context — Muslim Burial Mobile App
-=======
-# AI Context — Muslim Burial Mobile
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 - **Repository:** https://gitlab.com/sambukhari/muslim-burial
 - **Reviewed branch:** `main` (read-only in uploaded source)

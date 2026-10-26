@@ -1,10 +1,6 @@
 {
   "slug": "priority-fix-admin-panel",
-<<<<<<< HEAD
   "title": "Priority Fix Admin & API",
-=======
-  "title": "Priority Fix — Admin & API",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Administration and API backend for Priority Fix property repair operations",
   "stack": "Laravel, PHP, Sanctum, Spatie permissions, Firebase integration",
   "repoPath": "sambukhari/priority-fix-admin-panel",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "Priority Fix Admin & API — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Priority Fix Admin & API source architecture overview"
-=======
-      "title": "Priority Fix — Admin & API — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "Priority Fix — Admin & API source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for Priority Fix Admin & API"
-=======
-      "alt": "Conceptual system module overview for Priority Fix — Admin & API"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -133,8 +119,4 @@
       "title": "Priority Fix — Landlord"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

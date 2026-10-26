@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Project Modules and Features — My Muslim Burial Backend
-=======
-# Project Modules and Features — My Muslim Burial — Backend
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 1. **Next of Kin** — Kin controller and model.

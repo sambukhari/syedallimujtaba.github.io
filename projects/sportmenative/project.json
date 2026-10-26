@@ -1,10 +1,6 @@
 {
   "slug": "sportmenative",
-<<<<<<< HEAD
   "title": "SportMeNative Fan App",
-=======
-  "title": "SportMeNative",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Sports creator, fan and supporter social mobile app",
   "stack": "React Native, Expo, Redux Toolkit, Stripe SDK",
   "repoPath": "sambukhari/sportmenative",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "SportMeNative Fan App — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "SportMeNative Fan App source architecture overview"
-=======
-      "title": "SportMeNative — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "SportMeNative source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for SportMeNative Fan App"
-=======
-      "alt": "Conceptual system module overview for SportMeNative"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -137,8 +123,4 @@
       "title": "SportsCMS"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

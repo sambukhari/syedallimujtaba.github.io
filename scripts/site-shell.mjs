@@ -29,11 +29,7 @@ export function applySiteShell(html,{root='../../',page='detail',archived=false}
  const head=/<header\b[^>]*>[\s\S]*?<\/header>/i,foot=/<footer\b[^>]*>[\s\S]*?<\/footer>/i;
  if(!head.test(output)||!foot.test(output))throw Error('Page is missing a header or footer for shared shell');
  output=output.replace(head,()=>header).replace(foot,()=>footer);
-<<<<<<< HEAD
  const assets=`<link rel="stylesheet" href="${root}assets/css/site-shell.css"><link rel="stylesheet" href="${root}assets/css/motion.css"><script defer src="${root}assets/js/site-shell.js"></script><script defer src="${root}assets/js/motion.js"></script>`;
-=======
- const assets=`<link rel="stylesheet" href="${root}assets/css/site-shell.css"><script defer src="${root}assets/js/site-shell.js"></script>`;
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
  if(!output.includes('</head>'))throw Error('Missing document head');
  output=output.replace('</head>',(archived?'<meta name="robots" content="noindex,follow">':'')+assets+'</head>');
  return output;

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # AI Context — Sportsapp Creator Network
-=======
-# AI Context — Sportsapp
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 - **Repository:** https://gitlab.com/sambukhari/Sportsapp
 - **Reviewed branch:** `main` (read-only in uploaded source)

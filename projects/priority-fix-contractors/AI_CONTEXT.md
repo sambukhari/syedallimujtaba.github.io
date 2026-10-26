@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # AI Context — Priority Fix Contractor App
-=======
-# AI Context — Priority Fix — Contractors
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 - **Repository:** https://gitlab.com/sambukhari/priority-fix-contractors
 - **Reviewed branch:** `main` (read-only in uploaded source)

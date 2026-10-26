@@ -1,10 +1,6 @@
 {
   "slug": "apex",
-<<<<<<< HEAD
   "title": "Apex Staffing",
-=======
-  "title": "Apex",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Job and staffing mobile app with applicant vetting and shifts",
   "stack": "React Native, Redux Toolkit, Firebase",
   "repoPath": "sambukhari/Apex",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "Apex Staffing — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Apex Staffing source architecture overview"
-=======
-      "title": "Apex — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "Apex source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for Apex Staffing"
-=======
-      "alt": "Conceptual system module overview for Apex"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -120,8 +106,4 @@
     ]
   },
   "related": []
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

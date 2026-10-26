@@ -1,10 +1,6 @@
 {
   "slug": "ttu-test-the-ummah",
-<<<<<<< HEAD
   "title": "TTU Learning & Exam Platform",
-=======
-  "title": "TTU — Test The Ummah",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Learning, practice, exam and quiz management platform",
   "stack": "Laravel, PHP, Jetstream, Inertia, Sanctum, Stripe",
   "repoPath": "sambukhari/ttu-test-the-ummah",
@@ -51,26 +47,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "TTU Learning & Exam Platform — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "TTU Learning & Exam Platform source architecture overview"
-=======
-      "title": "TTU — Test The Ummah — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "TTU — Test The Ummah source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for TTU Learning & Exam Platform"
-=======
-      "alt": "Conceptual system module overview for TTU — Test The Ummah"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -134,8 +120,4 @@
       "title": "Test The Ummah — Earlier App"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

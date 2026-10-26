@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Trade Core Web & API — portfolio media and provenance
-=======
-# Trade Core — Web & API — portfolio media and provenance
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 This is one of 36 repositories described by the uploaded GitLab project-inventory ZIP. The original uploaded ZIP remains the source of record; this directory contains normalized project descriptions, not an independently inspected source checkout.
 

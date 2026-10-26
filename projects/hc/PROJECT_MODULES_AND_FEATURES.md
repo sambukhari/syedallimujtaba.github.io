@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Project Modules and Features — HC (Inactive · Empty Repository)
-=======
-# Project Modules and Features — HC — Empty Repository
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
 
 ## Repository modules
 *No application modules were found in the inspected repository.*

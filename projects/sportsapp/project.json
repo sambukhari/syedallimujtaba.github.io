@@ -1,10 +1,6 @@
 {
   "slug": "sportsapp",
-<<<<<<< HEAD
   "title": "Sportsapp Creator Network",
-=======
-  "title": "Sportsapp",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Sports and creator social networking mobile app",
   "stack": "React Native, Expo, Redux",
   "repoPath": "sambukhari/Sportsapp",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "Sportsapp Creator Network — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Sportsapp Creator Network source architecture overview"
-=======
-      "title": "Sportsapp — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "Sportsapp source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for Sportsapp Creator Network"
-=======
-      "alt": "Conceptual system module overview for Sportsapp"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -137,8 +123,4 @@
       "title": "SportsCMS"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

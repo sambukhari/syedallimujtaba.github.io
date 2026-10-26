@@ -1,10 +1,6 @@
 {
   "slug": "classified",
-<<<<<<< HEAD
   "title": "Classified Mobile Marketplace",
-=======
-  "title": "Classified Mobile",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Mobile marketplace for classified listings and stores",
   "stack": "React Native, Expo, Stripe SDK",
   "repoPath": "sambukhari/Classified",
@@ -47,26 +43,16 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "Classified Mobile Marketplace — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Classified Mobile Marketplace source architecture overview"
-=======
-      "title": "Classified Mobile — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "Classified Mobile source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for Classified Mobile Marketplace"
-=======
-      "alt": "Conceptual system module overview for Classified Mobile"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [
@@ -125,8 +111,4 @@
       "title": "Laraclassified"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19

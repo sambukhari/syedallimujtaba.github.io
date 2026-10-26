@@ -1,10 +1,6 @@
 {
   "slug": "marketing-tool",
-<<<<<<< HEAD
   "title": "Marketing Tool (Inactive · Placeholder)",
-=======
-  "title": "Marketing Tool — Placeholder",
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
   "purpose": "Minimal marketing-tool placeholder project",
   "stack": "Undetermined (README and .gitignore only)",
   "repoPath": "sambukhari/marketing-tool",
@@ -30,37 +26,22 @@
     {
       "src": "assets/cover.svg",
       "kind": "diagram",
-<<<<<<< HEAD
       "title": "Marketing Tool (Inactive · Placeholder) — engineering overview",
       "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
       "alt": "Marketing Tool (Inactive · Placeholder) source architecture overview"
-=======
-      "title": "Marketing Tool — Placeholder — engineering overview",
-      "caption": "Conceptual visualization of source-described modules; not a product screenshot.",
-      "alt": "Marketing Tool — Placeholder source architecture overview"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     },
     {
       "src": "assets/workflow.svg",
       "kind": "diagram",
       "title": "Modules and source boundaries",
       "caption": "Illustrative layout; cross-module integration and production operation are not proven.",
-<<<<<<< HEAD
       "alt": "Conceptual system module overview for Marketing Tool (Inactive · Placeholder)"
-=======
-      "alt": "Conceptual system module overview for Marketing Tool — Placeholder"
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
     }
   ],
   "highlights": [],
   "workflows": {
     "main": []
   },
-<<<<<<< HEAD
   "related": [],
   "status": "inactive"
 }
-=======
-  "related": []
-}
->>>>>>> 7642daad2140afd60b6a0459c9757d77237b8a19
