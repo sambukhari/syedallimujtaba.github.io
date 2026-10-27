@@ -50,8 +50,12 @@ def scroll_to_chapter(page, stage):
 def wait_for_chapter_center(page, stage):
     # A chip updates main.js immediately; also require its scroll to reach the chapter.
     page.wait_for_function("""stage => {
-        const r = document.querySelector(`[data-story-chapter="${stage}"]`).getBoundingClientRect();
-        return Math.abs(r.top + r.height / 2 - innerHeight / 2) < innerHeight * .04;
+        const el = document.querySelector(`[data-story-chapter="${stage}"]`);
+        const r = el.getBoundingClientRect(), root = getComputedStyle(document.documentElement);
+        // scrollIntoView centers within the scrollport after the fixed-header padding.
+        const center = (innerHeight + parseFloat(root.scrollPaddingTop || 0)
+                        - (parseFloat(root.scrollPaddingBottom) || 0)) / 2;
+        return Math.abs(r.top + r.height / 2 - center) < 10;
     }""", arg=stage)
 
 
